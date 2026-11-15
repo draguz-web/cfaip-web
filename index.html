@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFAIP Consultores y Servicios · Monterrey</title>
+<meta name="description" content="Créditos, bienes raíces y trámites ante dependencias en Monterrey, N.L. Cuéntenos su caso por WhatsApp.">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#14233F;
+  --acero:#4C74A8;
+  --acero-osc:#36598A;
+  --papel:#F1F2EE;
+  --hoja:#FFFFFF;
+  --manila:#E3C27E;
+  --manila-osc:#CFA95E;
+  --sello:#A8322B;
+  --gris:#5B6270;
+  --linea:#D5D8D0;
+  --sans:"Archivo",system-ui,sans-serif;
+  --serif:"Source Serif 4",Georgia,serif;
+  --ancho:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--serif);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--acero-osc)}
+:focus-visible{outline:3px solid var(--acero);outline-offset:3px;border-radius:2px}
+.contenedor{max-width:var(--ancho);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--sans);font-stretch:125%;font-weight:800;line-height:1.02;letter-spacing:-.01em;margin:0}
+h2{font-size:clamp(2rem,4.4vw,3.2rem)}
+h3{font-size:1.35rem;line-height:1.15}
+p{margin:0 0 1em;max-width:62ch}
+
+/* Botón principal */
+.boton{display:inline-flex;align-items:center;gap:.6em;font-family:var(--sans);font-weight:650;font-size:1rem;text-decoration:none;
+  background:var(--tinta);color:#fff;border:0;border-radius:6px;padding:.85em 1.3em;cursor:pointer;transition:background .15s}
+.boton:hover{background:var(--acero-osc)}
+.boton svg{width:1.2em;height:1.2em;flex:none}
+
+/* Encabezado */
+.barra{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--tinta)}
+.marca img{width:52px;height:52px}
+.marca span{font-family:var(--sans);font-weight:700;font-size:1.05rem;line-height:1.1}
+.marca small{display:block;font-weight:450;color:var(--gris);font-size:.82rem}
+.barra nav{display:flex;align-items:center;gap:26px;font-family:var(--sans);font-size:.95rem}
+.barra nav a:not(.boton){color:var(--tinta);text-decoration:none}
+.barra nav a:not(.boton):hover{color:var(--acero)}
+
+/* Portada: cielo de Monterrey */
+.cielo{position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(180deg,#2C5288 0%,#4C74A8 48%,#8EB0D8 82%,#B9CDE6 100%)}
+.cielo .marca{color:#fff}
+.cielo .marca small{color:#C9D7EC}
+.cielo .marca img{background:#fff;border-radius:50%;padding:3px}
+.cielo .barra nav a:not(.boton){color:#fff}
+.cielo .barra nav a:not(.boton):hover{color:#DCE7F6}
+.boton.claro{background:#fff;color:var(--tinta)}
+.boton.claro:hover{background:#DCE6F3}
+.portada{position:relative;padding:40px 0 clamp(170px,21vw,320px)}
+.portada .contenedor{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+.portada h1{font-size:clamp(3rem,7.6vw,6.4rem);margin-top:22px;color:#fff;text-shadow:0 2px 30px rgba(20,35,63,.25)}
+.portada .intro{font-size:1.2rem;margin:28px 0 30px;max-width:34ch;color:#E4ECF7}
+.datos-rapidos{display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--sans);font-size:.95rem;color:#D3DFF0;margin-top:28px}
+.datos-rapidos b{color:#fff;font-weight:650}
+.cerro{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:clamp(200px,26vw,380px);z-index:1}
+
+/* Solicitud (formulario) */
+.solicitud{position:relative;color:var(--tinta);background:var(--hoja);border:1px solid var(--linea);border-radius:4px;padding:30px 30px 26px;
+  box-shadow:0 1px 0 var(--linea),0 30px 60px -28px rgba(10,22,45,.6);transform:rotate(.6deg);margin-top:12px;z-index:2}
+.solicitud::before{content:"";position:absolute;inset:auto 0 -9px 8px;height:9px;background:var(--hoja);border:1px solid var(--linea);border-top:0;border-radius:0 0 4px 4px;transform:rotate(-.8deg);z-index:-1}
+.solicitud header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:2px solid var(--tinta);padding-bottom:12px;margin-bottom:18px}
+.solicitud header h2{font-size:1.45rem;font-stretch:112%}
+.solicitud header span{font-family:var(--sans);font-size:.85rem;color:var(--gris);white-space:nowrap}
+.campo{display:block;margin-bottom:16px}
+.campo label,.campo legend{display:block;font-family:var(--sans);font-size:.88rem;font-weight:600;margin-bottom:6px}
+.campo input,.campo textarea{width:100%;font:inherit;font-size:1rem;color:var(--tinta);background:transparent;border:0;border-bottom:1.5px solid #A9AFBA;padding:6px 2px;border-radius:0}
+.campo textarea{resize:vertical;min-height:92px;border:1.5px solid #A9AFBA;border-radius:3px;padding:8px 10px;
+  background-image:repeating-linear-gradient(transparent 0 27px,#E6E8E3 27px 28px);line-height:28px}
+.campo input:focus,.campo textarea:focus{outline:none;border-color:var(--acero);box-shadow:0 2px 0 -0.5px var(--acero)}
+fieldset.campo{border:0;padding:0;margin:0 0 16px}
+.opciones{display:flex;flex-wrap:wrap;gap:8px}
+.opciones label{margin:0;font-weight:500;font-size:.95rem;display:flex;align-items:center;gap:8px;white-space:nowrap;border:1.5px solid #A9AFBA;border-radius:4px;padding:7px 12px;cursor:pointer}
+.opciones input{accent-color:var(--tinta);margin:0}
+.opciones label:has(input:checked){border-color:var(--tinta);background:#E9EDF4}
+.solicitud .boton{width:100%;justify-content:center;margin-top:6px}
+.solicitud .nota{font-family:var(--sans);font-size:.82rem;color:var(--gris);margin:12px 0 0}
+.error{color:var(--sello);font-family:var(--sans);font-size:.85rem;margin:6px 0 0;min-height:1em}
+
+.sello{position:absolute;right:26px;top:70px;width:170px;height:170px;pointer-events:none;color:var(--sello);opacity:0;transform:scale(1.8) rotate(-24deg)}
+.sello.puesto{animation:sellar .38s cubic-bezier(.2,.9,.3,1.3) forwards}
+@keyframes sellar{to{opacity:.88;transform:scale(1) rotate(-14deg)}}
+
+/* Expediente de servicios */
+.seccion{padding:110px 0}
+.seccion .encabezado{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:44px}
+.seccion .encabezado p{margin:0;color:#2A3754}
+.expediente{position:relative}
+.pestanas{display:flex;gap:6px;padding-left:18px;position:relative;z-index:1}
+.pestana{font-family:var(--sans);font-weight:650;font-size:1rem;border:1px solid var(--manila-osc);border-bottom:0;background:#EAD7AE;color:#5B4A27;
+  border-radius:10px 10px 0 0;padding:12px 22px 10px;cursor:pointer;transform:translateY(4px);transition:transform .15s,background .15s}
+.pestana:hover{transform:translateY(1px)}
+.pestana[aria-selected="true"]{background:var(--manila);color:var(--tinta);transform:none}
+.carpeta{background:var(--manila);border:1px solid var(--manila-osc);border-radius:4px 10px 10px 10px;padding:14px;margin-top:-1px}
+.hoja{background:var(--hoja);border-radius:3px;padding:44px 48px;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;min-height:420px}
+.hoja[hidden]{display:none}
+.hoja h3{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:18px;color:var(--acero-osc)}
+.hoja{border-top:6px solid var(--acero)}
+.hoja .para-quien{font-style:italic;color:var(--gris)}
+.lista{list-style:none;margin:0;padding:0}
+.lista li{display:grid;grid-template-columns:1fr;padding:14px 0;border-bottom:1px solid var(--linea)}
+.lista li:first-child{padding-top:0}
+.lista b{font-family:var(--sans);font-weight:650;font-size:1.02rem}
+.lista span{color:var(--gris);font-size:.98rem;line-height:1.5}
+.hoja .boton{margin-top:10px}
+
+/* Casos */
+.casos{background:#F3E6C6}
+.casos .encabezado p{color:#5B4A27}
+.lista-casos{display:grid;grid-template-columns:repeat(2,1fr);gap:0 64px}
+.caso{padding:26px 0;border-top:1.5px solid #D2B470}
+.caso h3{font-family:var(--serif);font-stretch:100%;font-weight:600;font-size:1.3rem;letter-spacing:0;line-height:1.3;margin-bottom:8px}
+.caso p{margin:0;color:#4A4030}
+.caso a{font-family:var(--sans);font-size:.88rem;font-weight:650;display:inline-block;margin-top:12px;text-decoration:none;
+  background:var(--tinta);color:#fff;border-radius:999px;padding:5px 13px}
+.caso a:hover{background:var(--acero-osc)}
+
+/* Pasos */
+.pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;counter-reset:paso}
+.pasos li{counter-increment:paso;border-top:3px solid var(--acero);padding-top:18px}
+.pasos li::before{content:counter(paso);font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:3.4rem;line-height:1;color:var(--acero);display:block;margin-bottom:14px}
+.pasos h3{margin-bottom:10px}
+.pasos p{color:#3A4560;margin:0}
+
+/* Pie / contacto */
+.pie{background:var(--tinta);color:#DCE3EE;padding:90px 0 40px}
+.pie h2{color:#fff;max-width:14ch}
+.pie .rejilla{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;align-items:start}
+.pie a{color:#fff}
+.pie dl{margin:0;font-family:var(--sans);font-size:1rem}
+.pie dt{color:#9FB0CA;font-size:.88rem;margin-top:18px}
+.pie dt:first-child{margin-top:0}
+.pie dd{margin:2px 0 0}
+.pie .boton{background:var(--hoja);color:var(--tinta);margin-top:26px}
+.pie .boton:hover{background:#DCE6F3}
+.pie .legal{border-top:1px solid #2C3D5E;margin-top:70px;padding-top:24px;font-family:var(--sans);font-size:.85rem;color:#8395B2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cerro-pie{display:block;width:100%;height:auto;min-height:70px;color:var(--tinta);margin-bottom:-1px}
+
+/* Botón flotante de WhatsApp (móvil) */
+.flotante{display:none}
+
+@media (max-width:900px){
+  .barra nav a:not(.boton){display:none}
+  .portada .contenedor{grid-template-columns:1fr;gap:36px}
+  .portada h1{margin-top:8px}
+  .portada{padding-bottom:200px}
+  .cerro{height:190px}
+  .seccion{padding:76px 0}
+  .seccion .encabezado{grid-template-columns:1fr;gap:16px}
+  .hoja{grid-template-columns:1fr;gap:28px;padding:30px 24px;min-height:0}
+  .lista-casos{grid-template-columns:1fr}
+  .pasos{grid-template-columns:1fr;gap:34px}
+  .pie .rejilla{grid-template-columns:1fr;gap:36px}
+}
+@media (max-width:560px){
+  .contenedor{padding:0 16px}
+  .marca small{display:none}
+  .barra .boton span{display:none}
+  .barra .boton{padding:.75em}
+  .solicitud{padding:24px 18px 20px;transform:none}
+  .solicitud header{flex-direction:column;gap:2px}
+  .sello{width:130px;height:130px;right:10px;top:84px}
+  .pestanas{padding-left:6px;gap:4px}
+  .pestana{padding:10px 11px 8px;font-size:.88rem}
+  .carpeta{padding:8px}
+  .hoja{padding:24px 18px}
+  .flotante{display:flex;position:fixed;right:16px;bottom:16px;z-index:10;width:56px;height:56px;border-radius:50%;background:#1E8E4F;color:#fff;align-items:center;justify-content:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.4)}
+  .flotante svg{width:28px;height:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .sello.puesto{animation:none;opacity:.88;transform:rotate(-14deg)}
+  .pestana{transition:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+</svg>
+
+<div class="cielo">
+<header class="contenedor barra">
+  <a class="marca" href="#inicio" aria-label="CFAIP Consultores y Servicios, inicio">
+    <img src="img/logo.png" alt="" width="52" height="52">
+    <span>CFAIP<small>Consultores y Servicios</small></span>
+  </a>
+  <nav aria-label="Principal">
+    <a href="#servicios">Servicios</a>
+    <a href="#como-trabajamos">Cómo trabajamos</a>
+    <a href="#contacto">Contacto</a>
+    <a class="boton claro" href="https://wa.me/528140297419" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>81 4029 7419</span></a>
+  </nav>
+</header>
+
+  <section class="portada" id="inicio">
+    <div class="contenedor">
+      <div>
+        <h1>Nosotros hacemos las vueltas.</h1>
+        <p class="intro">Créditos, bienes raíces y trámites ante cualquier dependencia de Monterrey y Nuevo León. Cuéntenos su caso y le decimos qué documentos necesita y cuál es el camino más corto.</p>
+        <a class="boton claro" href="#servicios">Ver qué resolvemos</a>
+        <div class="datos-rapidos">
+          <span><b>Lunes a viernes</b> 9:00 a 18:00</span>
+          <span><b>Monterrey,</b> N.L.</span>
+        </div>
+      </div>
+
+      <form class="solicitud" id="solicitud" novalidate aria-labelledby="titulo-solicitud">
+        <header>
+          <h2 id="titulo-solicitud">Solicitud de servicio</h2>
+          <span>Fecha: <time id="fecha"></time></span>
+        </header>
+        <div class="campo">
+          <label for="nombre">Su nombre</label>
+          <input id="nombre" name="nombre" autocomplete="name" required>
+        </div>
+        <fieldset class="campo">
+          <legend>¿Con qué le ayudamos?</legend>
+          <div class="opciones">
+            <label><input type="radio" name="area" value="un crédito o tema financiero" checked> Crédito o finanzas</label>
+            <label><input type="radio" name="area" value="una propiedad"> Una propiedad</label>
+            <label><input type="radio" name="area" value="un trámite"> Un trámite</label>
+          </div>
+        </fieldset>
+        <div class="campo">
+          <label for="caso">Cuéntenos su caso</label>
+          <textarea id="caso" name="caso" rows="3" required placeholder="Ej. Mi papá dejó una casa en Guadalupe sin testamento y queremos venderla."></textarea>
+          <p class="error" id="error" role="alert"></p>
+        </div>
+        <button class="boton" type="submit"><svg aria-hidden="true"><use href="#wa"/></svg>Enviar por WhatsApp</button>
+        <p class="nota">Se abre WhatsApp con su mensaje listo. Contestamos en horario de oficina.</p>
+        <svg class="sello" id="sello" viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="6"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path id="arco" d="M100 100 m-66 0 a66 66 0 1 1 132 0" fill="none"/>
+          <text font-family="Archivo, sans-serif" font-weight="700" font-size="17" fill="currentColor" letter-spacing="3"><textPath href="#arco" startOffset="50%" text-anchor="middle">CFAIP · MONTERREY</textPath></text>
+          <text x="100" y="112" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="30" textLength="138" lengthAdjust="spacingAndGlyphs" fill="currentColor">RECIBIDO</text>
+          <text x="100" y="146" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="16" fill="currentColor" id="sello-fecha"></text>
+        </svg>
+      </form>
+    </div>
+
+    <!-- Cerro de la Silla -->
+    <!-- Sierra Madre al fondo y Cerro de la Silla al frente -->
+    <svg class="cerro" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <path fill="#6E92C2" d="M0 320V196C110 188 210 160 320 168C410 175 470 138 560 146C650 154 700 186 790 182C900 177 1000 138 1120 146C1240 155 1340 184 1440 176V320Z"/>
+      <path fill="#3D6297" d="M0 320V236C140 230 260 214 380 220C480 225 560 206 640 214C760 226 860 246 980 240C1120 233 1280 222 1440 228V320Z"/>
+      <path fill="#F1F2EE" d="M0 320V292C200 287 380 268 520 244C590 232 630 205 668 168L700 136L728 104L752 80L766 86L782 112L800 150L816 176L830 182L842 170L856 146L872 118L884 104L896 108L912 132L940 176C980 236 1150 280 1440 290V320Z"/>
+    </svg>
+  </section>
+
+</div>
+
+<main>
+  <section class="seccion" id="servicios">
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2>Tres áreas, un solo despacho.</h2>
+        <p>Muchos casos tocan las tres: una casa heredada necesita trámite en Catastro, escrituras y, a veces, un crédito para comprar la parte de los hermanos. Lo llevamos completo.</p>
+      </div>
+
+      <div class="expediente">
+        <div class="pestanas" role="tablist" aria-label="Áreas de servicio">
+          <button class="pestana" role="tab" id="t-fin" aria-controls="p-fin" aria-selected="true">Finanzas</button>
+          <button class="pestana" role="tab" id="t-bie" aria-controls="p-bie" aria-selected="false" tabindex="-1">Bienes raíces</button>
+          <button class="pestana" role="tab" id="t-tra" aria-controls="p-tra" aria-selected="false" tabindex="-1">Trámites</button>
+        </div>
+        <div class="carpeta">
+          <div class="hoja" role="tabpanel" id="p-fin" aria-labelledby="t-fin">
+            <div>
+              <h3>Bróker financiero</h3>
+              <p class="para-quien">Para negocios que quieren crecer y personas que buscan el crédito correcto.</p>
+              <p>Comparamos opciones, armamos su expediente y lo acompañamos hasta que el dinero llega.</p>
+              <a class="boton" href="https://wa.me/528140297419?text=Hola%2C%20me%20interesa%20un%20cr%C3%A9dito." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Preguntar por un crédito</a>
+            </div>
+            <ul class="lista">
+              <li><b>Créditos para PYMES y personales</b><span>Capital de trabajo, equipo o gastos personales.</span></li>
+              <li><b>Créditos hipotecarios</b><span>Para comprar, construir o liquidar su casa.</span></li>
+              <li><b>Créditos para exportar e importar</b><span>Financiamiento para operaciones de comercio exterior.</span></li>
+              <li><b>Apoyos de gobierno</b><span>Programas federales y estatales para empresas.</span></li>
+              <li><b>Compra y venta de empresas</b><span>Valuación, búsqueda de comprador y cierre.</span></li>
+              <li><b>Trámites aduanales y fiscales</b><span>Para que su operación esté en regla con el SAT y aduanas.</span></li>
+            </ul>
+          </div>
+          <div class="hoja" role="tabpanel" id="p-bie" aria-labelledby="t-bie" hidden>
+            <div>
+              <h3>Bienes raíces</h3>
+              <p class="para-quien">Para quien hereda, compra, vende o renta una propiedad.</p>
+              <p>Nos encargamos del papeleo que detiene la mayoría de las operaciones, desde el intestado hasta el pago del predial.</p>
+              <a class="boton" href="https://wa.me/528140297419?text=Hola%2C%20quiero%20informes%20sobre%20una%20propiedad." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Preguntar por una propiedad</a>
+            </div>
+            <ul class="lista">
+              <li><b>Propiedades intestadas</b><span>Casas heredadas sin testamento: las ponemos a nombre de quien corresponde.</span></li>
+              <li><b>Compra y venta de propiedades</b><span>Revisión de papeles, avalúo y acompañamiento hasta la escritura.</span></li>
+              <li><b>Créditos hipotecarios</b><span>Le ayudamos a conseguir el financiamiento para comprar.</span></li>
+              <li><b>Administración de propiedades</b><span>Plazas, locales, edificios y casas: cobro de rentas y mantenimiento.</span></li>
+              <li><b>Pago de impuestos y servicios</b><span>Predial, agua y luz al corriente, sin que usted haga filas.</span></li>
+              <li><b>Permisos de construcción</b><span>Solicitud y seguimiento ante Desarrollo Urbano.</span></li>
+            </ul>
+          </div>
+          <div class="hoja" role="tabpanel" id="p-tra" aria-labelledby="t-tra" hidden>
+            <div>
+              <h3>Trámites en dependencias</h3>
+              <p class="para-quien">Para quien no tiene tiempo de hacer filas o ya se atoró en una ventanilla.</p>
+              <p>Sabemos qué pide cada oficina y en qué orden. Usted nos da los documentos y nosotros hacemos las vueltas.</p>
+              <a class="boton" href="https://wa.me/528140297419?text=Hola%2C%20necesito%20ayuda%20con%20un%20tr%C3%A1mite." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Preguntar por un trámite</a>
+            </div>
+            <ul class="lista">
+              <li><b>CFE y Agua y Drenaje</b><span>Contratos, cambios de nombre, aclaraciones de recibos.</span></li>
+              <li><b>SAT, nómina e IMSS</b><span>Altas, declaraciones, aclaraciones y requerimientos.</span></li>
+              <li><b>Catastro, Registro Público y notaría</b><span>Certificados, inscripciones y escrituras.</span></li>
+              <li><b>Desarrollo Urbano y registro de obras</b><span>Licencias, usos de suelo y alineamientos.</span></li>
+              <li><b>Control Vehicular, Policía y Tránsito</b><span>Placas, refrendos, bajas y liberaciones.</span></li>
+              <li><b>Multas en cualquier dependencia</b><span>Revisamos si procede pagarla, reducirla o impugnarla.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion casos">
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2>Casos que nos llegan seguido.</h2>
+        <p>Si el suyo se parece a alguno, ya sabemos por dónde empezar.</p>
+      </div>
+      <div class="lista-casos">
+        <article class="caso">
+          <h3>“Mis papás fallecieron y la casa sigue a su nombre.”</h3>
+          <p>Se resuelve con un juicio intestamentario y la escrituración a nombre de los herederos. Le decimos qué actas y papeles reunir.</p>
+          <a href="#servicios" data-ir="t-bie">Bienes raíces</a>
+        </article>
+        <article class="caso">
+          <h3>“Necesito capital para mi negocio y el banco me lo negó.”</h3>
+          <p>Hay más opciones que el banco donde tiene su cuenta. Revisamos su situación y buscamos el crédito que sí le aprueben.</p>
+          <a href="#servicios" data-ir="t-fin">Finanzas</a>
+        </article>
+        <article class="caso">
+          <h3>“Me llegó un requerimiento del SAT y no entiendo qué piden.”</h3>
+          <p>Lo leemos con usted, le explicamos qué significa y preparamos la respuesta dentro del plazo.</p>
+          <a href="#servicios" data-ir="t-tra">Trámites</a>
+        </article>
+        <article class="caso">
+          <h3>“Tengo locales en renta y ya no me da tiempo de atenderlos.”</h3>
+          <p>Administramos la propiedad: cobranza, contratos, mantenimiento y pagos de servicios, con reporte cada mes.</p>
+          <a href="#servicios" data-ir="t-bie">Bienes raíces</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="como-trabajamos">
+    <div class="contenedor">
+      <div class="encabezado">
+        <h2>Cómo trabajamos.</h2>
+        <p>Atención personalizada y de confianza en cada servicio, de principio a fin.</p>
+      </div>
+      <ol class="pasos">
+        <li>
+          <h3>Nos cuenta su caso</h3>
+          <p>Por WhatsApp, correo o en persona. Entre más detalle nos dé, más rápido le orientamos.</p>
+        </li>
+        <li>
+          <h3>Le decimos el camino</h3>
+          <p>Qué documentos hacen falta, qué pasos siguen y cuánto cobramos, antes de empezar.</p>
+        </li>
+        <li>
+          <h3>Hacemos las vueltas</h3>
+          <p>Llevamos el trámite ante cada oficina y le avisamos en cada avance hasta terminar.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<svg class="cerro-pie" viewBox="0 70 1440 250" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <path fill="currentColor" d="M0 320V292C200 287 380 268 520 244C590 232 630 205 668 168L700 136L728 104L752 80L766 86L782 112L800 150L816 176L830 182L842 170L856 146L872 118L884 104L896 108L912 132L940 176C980 236 1150 280 1440 290V320Z"/>
+</svg>
+<footer class="pie" id="contacto">
+  <div class="contenedor">
+    <div class="rejilla">
+      <div>
+        <h2>¿Por dónde empezamos?</h2>
+        <a class="boton" href="https://wa.me/528140297419" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Escribir por WhatsApp</a>
+      </div>
+      <dl>
+        <dt>WhatsApp y teléfono</dt>
+        <dd><a href="tel:+528140297419">81 4029 7419</a></dd>
+        <dt>Correo</dt>
+        <dd><a href="mailto:infoservice@cfaipconsultoresyservicios.com">infoservice@cfaipconsultoresyservicios.com</a></dd>
+      </dl>
+      <dl>
+        <dt>Horario</dt>
+        <dd>Lunes a viernes, 9:00 a 18:00</dd>
+        <dt>Ciudad</dt>
+        <dd>Monterrey, Nuevo León</dd>
+      </dl>
+    </div>
+    <div class="legal">
+      <span>© <span id="anio"></span> CFAIP Consultores y Servicios</span>
+      <span>Consultoría financiera, bienes raíces y trámites</span>
+    </div>
+  </div>
+</footer>
+
+<a class="flotante" href="https://wa.me/528140297419" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+
+<script>
+(function(){
+  const hoy = new Date();
+  const fechaLarga = hoy.toLocaleDateString('es-MX',{day:'numeric',month:'long',year:'numeric'});
+  document.getElementById('fecha').textContent = fechaLarga;
+  document.getElementById('fecha').dateTime = hoy.toISOString().slice(0,10);
+  document.getElementById('sello-fecha').textContent = hoy.toLocaleDateString('es-MX',{day:'2-digit',month:'2-digit',year:'numeric'});
+  document.getElementById('anio').textContent = hoy.getFullYear();
+
+  // Pestañas del expediente
+  const tabs = [...document.querySelectorAll('.pestana')];
+  function activar(tab, enfocar){
+    tabs.forEach(t=>{
+      const sel = t === tab;
+      t.setAttribute('aria-selected', sel);
+      t.tabIndex = sel ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !sel;
+    });
+    if (enfocar) tab.focus();
+  }
+  tabs.forEach((t,i)=>{
+    t.addEventListener('click',()=>activar(t));
+    t.addEventListener('keydown',e=>{
+      if (e.key==='ArrowRight'||e.key==='ArrowLeft'){
+        const n = (i + (e.key==='ArrowRight'?1:-1) + tabs.length) % tabs.length;
+        activar(tabs[n], true);
+      }
+    });
+  });
+  document.querySelectorAll('[data-ir]').forEach(a=>a.addEventListener('click',()=>activar(document.getElementById(a.dataset.ir))));
+
+  // Solicitud -> WhatsApp
+  const form = document.getElementById('solicitud');
+  const error = document.getElementById('error');
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    const nombre = form.nombre.value.trim();
+    const caso = form.caso.value.trim();
+    if (!nombre || !caso){
+      error.textContent = !nombre ? 'Escriba su nombre para saber cómo dirigirnos a usted.' : 'Cuéntenos su caso en una o dos líneas.';
+      (!nombre ? form.nombre : form.caso).focus();
+      return;
+    }
+    error.textContent = '';
+    const area = form.area.value;
+    const texto = `Hola, soy ${nombre}. Necesito ayuda con ${area}.\n\n${caso}`;
+    const sello = document.getElementById('sello');
+    sello.classList.remove('puesto'); void sello.offsetWidth; sello.classList.add('puesto');
+    setTimeout(()=>window.open('https://wa.me/528140297419?text='+encodeURIComponent(texto),'_blank','noopener'), 650);
+  });
+})();
+</script>
+</body>
+</html>
