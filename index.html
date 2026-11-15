@@ -102,11 +102,19 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .seccion .encabezado{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:44px}
 .seccion .encabezado p{margin:0;color:#2A3754}
 .expediente{position:relative}
+.pista{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-size:.98rem;color:var(--acero-osc);margin:0 0 14px 18px}
+.pista svg{width:22px;height:22px;flex:none}
+.pestana-icono{width:1.1em;height:1.1em;vertical-align:-.15em;margin-right:.45em}
+.siguiente{grid-column:1/-1;justify-self:end;display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-weight:650;font-size:.98rem;
+  background:none;border:1.5px solid var(--acero);color:var(--acero-osc);border-radius:6px;padding:.6em 1em;cursor:pointer}
+.siguiente:hover{background:#E9EFF7}
+.siguiente svg{width:1.1em;height:1.1em}
 .pestanas{display:flex;gap:6px;padding-left:18px;position:relative;z-index:1}
-.pestana{font-family:var(--sans);font-weight:650;font-size:1rem;border:1px solid var(--manila-osc);border-bottom:0;background:#EAD7AE;color:#5B4A27;
-  border-radius:10px 10px 0 0;padding:12px 22px 10px;cursor:pointer;transform:translateY(4px);transition:transform .15s,background .15s}
-.pestana:hover{transform:translateY(1px)}
-.pestana[aria-selected="true"]{background:var(--manila);color:var(--tinta);transform:none}
+.pestana{font-family:var(--sans);font-weight:650;font-size:1rem;border:1.5px solid var(--acero);border-bottom:0;background:#E3EBF5;color:var(--acero-osc);
+  border-radius:10px 10px 0 0;padding:12px 22px 10px;cursor:pointer;transform:translateY(4px);transition:transform .15s,background .15s;
+  text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+.pestana:hover{transform:translateY(1px);background:#D2DFEF}
+.pestana[aria-selected="true"]{background:var(--manila);border-color:var(--manila-osc);color:var(--tinta);transform:none;text-decoration:none;cursor:default}
 .carpeta{background:var(--manila);border:1px solid var(--manila-osc);border-radius:4px 10px 10px 10px;padding:14px;margin-top:-1px}
 .hoja{background:var(--hoja);border-radius:3px;padding:44px 48px;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;min-height:420px}
 .hoja[hidden]{display:none}
@@ -177,7 +185,10 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   .solicitud header{flex-direction:column;gap:2px}
   .sello{width:130px;height:130px;right:10px;top:84px}
   .pestanas{padding-left:6px;gap:4px}
-  .pestana{padding:10px 11px 8px;font-size:.88rem}
+  .pestana{padding:10px 9px 8px;font-size:.86rem}
+  .pestana-icono{display:none}
+  .pista{margin-left:6px;font-size:.92rem}
+  .siguiente{justify-self:stretch;justify-content:center}
   .carpeta{padding:8px}
   .hoja{padding:24px 18px}
   .flotante{display:flex;position:fixed;right:16px;bottom:16px;z-index:10;width:56px;height:56px;border-radius:50%;background:#1E8E4F;color:#fff;align-items:center;justify-content:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.4)}
@@ -277,10 +288,11 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
       </div>
 
       <div class="expediente">
+        <p class="pista"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-.5V4.5a1.5 1.5 0 0 1 3 0V10m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1.2a5 5 0 0 1-3.9-1.9L4.6 15.6a1.5 1.5 0 0 1 2.3-1.9L9 16"/></svg>Toque cada pestaña para ver los servicios de esa área.</p>
         <div class="pestanas" role="tablist" aria-label="Áreas de servicio">
-          <button class="pestana" role="tab" id="t-fin" aria-controls="p-fin" aria-selected="true">Finanzas</button>
-          <button class="pestana" role="tab" id="t-bie" aria-controls="p-bie" aria-selected="false" tabindex="-1">Bienes raíces</button>
-          <button class="pestana" role="tab" id="t-tra" aria-controls="p-tra" aria-selected="false" tabindex="-1">Trámites</button>
+          <button class="pestana" role="tab" id="t-fin" aria-controls="p-fin" aria-selected="true"><svg class="pestana-icono" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M5 10v8m4.7-8v8m4.6-8v8M19 10v8M2.5 21h19M12 3l9 5H3z"/></svg>Finanzas</button>
+          <button class="pestana" role="tab" id="t-bie" aria-controls="p-bie" aria-selected="false" tabindex="-1"><svg class="pestana-icono" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 11 12 4l9 7M5.5 9.5V20h13V9.5M10 20v-5h4v5"/></svg>Bienes raíces</button>
+          <button class="pestana" role="tab" id="t-tra" aria-controls="p-tra" aria-selected="false" tabindex="-1"><svg class="pestana-icono" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8zM14 3v5h5M8.5 13h7m-7 4h4.5"/></svg>Trámites</button>
         </div>
         <div class="carpeta">
           <div class="hoja" role="tabpanel" id="p-fin" aria-labelledby="t-fin">
@@ -298,6 +310,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
               <li><b>Compra y venta de empresas</b><span>Valuación, búsqueda de comprador y cierre.</span></li>
               <li><b>Trámites aduanales y fiscales</b><span>Para que su operación esté en regla con el SAT y aduanas.</span></li>
             </ul>
+            <button class="siguiente" type="button" data-siguiente="t-bie">Siguiente área: Bienes raíces<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m9 6 6 6-6 6"/></svg></button>
           </div>
           <div class="hoja" role="tabpanel" id="p-bie" aria-labelledby="t-bie" hidden>
             <div>
@@ -314,6 +327,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
               <li><b>Pago de impuestos y servicios</b><span>Predial, agua y luz al corriente, sin que usted haga filas.</span></li>
               <li><b>Permisos de construcción</b><span>Solicitud y seguimiento ante Desarrollo Urbano.</span></li>
             </ul>
+            <button class="siguiente" type="button" data-siguiente="t-tra">Siguiente área: Trámites<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m9 6 6 6-6 6"/></svg></button>
           </div>
           <div class="hoja" role="tabpanel" id="p-tra" aria-labelledby="t-tra" hidden>
             <div>
@@ -330,6 +344,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
               <li><b>Control Vehicular, Policía y Tránsito</b><span>Placas, refrendos, bajas y liberaciones.</span></li>
               <li><b>Multas en cualquier dependencia</b><span>Revisamos si procede pagarla, reducirla o impugnarla.</span></li>
             </ul>
+            <button class="siguiente" type="button" data-siguiente="t-fin">Volver a Finanzas<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m9 6 6 6-6 6"/></svg></button>
           </div>
         </div>
       </div>
@@ -453,6 +468,11 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     });
   });
   document.querySelectorAll('[data-ir]').forEach(a=>a.addEventListener('click',()=>activar(document.getElementById(a.dataset.ir))));
+  document.querySelectorAll('[data-siguiente]').forEach(b=>b.addEventListener('click',()=>{
+    const t = document.getElementById(b.dataset.siguiente);
+    activar(t, true);
+    t.scrollIntoView({block:'nearest'});
+  }));
 
   // Solicitud -> WhatsApp
   const form = document.getElementById('solicitud');
