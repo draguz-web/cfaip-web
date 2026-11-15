@@ -460,6 +460,8 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
 <script>
 (function(){
+  // Al recargar, empezar siempre desde arriba (sin conservar el scroll anterior)
+  if ('scrollRestoration' in history && !location.hash) { history.scrollRestoration = 'manual'; scrollTo(0,0); }
   const hoy = new Date();
   const fechaLarga = hoy.toLocaleDateString('es-MX',{day:'numeric',month:'long',year:'numeric'});
   document.getElementById('fecha').textContent = fechaLarga;
