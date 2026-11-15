@@ -1,0 +1,7 @@
+# Google solo lee este archivo en la raíz del dominio.
+# Funciona en cuanto la página esté en https://cfaipconsultoresyservicios.com/
+User-agent: *
+Allow: /
+Disallow: /DESIGN.md
+
+Sitemap: https://draguz-web.github.io/cfaip-web/sitemap.xml
