@@ -46,7 +46,7 @@ p{margin:0 0 1em;max-width:62ch}
 /* Encabezado */
 .barra{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
 .marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--tinta)}
-.marca img{width:52px;height:52px}
+.marca img{width:56px;height:56px;object-fit:contain}
 .marca span{font-family:var(--sans);font-weight:700;font-size:1.05rem;line-height:1.1}
 .marca small{display:block;font-weight:450;color:var(--gris);font-size:.82rem}
 .barra nav{display:flex;align-items:center;gap:26px;font-family:var(--sans);font-size:.95rem}
@@ -58,7 +58,7 @@ p{margin:0 0 1em;max-width:62ch}
   background:linear-gradient(180deg,#2C5288 0%,#4C74A8 48%,#8EB0D8 82%,#B9CDE6 100%)}
 .cielo .marca{color:#fff}
 .cielo .marca small{color:#C9D7EC}
-.cielo .marca img{background:#fff;border-radius:50%;padding:3px}
+.cielo .marca img{background:#fff;border-radius:10px;padding:6px;box-shadow:0 4px 14px -6px rgba(10,22,45,.5)}
 .cielo .barra nav a:not(.boton){color:#fff}
 .cielo .barra nav a:not(.boton):hover{color:#DCE7F6}
 .boton.claro{background:#fff;color:var(--tinta)}
