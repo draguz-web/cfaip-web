@@ -194,6 +194,26 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   .flotante{display:flex;position:fixed;right:16px;bottom:16px;z-index:10;width:56px;height:56px;border-radius:50%;background:#1E8E4F;color:#fff;align-items:center;justify-content:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.4)}
   .flotante svg{width:28px;height:28px}
 }
+/* Animación: entrada de la portada (una sola secuencia) */
+@media (prefers-reduced-motion:no-preference){
+  .cerro .capa{animation:subir 1.4s cubic-bezier(.16,.84,.3,1) both}
+  .cerro .capa-lejos{animation-delay:.05s}
+  .cerro .capa-media{animation-delay:.2s}
+  .cerro .capa-frente{animation-delay:.35s}
+  @keyframes subir{from{transform:translateY(90px)}to{transform:translateY(0)}}
+  .portada h1{animation:aparecer .9s cubic-bezier(.2,.7,.2,1) .45s both}
+  .portada .intro,.portada .boton.claro,.datos-rapidos{animation:aparecer .8s cubic-bezier(.2,.7,.2,1) .7s both}
+  @keyframes aparecer{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .solicitud{animation:hoja-cae 1s cubic-bezier(.2,.8,.25,1) .9s both}
+  @keyframes hoja-cae{from{opacity:0;transform:translateY(-26px) rotate(-2.5deg)}to{opacity:1;transform:rotate(.6deg)}}
+  /* Hoja que sale de la carpeta al cambiar de pestaña */
+  .hoja.sacar{animation:sacar .42s cubic-bezier(.2,.8,.25,1)}
+  @keyframes sacar{from{opacity:.2;transform:translateY(22px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:no-preference) and (max-width:560px){
+  @keyframes hoja-cae{from{opacity:0;transform:translateY(-26px)}to{opacity:1;transform:none}}
+}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .sello.puesto{animation:none;opacity:.88;transform:rotate(-14deg)}
@@ -271,9 +291,9 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     <!-- Cerro de la Silla -->
     <!-- Sierra Madre al fondo y Cerro de la Silla al frente -->
     <svg class="cerro" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <path fill="#6E92C2" d="M0 320V196C110 188 210 160 320 168C410 175 470 138 560 146C650 154 700 186 790 182C900 177 1000 138 1120 146C1240 155 1340 184 1440 176V320Z"/>
-      <path fill="#3D6297" d="M0 320V236C140 230 260 214 380 220C480 225 560 206 640 214C760 226 860 246 980 240C1120 233 1280 222 1440 228V320Z"/>
-      <path fill="#F1F2EE" d="M0 320V292C200 287 380 268 520 244C590 232 630 205 668 168L700 136L728 104L752 80L766 86L782 112L800 150L816 176L830 182L842 170L856 146L872 118L884 104L896 108L912 132L940 176C980 236 1150 280 1440 290V320Z"/>
+      <path class="capa capa-lejos" fill="#6E92C2" d="M0 320V196C110 188 210 160 320 168C410 175 470 138 560 146C650 154 700 186 790 182C900 177 1000 138 1120 146C1240 155 1340 184 1440 176V320Z"/>
+      <path class="capa capa-media" fill="#3D6297" d="M0 320V236C140 230 260 214 380 220C480 225 560 206 640 214C760 226 860 246 980 240C1120 233 1280 222 1440 228V320Z"/>
+      <path class="capa capa-frente" fill="#F1F2EE" d="M0 320V292C200 287 380 268 520 244C590 232 630 205 668 168L700 136L728 104L752 80L766 86L782 112L800 150L816 176L830 182L842 170L856 146L872 118L884 104L896 108L912 132L940 176C980 236 1150 280 1440 290V320Z"/>
     </svg>
   </section>
 
@@ -447,14 +467,36 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   document.getElementById('sello-fecha').textContent = hoy.toLocaleDateString('es-MX',{day:'2-digit',month:'2-digit',year:'numeric'});
   document.getElementById('anio').textContent = hoy.getFullYear();
 
+  const conMovimiento = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Profundidad del cerro: las capas del fondo bajan más lento al hacer scroll
+  if (conMovimiento){
+    const lejos = document.querySelector('.capa-lejos');
+    const media = document.querySelector('.capa-media');
+    const cielo = document.querySelector('.cielo');
+    let pendiente = false;
+    const mover = ()=>{
+      pendiente = false;
+      const y = Math.min(scrollY, cielo.offsetHeight);
+      lejos.style.translate = `0 ${y * 0.22}px`;
+      media.style.translate = `0 ${y * 0.1}px`;
+    };
+    addEventListener('scroll', ()=>{ if (!pendiente){ pendiente = true; requestAnimationFrame(mover); } }, {passive:true});
+  }
+
   // Pestañas del expediente
   const tabs = [...document.querySelectorAll('.pestana')];
   function activar(tab, enfocar){
     tabs.forEach(t=>{
       const sel = t === tab;
+      const hoja = document.getElementById(t.getAttribute('aria-controls'));
+      const estabaOculta = hoja.hidden;
       t.setAttribute('aria-selected', sel);
       t.tabIndex = sel ? 0 : -1;
-      document.getElementById(t.getAttribute('aria-controls')).hidden = !sel;
+      hoja.hidden = !sel;
+      if (sel && estabaOculta && conMovimiento){
+        hoja.classList.remove('sacar'); void hoja.offsetWidth; hoja.classList.add('sacar');
+      }
     });
     if (enfocar) tab.focus();
   }
