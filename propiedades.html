@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propiedades en venta y renta en Monterrey | CFAIP Consultores y Servicios</title>
+<meta name="description" content="Catálogo de casas, departamentos, terrenos y locales en venta y renta en Monterrey y su área metropolitana. Pregunte por cualquier propiedad por WhatsApp.">
+<link rel="canonical" href="https://draguz-web.github.io/cfaip-web/propiedades.html">
+<meta name="theme-color" content="#14233F">
+<link rel="icon" href="img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Propiedades en Monterrey · CFAIP">
+<meta property="og:description" content="Casas, departamentos, terrenos y locales en venta y renta.">
+<meta property="og:image" content="https://draguz-web.github.io/cfaip-web/img/compartir.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="recursos/propiedades.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+</svg>
+
+<header class="cabecera">
+  <div class="contenedor barra">
+    <a class="marca" href="index.html" aria-label="CFAIP Consultores y Servicios, inicio">
+      <img src="img/logo.png" alt="" width="46" height="46">
+      <span>CFAIP<small>Consultores y Servicios</small></span>
+    </a>
+    <nav aria-label="Principal">
+      <a class="ocultar-movil" href="index.html">Inicio</a>
+      <a href="propiedades.html" aria-current="page">Catálogo</a>
+      <a href="mapa.html" data-conservar-filtros>Mapa</a>
+      <a class="boton claro" href="https://wa.me/528140297419" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>81 4029 7419</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="contenedor">
+  <div class="titular">
+    <h1>Propiedades</h1>
+    <p>Casas, departamentos, terrenos y locales en Monterrey y su área metropolitana. Toque una propiedad para ver su ficha o búsquelas en el <a href="mapa.html" data-conservar-filtros>mapa</a>.</p>
+    <span class="aviso-demo">Catálogo de demostración: las propiedades son de ejemplo.</span>
+  </div>
+
+  <form class="filtros" id="filtros" aria-label="Filtrar propiedades">
+    <fieldset>
+      <legend>Operación</legend>
+      <div class="segmentos">
+        <label><input type="radio" name="operacion" value="" checked>Todas</label>
+        <label><input type="radio" name="operacion" value="venta">Venta</label>
+        <label><input type="radio" name="operacion" value="renta">Renta</label>
+      </div>
+    </fieldset>
+    <label>Tipo
+      <select name="tipo">
+        <option value="">Todos</option>
+        <option>Casa</option><option>Departamento</option><option>Terreno</option><option>Local</option>
+      </select>
+    </label>
+    <label>Recámaras
+      <select name="recamaras">
+        <option value="">Cualquiera</option>
+        <option value="1">1 o más</option><option value="2">2 o más</option><option value="3">3 o más</option><option value="4">4 o más</option>
+      </select>
+    </label>
+    <label>Precio
+      <select name="precio"></select>
+    </label>
+    <label>Ordenar
+      <select name="orden" data-defecto="recientes">
+        <option value="recientes">Más recientes</option>
+        <option value="precio-asc">Menor precio</option>
+        <option value="precio-desc">Mayor precio</option>
+        <option value="tamano">Más grandes</option>
+      </select>
+    </label>
+    <button class="limpiar" type="reset">Quitar filtros</button>
+  </form>
+
+  <p class="conteo" id="conteo" aria-live="polite" style="margin:22px 0 16px"></p>
+  <div class="rejilla" id="rejilla"></div>
+  <div style="height:80px"></div>
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <span>© <span id="anio"></span> CFAIP Consultores y Servicios · Monterrey, N.L.</span>
+    <span><a href="index.html">Inicio</a> · <a href="aviso-de-privacidad.html">Aviso de privacidad</a></span>
+  </div>
+</footer>
+
+<a class="flotante" href="https://wa.me/528140297419" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+
+<script src="recursos/propiedades-datos.js"></script>
+<script src="recursos/propiedades.js"></script>
+<script>
+(function(){
+  const P = window.Propiedades;
+  const form = document.getElementById('filtros');
+  const rejilla = document.getElementById('rejilla');
+  const conteo = document.getElementById('conteo');
+
+  function pintar(){
+    const r = P.filtrar(form);
+    conteo.innerHTML = r.length === 1 ? '<b>1</b> propiedad' : `<b>${r.length}</b> propiedades`;
+    rejilla.innerHTML = r.length ? r.map(P.tarjeta).join('')
+      : '<p class="vacio">No hay propiedades con esos filtros. Pruebe quitando alguno.</p>';
+  }
+
+  P.leerFiltros(form);
+  form.addEventListener('change', e => {
+    if (e.target.name === 'operacion') P.opcionesPrecio(form);
+    P.guardarFiltros(form); pintar();
+  });
+  form.addEventListener('reset', () => setTimeout(() => { P.opcionesPrecio(form); P.guardarFiltros(form); pintar(); }));
+  rejilla.addEventListener('click', e => {
+    const b = e.target.closest('[data-abrir]');
+    if (b) P.abrirFicha(b.dataset.abrir);
+  });
+  P.guardarFiltros(form);
+  pintar();
+
+  // Abrir la ficha si la dirección trae la clave (por ejemplo propiedades.html#CF-101)
+  if (location.hash) P.abrirFicha(decodeURIComponent(location.hash.slice(1)));
+})();
+</script>
+</body>
+</html>

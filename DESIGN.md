@@ -30,3 +30,9 @@ La foto genérica se reemplaza por la silueta del **Cerro de la Silla**: la port
 - Alineado a la izquierda.
 - Numeración solo en "Cómo trabajamos", que sí es una secuencia.
 - No inventar cifras ni testimonios: faltan datos reales del cliente.
+
+## Propiedades (catálogo y mapa)
+- `propiedades.html`: catálogo en rejilla con filtros (venta/renta, tipo, recámaras, precio) y ficha de cada propiedad con botón a WhatsApp.
+- `mapa.html`: lista a la izquierda y mapa a la derecha con el precio de cada propiedad; la lista muestra solo lo que se ve en el mapa. En celular un botón cambia entre lista y mapa.
+- Las propiedades se editan en `recursos/propiedades-datos.js`. Las actuales **son de ejemplo**; reemplazarlas por las reales. Si una propiedad no tiene `foto`, se dibuja una fachada ilustrada.
+- Mapa: Leaflet con el mapa base gratuito de OpenStreetMap (estilo CARTO Voyager); no requiere clave.
