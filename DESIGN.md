@@ -1,5 +1,8 @@
 # CFAIP Consultores y Servicios — dirección de diseño
 
+> **Cambio 2026-11-17 (junta con el cliente):** la página pasa a **fondo oscuro** (#0E1930, secciones alternas #14223F, pie #091224). La portada es **Monterrey de noche**: cielo con estrellas, Sierra Madre y Cerro de la Silla en azules, y la **ciudad con ventanas encendidas** al frente (con el Faro del Comercio). La solicitud, el expediente y el chat siguen siendo hojas claras sobre el fondo oscuro. Cada área del expediente lleva su **ilustración**. Se agregó un **chat en vivo** que conversa en la página y pasa el caso a WhatsApp. El nombre y el logo van más grandes y el nombre completo se ve también en celular.
+
+
 **Tema:** despacho en Monterrey que resuelve créditos, bienes raíces y trámites ante dependencias.
 **Público:** dueños de PYME, familias con una casa heredada, personas atoradas con SAT, CFE, Catastro o Control Vehicular.
 **Trabajo principal de la página:** que la persona cuente su caso y llegue al WhatsApp.

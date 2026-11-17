@@ -7,7 +7,7 @@
 <meta name="description" content="Despacho en Monterrey, N.L.: créditos para PYMES e hipotecarios, propiedades intestadas, compra y venta de inmuebles, y trámites ante SAT, CFE, Catastro y más. Cuéntenos su caso por WhatsApp.">
 <!-- Dirección base: cambiar a https://cfaipconsultoresyservicios.com/ al conectar el dominio (aquí, en og:url, og:image, JSON-LD y sitemap.xml) -->
 <link rel="canonical" href="https://draguz-web.github.io/cfaip-web/">
-<meta name="theme-color" content="#2C5288">
+<meta name="theme-color" content="#0B1428">
 <link rel="icon" href="img/logo.png">
 <link rel="apple-touch-icon" href="img/logo.png">
 
@@ -59,12 +59,22 @@
   --sans:"Archivo",system-ui,sans-serif;
   --serif:"Source Serif 4",Georgia,serif;
   --ancho:1180px;
+  /* Tema oscuro */
+  --fondo:#0E1930;
+  --fondo-2:#14223F;
+  --fondo-pie:#091224;
+  --texto:#E6ECF5;
+  --texto-2:#B4C1D6;
+  --enlace:#9DBDE6;
+  --linea-osc:#26375A;
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--serif);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--fondo);color:var(--texto);font-family:var(--serif);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-a{color:var(--acero-osc)}
+a{color:var(--enlace)}
+.hoja a:not(.boton),.solicitud a{color:var(--acero-osc)}
 :focus-visible{outline:3px solid var(--acero);outline-offset:3px;border-radius:2px}
 .contenedor{max-width:var(--ancho);margin:0 auto;padding:0 24px}
 h1,h2,h3{font-family:var(--sans);font-stretch:125%;font-weight:800;line-height:1.02;letter-spacing:-.01em;margin:0}
@@ -81,18 +91,25 @@ p{margin:0 0 1em;max-width:62ch}
 /* Encabezado */
 .barra{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:26px 0 18px}
 .marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--tinta)}
-.marca img{width:56px;height:56px;object-fit:contain}
-.marca span{font-family:var(--sans);font-weight:700;font-size:1.05rem;line-height:1.1}
-.marca small{display:block;font-weight:450;color:var(--gris);font-size:.82rem}
+.marca img{width:66px;height:66px;object-fit:contain}
+.marca span{font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:1.45rem;line-height:1;letter-spacing:.02em}
+.marca small{display:block;font-stretch:100%;font-weight:500;letter-spacing:0;color:var(--gris);font-size:.9rem;margin-top:4px}
 .barra nav{display:flex;align-items:center;gap:26px;font-family:var(--sans);font-size:.95rem}
 .barra nav a:not(.boton){color:var(--tinta);text-decoration:none}
 .barra nav a:not(.boton):hover{color:var(--acero)}
 
 /* Portada: cielo de Monterrey */
 .cielo{position:relative;overflow:hidden;color:#fff;
-  background:linear-gradient(180deg,#2C5288 0%,#4C74A8 48%,#8EB0D8 82%,#B9CDE6 100%)}
+  background:linear-gradient(180deg,#060C1C 0%,#0C1A36 42%,#1A3260 78%,#2B4B7E 100%)}
+/* Estrellas */
+.cielo::before{content:"";position:absolute;inset:0 0 40% 0;pointer-events:none;opacity:.7;
+  background-image:radial-gradient(1.2px 1.2px at 12% 18%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 27% 8%,#fff 50%,transparent 51%),
+  radial-gradient(1.4px 1.4px at 44% 22%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 58% 6%,#fff 50%,transparent 51%),
+  radial-gradient(1.2px 1.2px at 71% 15%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 86% 9%,#fff 50%,transparent 51%),
+  radial-gradient(1.3px 1.3px at 93% 27%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 6% 36%,#fff 50%,transparent 51%),
+  radial-gradient(1px 1px at 36% 40%,#fff 50%,transparent 51%),radial-gradient(1.1px 1.1px at 64% 34%,#fff 50%,transparent 51%)}
 .cielo .marca{color:#fff}
-.cielo .marca small{color:#C9D7EC}
+.cielo .marca small{color:#B4C6E2}
 .cielo .marca img{background:#fff;border-radius:50%;padding:9px 7px 5px;box-shadow:0 4px 14px -6px rgba(10,22,45,.5)}
 .cielo .barra nav a:not(.boton){color:#fff}
 .cielo .barra nav a:not(.boton):hover{color:#DCE7F6}
@@ -101,8 +118,8 @@ p{margin:0 0 1em;max-width:62ch}
 .portada{position:relative;padding:40px 0 clamp(170px,21vw,320px)}
 .portada .contenedor{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
 .portada h1{font-size:clamp(3rem,7.6vw,6.4rem);margin-top:22px;color:#fff;text-shadow:0 2px 30px rgba(20,35,63,.25)}
-.portada .intro{font-size:1.2rem;margin:28px 0 30px;max-width:34ch;color:#E4ECF7}
-.datos-rapidos{display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--sans);font-size:.95rem;color:#D3DFF0;margin-top:28px}
+.portada .intro{font-size:1.2rem;margin:28px 0 30px;max-width:34ch;color:#D6E1F1}
+.datos-rapidos{display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--sans);font-size:.95rem;color:#C3D2E8;margin-top:28px}
 .datos-rapidos b{color:#fff;font-weight:650}
 .cerro{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:clamp(200px,26vw,380px);z-index:1}
 
@@ -135,9 +152,9 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 /* Expediente de servicios */
 .seccion{padding:110px 0}
 .seccion .encabezado{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:44px}
-.seccion .encabezado p{margin:0;color:#2A3754}
+.seccion .encabezado p{margin:0;color:var(--texto-2)}
 .expediente{position:relative}
-.pista{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-size:.98rem;color:var(--acero-osc);margin:0 0 14px 18px}
+.pista{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-size:.98rem;color:var(--enlace);margin:0 0 14px 18px}
 .pista svg{width:22px;height:22px;flex:none}
 .pestana-icono{width:1.1em;height:1.1em;vertical-align:-.15em;margin-right:.45em}
 .siguiente{grid-column:1/-1;justify-self:end;display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-weight:650;font-size:.98rem;
@@ -145,13 +162,13 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .siguiente:hover{background:#E9EFF7}
 .siguiente svg{width:1.1em;height:1.1em}
 .pestanas{display:flex;gap:6px;padding-left:18px;position:relative;z-index:1}
-.pestana{font-family:var(--sans);font-weight:650;font-size:1rem;border:1.5px solid var(--acero);border-bottom:0;background:#E3EBF5;color:var(--acero-osc);
+.pestana{font-family:var(--sans);font-weight:650;font-size:1rem;border:1.5px solid #3A5785;border-bottom:0;background:#1B2C4E;color:#C9D7EC;
   border-radius:10px 10px 0 0;padding:12px 22px 10px;cursor:pointer;transform:translateY(4px);transition:transform .15s,background .15s;
   text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
-.pestana:hover{transform:translateY(1px);background:#D2DFEF}
+.pestana:hover{transform:translateY(1px);background:#243A63}
 .pestana[aria-selected="true"]{background:var(--manila);border-color:var(--manila-osc);color:var(--tinta);transform:none;text-decoration:none;cursor:default}
 .carpeta{background:var(--manila);border:1px solid var(--manila-osc);border-radius:4px 10px 10px 10px;padding:14px;margin-top:-1px}
-.hoja{background:var(--hoja);border-radius:3px;padding:44px 48px;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;min-height:420px}
+.hoja{background:var(--hoja);color:var(--tinta);border-radius:3px;padding:44px 48px;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;min-height:420px}
 .hoja[hidden]{display:none}
 .hoja h3{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:18px;color:var(--acero-osc)}
 .hoja{border-top:6px solid var(--acero)}
@@ -162,27 +179,28 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .lista b{font-family:var(--sans);font-weight:650;font-size:1.02rem}
 .lista span{color:var(--gris);font-size:.98rem;line-height:1.5}
 .hoja .boton{margin-top:10px}
+.ilustracion{display:block;width:100%;height:auto;max-width:440px;margin-bottom:22px;border-radius:6px}
 
 /* Casos */
-.casos{background:#F3E6C6}
-.casos .encabezado p{color:#5B4A27}
+.casos{background:var(--fondo-2);border-block:1px solid var(--linea-osc)}
+.casos .encabezado p{color:#D9C79A}
 .lista-casos{display:grid;grid-template-columns:repeat(2,1fr);gap:0 64px}
-.caso{padding:26px 0;border-top:1.5px solid #D2B470}
+.caso{padding:26px 0;border-top:1.5px solid #6B5A2A}
 .caso h3{font-family:var(--serif);font-stretch:100%;font-weight:600;font-size:1.3rem;letter-spacing:0;line-height:1.3;margin-bottom:8px}
-.caso p{margin:0;color:#4A4030}
+.caso p{margin:0;color:var(--texto-2)}
 .caso a{font-family:var(--sans);font-size:.88rem;font-weight:650;display:inline-block;margin-top:12px;text-decoration:none;
-  background:var(--tinta);color:#fff;border-radius:999px;padding:5px 13px}
-.caso a:hover{background:var(--acero-osc)}
+  background:var(--manila);color:var(--tinta);border-radius:999px;padding:5px 13px}
+.caso a:hover{background:#F0D59C}
 
 /* Pasos */
 .pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;counter-reset:paso}
 .pasos li{counter-increment:paso;border-top:3px solid var(--acero);padding-top:18px}
-.pasos li::before{content:counter(paso);font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:3.4rem;line-height:1;color:var(--acero);display:block;margin-bottom:14px}
+.pasos li::before{content:counter(paso);font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:3.4rem;line-height:1;color:#7FA3D3;display:block;margin-bottom:14px}
 .pasos h3{margin-bottom:10px}
-.pasos p{color:#3A4560;margin:0}
+.pasos p{color:var(--texto-2);margin:0}
 
 /* Pie / contacto */
-.pie{background:var(--tinta);color:#DCE3EE;padding:90px 0 40px}
+.pie{background:var(--fondo-pie);color:#DCE3EE;padding:90px 0 100px}
 .pie h2{color:#fff;max-width:14ch}
 .pie .rejilla{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;align-items:start}
 .pie a{color:#fff}
@@ -192,11 +210,9 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .pie dd{margin:2px 0 0}
 .pie .boton{background:var(--hoja);color:var(--tinta);margin-top:26px}
 .pie .boton:hover{background:#DCE6F3}
-.pie .legal{border-top:1px solid #2C3D5E;margin-top:70px;padding-top:24px;font-family:var(--sans);font-size:.85rem;color:#8395B2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.cerro-pie{display:block;width:100%;height:auto;min-height:70px;color:var(--tinta);margin-bottom:-1px}
+.pie .legal{border-top:1px solid var(--linea-osc);margin-top:70px;padding-top:24px;font-family:var(--sans);font-size:.85rem;color:#8395B2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cerro-pie{display:block;width:100%;height:auto;min-height:70px;color:var(--fondo-pie);margin-bottom:-1px}
 
-/* Botón flotante de WhatsApp (móvil) */
-.flotante{display:none}
 
 @media (max-width:900px){
   .barra nav a:not(.boton){display:none}
@@ -213,7 +229,9 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 }
 @media (max-width:560px){
   .contenedor{padding:0 16px}
-  .marca small{display:none}
+  .marca img{width:52px;height:52px}
+  .marca span{font-size:1.2rem}
+  .marca small{font-size:.78rem}
   .barra .boton span{display:none}
   .barra .boton{padding:.75em}
   .solicitud{padding:24px 18px 20px;transform:none}
@@ -226,15 +244,58 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   .siguiente{justify-self:stretch;justify-content:center}
   .carpeta{padding:8px}
   .hoja{padding:24px 18px}
-  .flotante{display:flex;position:fixed;right:16px;bottom:16px;z-index:10;width:56px;height:56px;border-radius:50%;background:#1E8E4F;color:#fff;align-items:center;justify-content:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.4)}
-  .flotante svg{width:28px;height:28px}
 }
+/* Chat en vivo */
+.oculto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.punto{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3DDC84;box-shadow:0 0 0 3px rgba(61,220,132,.22)}
+.fuera .punto{background:#E3C27E;box-shadow:0 0 0 3px rgba(227,194,126,.22)}
+.chat-boton{position:fixed;right:22px;bottom:22px;z-index:20;display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:650;font-size:1rem;
+  background:var(--acero);color:#fff;border:0;border-radius:999px;padding:14px 20px 14px 16px;cursor:pointer;box-shadow:0 12px 28px -10px rgba(0,0,0,.6)}
+.chat-boton:hover{background:#5A84BA}
+.chat-boton svg{width:24px;height:24px}
+.chat-boton .punto{margin-left:2px}
+.chat-boton[aria-expanded="true"]{display:none}
+.chat{position:fixed;right:22px;bottom:22px;z-index:21;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100dvh - 44px));display:flex;flex-direction:column;
+  background:#F7F8F5;color:var(--tinta);border-radius:14px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.75);border:1px solid var(--linea-osc)}
+.chat[hidden]{display:none}
+.solicitud,.hoja,.chat{color-scheme:light}
+.chat-cabeza{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 16px;background:var(--fondo-2);color:#fff}
+.chat-cabeza img{width:40px;height:40px;background:#fff;border-radius:50%;padding:6px 5px 4px}
+.chat-cabeza div{flex:1;min-width:0;font-family:var(--sans);line-height:1.25}
+.chat-cabeza b{display:block;font-size:1rem}
+.chat-cabeza small{display:flex;align-items:center;gap:7px;font-size:.82rem;color:#B4C6E2}
+.chat-cabeza .punto{width:8px;height:8px}
+.chat-cerrar{background:none;border:0;color:#fff;padding:8px;border-radius:8px;cursor:pointer}
+.chat-cerrar:hover{background:#243A63}
+.chat-cerrar svg{width:20px;height:20px;display:block}
+.chat-mensajes{flex:1;overflow-y:auto;padding:18px 14px;display:flex;flex-direction:column;gap:10px;font-family:var(--sans);font-size:.96rem;line-height:1.45}
+.msj{max-width:85%;padding:10px 13px;border-radius:14px;white-space:pre-line;overflow-wrap:anywhere}
+.msj.ellos{align-self:flex-start;background:#fff;border:1px solid var(--linea);border-bottom-left-radius:4px}
+.msj.yo{align-self:flex-end;background:var(--acero-osc);color:#fff;border-bottom-right-radius:4px}
+.msj.escribiendo{color:var(--gris);font-style:italic}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-start}
+.chips button{font:inherit;font-size:.9rem;font-weight:600;background:#fff;color:var(--acero-osc);border:1.5px solid var(--acero);border-radius:999px;padding:6px 12px;cursor:pointer}
+.chips button:hover{background:#E9EFF7}
+.msj .boton{margin-top:10px;background:#1E8E4F;color:#fff;font-size:.95rem;padding:.7em 1em}
+.msj .boton:hover{background:#18763F}
+.chat-escribir{display:flex;gap:8px;padding:10px;border-top:1px solid var(--linea);background:#fff}
+.chat-escribir input{flex:1;min-width:0;font:inherit;background:#fff;font-family:var(--sans);font-size:1rem;color:var(--tinta);border:1.5px solid #A9AFBA;border-radius:999px;padding:10px 14px}
+.chat-escribir input:focus{outline:none;border-color:var(--acero)}
+.chat-escribir button{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--tinta);color:#fff;cursor:pointer;display:grid;place-items:center}
+.chat-escribir button svg{width:20px;height:20px}
+@media (max-width:560px){
+  .chat-boton{right:16px;bottom:16px;padding:15px}
+  .chat-boton span{display:none}
+  .chat-boton .punto{position:absolute;top:6px;right:6px;margin:0}
+  .chat{right:8px;left:8px;bottom:8px;width:auto;height:min(78dvh,600px)}
+}
+
 /* Animación: entrada de la portada (una sola secuencia) */
 @media (prefers-reduced-motion:no-preference){
   .cerro .capa{animation:subir 1.4s cubic-bezier(.16,.84,.3,1) both}
   .cerro .capa-lejos{animation-delay:.05s}
   .cerro .capa-media{animation-delay:.2s}
-  .cerro .capa-frente{animation-delay:.35s}
+  .cerro .capa-ciudad{animation-delay:.35s}
   @keyframes subir{from{transform:translateY(90px)}to{transform:translateY(0)}}
   .portada h1{animation:aparecer .9s cubic-bezier(.2,.7,.2,1) .45s both}
   .portada .intro,.portada .boton.claro,.datos-rapidos{animation:aparecer .8s cubic-bezier(.2,.7,.2,1) .7s both}
@@ -323,12 +384,13 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
       </form>
     </div>
 
-    <!-- Cerro de la Silla -->
-    <!-- Sierra Madre al fondo y Cerro de la Silla al frente -->
+    <!-- Monterrey de noche: Sierra Madre, Cerro de la Silla y la ciudad al frente -->
     <svg class="cerro" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <path class="capa capa-lejos" fill="#6E92C2" d="M0 320V196C110 188 210 160 320 168C410 175 470 138 560 146C650 154 700 186 790 182C900 177 1000 138 1120 146C1240 155 1340 184 1440 176V320Z"/>
-      <path class="capa capa-media" fill="#3D6297" d="M0 320V236C140 230 260 214 380 220C480 225 560 206 640 214C760 226 860 246 980 240C1120 233 1280 222 1440 228V320Z"/>
-      <path class="capa capa-frente" fill="#F1F2EE" d="M0 320V292C200 287 380 268 520 244C590 232 630 205 668 168L700 136L728 104L752 80L766 86L782 112L800 150L816 176L830 182L842 170L856 146L872 118L884 104L896 108L912 132L940 176C980 236 1150 280 1440 290V320Z"/>
+      <path class="capa capa-lejos" fill="#1A2D50" d="M0 320V196C110 188 210 160 320 168C410 175 470 138 560 146C650 154 700 186 790 182C900 177 1000 138 1120 146C1240 155 1340 184 1440 176V320Z"/>
+      <path class="capa capa-media" fill="#2A4A7C" d="M0 320V292C200 287 380 268 520 244C590 232 630 205 668 168L700 136L728 104L752 80L766 86L782 112L800 150L816 176L830 182L842 170L856 146L872 118L884 104L896 108L912 132L940 176C980 236 1150 280 1440 290V320Z"/>
+      <g class="capa capa-ciudad"><path fill="#0E1930" d="M0 320V304H1440V320ZM0 320V221h54V320ZM57 320V215h54V320ZM115 320V173h38V320ZM157 320V230h56V320ZM217 320V162h33V320ZM252 320V96h40V320ZM294 320V150h30V320ZM326 320V158h45V320ZM371 320V216h28V320ZM402 320V223h54V320ZM460 320V219h36V320ZM496 320V147h30V320ZM526 320V170h34V320ZM562 320V118h46V320ZM610 320V234h27V320ZM639 320V242h54V320ZM700 320V267h48V320ZM748 320V265h35V320ZM785 320V241h56V320ZM843 320V250h50V320ZM897 320V237h48V320ZM952 320V182h51V320ZM1005 320V180h50V320ZM1062 320V104h44V320ZM1108 320V140h36V320ZM1146 320V176h39V320ZM1185 320V198h56V320ZM1244 320V159h52V320ZM1300 320V184h38V320ZM1340 320V189h31V320ZM1373 320V202h26V320ZM1399 320V181h34V320ZM271 96v-16h2V96ZM584 118v-23h2V118ZM1083 104v-28h2V104Z"/>
+      <path fill="#7E3A26" d="M670 320V72h9V320Z"/>
+      <path class="ventanas" fill="#F2C66D" d="M5 257h4v6h-4ZM5 270h4v6h-4ZM5 283h4v6h-4ZM14 283h4v6h-4ZM32 283h4v6h-4ZM23 296h4v6h-4ZM5 309h4v6h-4ZM32 309h4v6h-4ZM71 225h4v6h-4ZM89 238h4v6h-4ZM98 251h4v6h-4ZM62 264h4v6h-4ZM71 264h4v6h-4ZM80 290h4v6h-4ZM71 303h4v6h-4ZM120 183h4v6h-4ZM120 196h4v6h-4ZM129 209h4v6h-4ZM138 209h4v6h-4ZM129 261h4v6h-4ZM120 274h4v6h-4ZM129 274h4v6h-4ZM120 287h4v6h-4ZM129 287h4v6h-4ZM129 300h4v6h-4ZM171 240h4v6h-4ZM198 240h4v6h-4ZM171 253h4v6h-4ZM198 253h4v6h-4ZM171 266h4v6h-4ZM198 266h4v6h-4ZM162 279h4v6h-4ZM171 279h4v6h-4ZM180 279h4v6h-4ZM198 305h4v6h-4ZM222 172h4v6h-4ZM240 172h4v6h-4ZM240 198h4v6h-4ZM240 276h4v6h-4ZM240 289h4v6h-4ZM222 302h4v6h-4ZM257 106h4v6h-4ZM284 184h4v6h-4ZM257 197h4v6h-4ZM257 210h4v6h-4ZM284 223h4v6h-4ZM275 249h4v6h-4ZM257 288h4v6h-4ZM299 160h4v6h-4ZM308 173h4v6h-4ZM308 186h4v6h-4ZM308 212h4v6h-4ZM299 225h4v6h-4ZM317 251h4v6h-4ZM340 181h4v6h-4ZM349 207h4v6h-4ZM358 220h4v6h-4ZM331 233h4v6h-4ZM358 233h4v6h-4ZM358 246h4v6h-4ZM331 259h4v6h-4ZM340 259h4v6h-4ZM349 298h4v6h-4ZM331 311h4v6h-4ZM376 226h4v6h-4ZM385 226h4v6h-4ZM376 239h4v6h-4ZM407 233h4v6h-4ZM416 259h4v6h-4ZM416 285h4v6h-4ZM434 285h4v6h-4ZM443 285h4v6h-4ZM434 311h4v6h-4ZM474 268h4v6h-4ZM474 294h4v6h-4ZM465 307h4v6h-4ZM510 157h4v6h-4ZM501 170h4v6h-4ZM510 170h4v6h-4ZM519 196h4v6h-4ZM501 235h4v6h-4ZM501 248h4v6h-4ZM519 287h4v6h-4ZM510 300h4v6h-4ZM531 180h4v6h-4ZM540 219h4v6h-4ZM549 232h4v6h-4ZM531 271h4v6h-4ZM540 284h4v6h-4ZM540 297h4v6h-4ZM549 297h4v6h-4ZM585 128h4v6h-4ZM585 154h4v6h-4ZM585 232h4v6h-4ZM567 258h4v6h-4ZM594 284h4v6h-4ZM567 297h4v6h-4ZM594 297h4v6h-4ZM594 310h4v6h-4ZM624 244h4v6h-4ZM615 270h4v6h-4ZM615 283h4v6h-4ZM662 252h4v6h-4ZM680 252h4v6h-4ZM671 304h4v6h-4ZM705 277h4v6h-4ZM714 277h4v6h-4ZM714 290h4v6h-4ZM732 303h4v6h-4ZM771 301h4v6h-4ZM790 251h4v6h-4ZM808 290h4v6h-4ZM875 299h4v6h-4ZM902 247h4v6h-4ZM920 260h4v6h-4ZM902 273h4v6h-4ZM902 286h4v6h-4ZM911 286h4v6h-4ZM929 286h4v6h-4ZM966 192h4v6h-4ZM984 192h4v6h-4ZM957 205h4v6h-4ZM966 231h4v6h-4ZM993 231h4v6h-4ZM966 244h4v6h-4ZM957 257h4v6h-4ZM975 257h4v6h-4ZM957 270h4v6h-4ZM975 270h4v6h-4ZM984 270h4v6h-4ZM975 283h4v6h-4ZM984 309h4v6h-4ZM1028 190h4v6h-4ZM1019 255h4v6h-4ZM1010 268h4v6h-4ZM1019 281h4v6h-4ZM1028 307h4v6h-4ZM1067 114h4v6h-4ZM1067 127h4v6h-4ZM1076 140h4v6h-4ZM1085 140h4v6h-4ZM1067 166h4v6h-4ZM1067 179h4v6h-4ZM1085 192h4v6h-4ZM1067 231h4v6h-4ZM1076 231h4v6h-4ZM1085 231h4v6h-4ZM1094 244h4v6h-4ZM1076 270h4v6h-4ZM1094 283h4v6h-4ZM1085 309h4v6h-4ZM1122 150h4v6h-4ZM1131 176h4v6h-4ZM1122 189h4v6h-4ZM1131 202h4v6h-4ZM1131 215h4v6h-4ZM1113 228h4v6h-4ZM1122 254h4v6h-4ZM1113 267h4v6h-4ZM1151 212h4v6h-4ZM1178 251h4v6h-4ZM1169 264h4v6h-4ZM1169 277h4v6h-4ZM1178 303h4v6h-4ZM1199 208h4v6h-4ZM1190 221h4v6h-4ZM1208 221h4v6h-4ZM1208 234h4v6h-4ZM1190 260h4v6h-4ZM1208 273h4v6h-4ZM1226 273h4v6h-4ZM1199 286h4v6h-4ZM1226 286h4v6h-4ZM1208 299h4v6h-4ZM1276 169h4v6h-4ZM1249 208h4v6h-4ZM1258 208h4v6h-4ZM1258 221h4v6h-4ZM1267 260h4v6h-4ZM1285 286h4v6h-4ZM1267 299h4v6h-4ZM1276 299h4v6h-4ZM1305 194h4v6h-4ZM1305 220h4v6h-4ZM1323 233h4v6h-4ZM1305 272h4v6h-4ZM1314 298h4v6h-4ZM1323 311h4v6h-4ZM1345 277h4v6h-4ZM1363 277h4v6h-4ZM1378 225h4v6h-4ZM1378 264h4v6h-4ZM1387 277h4v6h-4ZM1387 290h4v6h-4ZM1387 303h4v6h-4ZM1413 204h4v6h-4ZM1404 230h4v6h-4ZM1422 230h4v6h-4ZM1413 256h4v6h-4ZM1404 269h4v6h-4ZM1413 269h4v6h-4ZM1404 295h4v6h-4Z"/></g>
     </svg>
   </section>
 
@@ -352,6 +414,16 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         <div class="carpeta">
           <div class="hoja" role="tabpanel" id="p-fin" aria-labelledby="t-fin">
             <div>
+              <svg class="ilustracion" viewBox="0 0 480 200" role="img" aria-label="Gráfica de barras que sube, con monedas">
+                <rect width="480" height="200" rx="6" fill="#E3EBF5"/>
+                <path d="M0 168h480" stroke="#B9CDE6" stroke-width="2"/>
+                <g fill="#4C74A8"><rect x="62" y="122" width="34" height="46" rx="3"/><rect x="112" y="100" width="34" height="68" rx="3"/><rect x="162" y="76" width="34" height="92" rx="3"/><rect x="212" y="50" width="34" height="118" rx="3"/></g>
+                <path d="M60 116 120 90l52-20 66-34" fill="none" stroke="#14233F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="m222 30 22 4-8 20" fill="none" stroke="#14233F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <g stroke="#CFA95E" stroke-width="3"><ellipse cx="350" cy="160" rx="46" ry="12" fill="#E3C27E"/><path d="M304 146v14m92-14v14" /><ellipse cx="350" cy="146" rx="46" ry="12" fill="#E3C27E"/><path d="M304 132v14m92-14v14"/><ellipse cx="350" cy="132" rx="46" ry="12" fill="#E3C27E"/><path d="M304 118v14m92-14v14"/><ellipse cx="350" cy="118" rx="46" ry="12" fill="#E3C27E"/></g>
+                <text x="350" y="124" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="18" fill="#8A6A2C">$</text>
+                <circle cx="420" cy="62" r="26" fill="#E3C27E" stroke="#CFA95E" stroke-width="3"/><text x="420" y="70" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="22" fill="#8A6A2C">$</text>
+              </svg>
               <h3>Bróker financiero</h3>
               <p class="para-quien">Para negocios que quieren crecer y personas que buscan el crédito correcto.</p>
               <p>Comparamos opciones, armamos su expediente y lo acompañamos hasta que el dinero llega.</p>
@@ -369,6 +441,17 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
           </div>
           <div class="hoja" role="tabpanel" id="p-bie" aria-labelledby="t-bie" hidden>
             <div>
+              <svg class="ilustracion" viewBox="0 0 480 200" role="img" aria-label="Casa con llave y el Cerro de la Silla al fondo">
+                <rect width="480" height="200" rx="6" fill="#E3EBF5"/>
+                <path fill="#B9CDE6" d="M0 168c60-4 120-14 170-30 26-8 40-30 54-50l12-18 8 6 10 22 10 14 8-10 10-18 8 2 12 22c20 30 80 50 168 56v6H0z"/>
+                <path d="M0 168h480" stroke="#9DB7D9" stroke-width="2"/>
+                <path fill="#FFFFFF" stroke="#14233F" stroke-width="4" stroke-linejoin="round" d="M120 168V104l70-52 70 52v64z"/>
+                <path fill="#4C74A8" stroke="#14233F" stroke-width="4" stroke-linejoin="round" d="m104 112 86-66 86 66-10 12-76-58-76 58z"/>
+                <rect x="172" y="122" width="34" height="46" fill="#E3C27E" stroke="#14233F" stroke-width="4"/>
+                <rect x="222" y="112" width="24" height="22" fill="#B9CDE6" stroke="#14233F" stroke-width="4"/>
+                <rect x="134" y="112" width="24" height="22" fill="#B9CDE6" stroke="#14233F" stroke-width="4"/>
+                <g transform="rotate(-28 370 110)"><circle cx="330" cy="110" r="22" fill="none" stroke="#CFA95E" stroke-width="10"/><path d="M352 110h74m-18 0v18m-16-18v12" stroke="#CFA95E" stroke-width="10" stroke-linecap="round"/></g>
+              </svg>
               <h3>Bienes raíces</h3>
               <p class="para-quien">Para quien hereda, compra, vende o renta una propiedad.</p>
               <p>Nos encargamos del papeleo que detiene la mayoría de las operaciones, desde el intestado hasta el pago del predial.</p>
@@ -386,6 +469,13 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
           </div>
           <div class="hoja" role="tabpanel" id="p-tra" aria-labelledby="t-tra" hidden>
             <div>
+              <svg class="ilustracion" viewBox="0 0 480 200" role="img" aria-label="Documentos con sello de recibido">
+                <rect width="480" height="200" rx="6" fill="#E3EBF5"/>
+                <path fill="#E3C27E" stroke="#CFA95E" stroke-width="3" d="M70 176V64h70l14 14h170v98z"/>
+                <g transform="rotate(-6 210 110)"><rect x="128" y="40" width="150" height="130" rx="3" fill="#fff" stroke="#14233F" stroke-width="3"/><path d="M146 66h110M146 84h110M146 102h80M146 120h96M146 138h60" stroke="#9DB7D9" stroke-width="5" stroke-linecap="round"/></g>
+                <g transform="rotate(4 280 110)"><rect x="200" y="50" width="150" height="130" rx="3" fill="#fff" stroke="#14233F" stroke-width="3"/><path d="M218 74h110M218 92h110M218 110h70M218 128h96" stroke="#9DB7D9" stroke-width="5" stroke-linecap="round"/></g>
+                <g transform="rotate(-14 368 128)" fill="none" stroke="#A8322B"><circle cx="368" cy="128" r="44" stroke-width="5"/><circle cx="368" cy="128" r="36" stroke-width="2"/><text x="368" y="135" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="17" fill="#A8322B" stroke="none">RECIBIDO</text></g>
+              </svg>
               <h3>Trámites en dependencias</h3>
               <p class="para-quien">Para quien no tiene tiempo de hacer filas o ya se atoró en una ventanilla.</p>
               <p>Sabemos qué pide cada oficina y en qué orden. Usted nos da los documentos y nosotros hacemos las vueltas.</p>
@@ -491,7 +581,27 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   </div>
 </footer>
 
-<a class="flotante" href="https://wa.me/528140297419" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+<!-- Chat en vivo: conversa aquí y pasa el caso a un asesor por WhatsApp -->
+<button class="chat-boton" id="chat-boton" type="button" aria-expanded="false" aria-controls="chat">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M8.5 10h.01M12 10h.01M15.5 10h.01"/></svg>
+  <span>Chat en vivo</span><i class="punto" aria-hidden="true"></i>
+</button>
+<section class="chat" id="chat" role="dialog" aria-labelledby="chat-titulo" hidden>
+  <header class="chat-cabeza">
+    <img src="img/logo.png" alt="" width="40" height="40">
+    <div>
+      <b id="chat-titulo">CFAIP Consultores</b>
+      <small id="chat-estado"><i class="punto"></i><span></span></small>
+    </div>
+    <button class="chat-cerrar" id="chat-cerrar" type="button" aria-label="Cerrar chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></svg></button>
+  </header>
+  <div class="chat-mensajes" id="chat-mensajes" aria-live="polite"></div>
+  <form class="chat-escribir" id="chat-form" autocomplete="off">
+    <label class="oculto" for="chat-texto">Escriba su mensaje</label>
+    <input id="chat-texto" placeholder="Escriba su mensaje…" maxlength="600">
+    <button type="submit" aria-label="Enviar"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.4 20.4 21 12 3.4 3.6 3.4 10l12.6 2-12.6 2z"/></svg></button>
+  </form>
+</section>
 
 <script>
 (function(){
@@ -571,6 +681,66 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     const sello = document.getElementById('sello');
     sello.classList.remove('puesto'); void sello.offsetWidth; sello.classList.add('puesto');
     setTimeout(()=>window.open('https://wa.me/528140297419?text='+encodeURIComponent(texto),'_blank','noopener'), 650);
+  });
+
+  // Chat en vivo
+  const chatBoton = document.getElementById('chat-boton');
+  const chat = document.getElementById('chat');
+  const lista = document.getElementById('chat-mensajes');
+  const chatForm = document.getElementById('chat-form');
+  const chatTexto = document.getElementById('chat-texto');
+  // ¿Estamos en horario? Lunes a viernes de 9:00 a 18:00, hora de Monterrey
+  function enHorario(){
+    const p = Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/Monterrey',weekday:'short',hour:'numeric',hourCycle:'h23'})
+      .formatToParts(new Date()).map(x=>[x.type,x.value]));
+    return !['Sat','Sun'].includes(p.weekday) && +p.hour >= 9 && +p.hour < 18;
+  }
+  const abierto = enHorario();
+  document.querySelector('#chat-estado span').textContent = abierto ? 'En línea · le contestamos en minutos' : 'Fuera de horario · le contestamos a primera hora';
+  if (!abierto){ chatBoton.classList.add('fuera'); chat.classList.add('fuera'); }
+  let tema = '', paso = 0;
+  function burbuja(texto, quien){
+    const d = document.createElement('div');
+    d.className = 'msj ' + quien; d.textContent = texto;
+    lista.append(d); lista.scrollTop = lista.scrollHeight; return d;
+  }
+  function responder(texto, extra){
+    const esc = burbuja('Escribiendo…','ellos escribiendo');
+    setTimeout(()=>{ esc.remove(); const d = burbuja(texto,'ellos'); if (extra) extra(d); lista.scrollTop = lista.scrollHeight; }, conMovimiento ? 700 : 0);
+  }
+  function opciones(){
+    const c = document.createElement('div'); c.className = 'chips';
+    [['Un crédito','un crédito o tema financiero'],['Una propiedad','una propiedad'],['Un trámite','un trámite'],['Otra cosa','otra consulta']].forEach(([et,val])=>{
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = et;
+      b.addEventListener('click',()=>{ c.remove(); burbuja(et,'yo'); tema = val; paso = 1;
+        responder('Muy bien. Cuéntenos su caso en pocas palabras y díganos su nombre, y un asesor lo revisa.'); chatTexto.focus(); });
+      c.append(b);
+    });
+    lista.append(c); lista.scrollTop = lista.scrollHeight;
+  }
+  function iniciar(){
+    if (lista.childElementCount) return;
+    burbuja('¡Hola! 👋 Somos CFAIP Consultores y Servicios.' + (abierto ? '' : '\nAhorita estamos fuera de horario, pero déjenos su mensaje y le contestamos a primera hora.'),'ellos');
+    responder('¿Con qué le podemos ayudar?', ()=>opciones());
+  }
+  function abrir(){ chat.hidden = false; chatBoton.setAttribute('aria-expanded','true'); iniciar(); chatTexto.focus(); }
+  function cerrar(){ chat.hidden = true; chatBoton.setAttribute('aria-expanded','false'); chatBoton.focus(); }
+  chatBoton.addEventListener('click', abrir);
+  document.getElementById('chat-cerrar').addEventListener('click', cerrar);
+  chat.addEventListener('keydown', e=>{ if (e.key === 'Escape') cerrar(); });
+  chatForm.addEventListener('submit', e=>{
+    e.preventDefault();
+    const t = chatTexto.value.trim(); if (!t) return;
+    chatTexto.value = ''; burbuja(t,'yo');
+    lista.querySelector('.chips')?.remove();
+    const mensaje = tema ? `Hola, escribo desde la página. Necesito ayuda con ${tema}.\n\n${t}` : `Hola, escribo desde la página.\n\n${t}`;
+    paso++;
+    responder('¡Gracias! Para que un asesor le conteste directo, toque el botón y se abre WhatsApp con su mensaje ya escrito.', d=>{
+      const a = document.createElement('a'); a.className = 'boton'; a.target = '_blank'; a.rel = 'noopener';
+      a.href = 'https://wa.me/528140297419?text=' + encodeURIComponent(mensaje);
+      a.innerHTML = '<svg aria-hidden="true"><use href="#wa"/></svg>Continuar en WhatsApp';
+      d.append(document.createElement('br'), a);
+    });
   });
 })();
 </script>
