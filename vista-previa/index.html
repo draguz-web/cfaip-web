@@ -737,6 +737,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   document.querySelector('#chat-estado span').textContent = abierto ? 'En línea · le contestamos en minutos' : 'Fuera de horario · le contestamos a primera hora';
   if (!abierto){ chatBoton.classList.add('fuera'); chat.classList.add('fuera'); }
   let tema = '', paso = 0;
+  const escritos = [];
   function burbuja(texto, quien){
     const d = document.createElement('div');
     d.className = 'msj ' + quien; d.textContent = texto;
@@ -771,7 +772,10 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     const t = chatTexto.value.trim(); if (!t) return;
     chatTexto.value = ''; burbuja(t,'yo');
     lista.querySelector('.chips')?.remove();
-    const mensaje = tema ? `Hola, escribo desde la página. Necesito ayuda con ${tema}.\n\n${t}` : `Hola, escribo desde la página.\n\n${t}`;
+    escritos.push(t);
+    const cuerpo = escritos.join('\n');
+    const mensaje = tema ? `Hola, escribo desde la página. Necesito ayuda con ${tema}.\n\n${cuerpo}` : `Hola, escribo desde la página.\n\n${cuerpo}`;
+    lista.querySelectorAll('.msj.ellos a.boton').forEach(x=>x.closest('.msj').remove());
     paso++;
     responder('¡Gracias! Para que un asesor le conteste directo, toque el botón y se abre WhatsApp con su mensaje ya escrito.', d=>{
       const a = document.createElement('a'); a.className = 'boton'; a.target = '_blank'; a.rel = 'noopener';
