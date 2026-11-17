@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CFAIP Consultores y Servicios | Créditos, bienes raíces y trámites en Monterrey</title>
+<title>CFAIP · Consultor Financiero, Análisis, Investigación y Proyectos | Monterrey</title>
 <meta name="description" content="Despacho en Monterrey, N.L.: créditos para PYMES e hipotecarios, propiedades intestadas, compra y venta de inmuebles, y trámites ante SAT, CFE, Catastro y más. Cuéntenos su caso por WhatsApp.">
 <!-- Dirección base: cambiar a https://cfaipconsultoresyservicios.com/ al conectar el dominio (aquí, en og:url, og:image, JSON-LD y sitemap.xml) -->
 <link rel="canonical" href="https://draguz-web.github.io/cfaip-web/">
@@ -14,14 +14,14 @@
 <!-- Vista previa al compartir (WhatsApp, Facebook, etc.) -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
-<meta property="og:site_name" content="CFAIP Consultores y Servicios">
-<meta property="og:title" content="CFAIP Consultores y Servicios · Monterrey">
+<meta property="og:site_name" content="CFAIP">
+<meta property="og:title" content="CFAIP · Consultor Financiero, Análisis, Investigación y Proyectos">
 <meta property="og:description" content="Créditos, bienes raíces y trámites ante cualquier dependencia de Nuevo León. Nosotros hacemos las vueltas.">
 <meta property="og:url" content="https://draguz-web.github.io/cfaip-web/">
 <meta property="og:image" content="https://draguz-web.github.io/cfaip-web/img/compartir.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="CFAIP Consultores y Servicios: Nosotros hacemos las vueltas. Cerro de la Silla al fondo.">
+<meta property="og:image:alt" content="CFAIP: Nosotros hacemos las vueltas. Cerro de la Silla al fondo.">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Datos del negocio para Google -->
@@ -29,7 +29,8 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "CFAIP Consultores y Servicios",
+  "name": "CFAIP Consultor Financiero, Análisis, Investigación y Proyectos",
+  "alternateName": "CFAIP",
   "description": "Consultoría financiera, bienes raíces y trámites ante dependencias en Monterrey, Nuevo León.",
   "url": "https://draguz-web.github.io/cfaip-web/",
   "logo": "https://draguz-web.github.io/cfaip-web/img/logo.png",
@@ -93,7 +94,7 @@ p{margin:0 0 1em;max-width:62ch}
 .marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--tinta)}
 .marca img{width:66px;height:66px;object-fit:contain}
 .marca span{font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:1.45rem;line-height:1;letter-spacing:.02em}
-.marca small{display:block;font-stretch:100%;font-weight:500;letter-spacing:0;color:var(--gris);font-size:.9rem;margin-top:4px}
+.marca small{display:block;max-width:26ch;font-stretch:100%;font-weight:500;letter-spacing:0;color:var(--gris);font-size:.82rem;line-height:1.3;margin-top:4px}
 .barra nav{display:flex;align-items:center;gap:26px;font-family:var(--sans);font-size:.95rem}
 .barra nav a:not(.boton){color:var(--tinta);text-decoration:none}
 .barra nav a:not(.boton):hover{color:var(--acero)}
@@ -116,10 +117,22 @@ p{margin:0 0 1em;max-width:62ch}
 .boton.claro{background:#fff;color:var(--tinta)}
 .boton.claro:hover{background:#DCE6F3}
 .portada{position:relative;padding:40px 0 clamp(210px,25vw,380px)}
-.portada .contenedor{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
-.portada h1{font-size:clamp(3rem,7.6vw,6.4rem);margin-top:22px;color:#fff;text-shadow:0 2px 30px rgba(20,35,63,.25)}
-.portada .intro{font-size:1.2rem;margin:28px 0 30px;max-width:34ch;color:#D6E1F1}
-.datos-rapidos{display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--sans);font-size:.95rem;color:#C3D2E8;margin-top:28px}
+.portada .contenedor{position:relative;z-index:2}
+.emblema{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:8px}
+.emblema-logo{width:clamp(130px,15vw,190px);height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.45))}
+.portada h1{font-size:clamp(2.1rem,5.4vw,4.6rem);line-height:1.04;max-width:17ch;margin-top:22px;color:#fff;text-wrap:balance;text-shadow:0 4px 40px rgba(0,0,0,.5)}
+.lugar{font-family:var(--sans);font-weight:650;letter-spacing:.08em;color:var(--manila);margin:18px 0 0;display:flex;align-items:center;gap:14px;max-width:none}
+.lugar::before,.lugar::after{content:"";width:42px;height:1.5px;background:currentColor;opacity:.7}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.boton.contorno{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.boton.contorno:hover{background:rgba(255,255,255,.12)}
+/* Sección de la solicitud */
+.solicitar{overflow-x:clip}
+.solicitar .contenedor{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.solicitar h2{margin-bottom:18px}
+.solicitar-texto p{color:var(--texto-2)}
+.portada .intro{font-size:1.2rem;margin:22px auto 30px;max-width:40ch;color:#D6E1F1}
+.datos-rapidos{display:flex;flex-direction:column;gap:8px;font-family:var(--sans);font-size:1rem;color:#C3D2E8;margin-top:28px}
 .datos-rapidos b{color:#fff;font-weight:650}
 .cerro{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:clamp(240px,30vw,440px);z-index:1}
 
@@ -241,8 +254,8 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
 @media (max-width:900px){
   .barra nav a:not(.boton){display:none}
-  .portada .contenedor{grid-template-columns:1fr;gap:36px}
-  .portada h1{margin-top:8px}
+  .solicitar .contenedor{grid-template-columns:1fr;gap:36px}
+  .portada h1{margin-top:14px}
   .portada{padding-bottom:240px}
   .cerro{height:240px}
   .seccion{padding:76px 0}
@@ -256,7 +269,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   .contenedor{padding:0 16px}
   .marca img{width:52px;height:52px}
   .marca span{font-size:1.2rem}
-  .marca small{font-size:.78rem}
+  .marca small{display:none}
   .barra .boton span{display:none}
   .barra .boton{padding:.75em}
   .solicitud{padding:24px 18px 20px;transform:none}
@@ -321,9 +334,9 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   .cerro .capa-ciudad{animation-delay:.35s}
   @keyframes subir{from{transform:translateY(90px)}to{transform:translateY(0)}}
   .portada h1{animation:aparecer .9s cubic-bezier(.2,.7,.2,1) .45s both}
-  .portada .intro,.portada .boton.claro,.datos-rapidos{animation:aparecer .8s cubic-bezier(.2,.7,.2,1) .7s both}
+  .emblema-logo{animation:aparecer .9s cubic-bezier(.2,.7,.2,1) .2s both}
+  .portada .lugar,.portada .intro,.portada .acciones{animation:aparecer .8s cubic-bezier(.2,.7,.2,1) .7s both}
   @keyframes aparecer{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-  .solicitud{animation:hoja-cae 1s cubic-bezier(.2,.8,.25,1) .9s both}
   @keyframes hoja-cae{from{opacity:0;transform:translateY(-26px) rotate(-2.5deg)}to{opacity:1;transform:rotate(.6deg)}}
 }
 @media (prefers-reduced-motion:no-preference) and (max-width:560px){
@@ -344,9 +357,9 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
 <div class="cielo">
 <header class="contenedor barra">
-  <a class="marca" href="#inicio" aria-label="CFAIP Consultores y Servicios, inicio">
+  <a class="marca" href="#inicio" aria-label="CFAIP, inicio">
     <img src="img/logo.png" alt="" width="52" height="52">
-    <span>CFAIP<small>Consultores y Servicios</small></span>
+    <span>CFAIP<small>Consultor Financiero, Análisis, Investigación y Proyectos</small></span>
   </a>
   <nav aria-label="Principal">
     <a href="#servicios">Servicios</a>
@@ -358,16 +371,52 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
   <section class="portada" id="inicio">
     <div class="contenedor">
-      <div>
-        <h1>Nosotros hacemos las vueltas.</h1>
-        <p class="intro">Créditos, bienes raíces y trámites ante cualquier dependencia de Monterrey y Nuevo León. Cuéntenos su caso y le decimos qué documentos necesita y cuál es el camino más corto.</p>
-        <a class="boton claro" href="#servicios">Ver qué resolvemos</a>
-        <div class="datos-rapidos">
-          <span><b>Lunes a viernes</b> 9:00 a 18:00</span>
-          <span><b>Monterrey,</b> N.L.</span>
+      <div class="emblema">
+        <img class="emblema-logo" src="img/logo-claro.png" alt="Logotipo de CFAIP" width="600" height="600">
+        <h1>Consultor Financiero, Análisis, Investigación y Proyectos</h1>
+        <p class="lugar">Monterrey, N.L.</p>
+        <p class="intro">Nosotros hacemos las vueltas: créditos, bienes raíces y trámites ante cualquier dependencia de Nuevo León.</p>
+        <div class="acciones">
+          <a class="boton claro" href="#servicios">Ver servicios</a>
+          <a class="boton contorno" href="#solicitar">Solicitar un servicio</a>
         </div>
       </div>
 
+    </div>
+
+    <!-- Monterrey de noche: Sierra Madre, Cerro de la Silla y torres de oficinas al frente -->
+    <svg class="cerro" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <path class="capa capa-lejos" fill="#152747" d="M0 320V196C110 188 210 160 320 168C410 175 470 138 560 146C650 154 700 186 790 182C900 177 1000 138 1120 146C1240 155 1340 184 1440 176V320Z"/>
+      <path class="capa capa-media" fill="#2B4A7A" d="M0 320V292C200 287 380 268 520 244C590 232 630 205 668 168L700 136L728 104L752 80L766 86L782 112L800 150L816 176L830 182L842 170L856 146L872 118L884 104L896 108L912 132L940 176C980 236 1150 280 1440 290V320Z"/>
+      <defs><linearGradient id="vidrio" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22385E"/><stop offset=".55" stop-color="#14223F"/><stop offset="1" stop-color="#0E1930"/></linearGradient><linearGradient id="brillo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B86C4" stop-opacity="0"/><stop offset="1" stop-color="#5B86C4" stop-opacity=".45"/></linearGradient><pattern id="parteluz" width="6" height="320" patternUnits="userSpaceOnUse"><path d="M5.5 0v320" stroke="#7FA3D3" stroke-opacity=".10"/></pattern></defs>
+      <rect class="resplandor" x="0" y="150" width="1440" height="170" fill="url(#brillo)"/>
+      <g class="capa capa-ciudad">
+      <path fill="url(#vidrio)" d="M10 320V170h47V320ZM74 320V200h35V320ZM122 320V174h10V154h9V140h18V154h9V174H177V320ZM196 320V186h39V320ZM250 320V138L302 112V320ZM320 320V170h32V320ZM364 320V130h11V110h10V96h20V110h10V130H425V320ZM446 320V60h41V320ZM502 320V128h55V320ZM576 320V176h36V320ZM626 320V230h50V320ZM694 320V262h71V320ZM788 320V252h55V320ZM862 320V266h49V320ZM928 320V150h46V320ZM990 320V80C990 50 1019.0 40 1048 40V320ZM1068 320V118L1112 148V320ZM1128 320V184h9V164h8V150h17V164h8V184H1180V320ZM1198 320V104h38V320ZM1250 320V164h57V320ZM1326 320V130h39V320ZM1380 320V182h47V320Z"/>
+      <path fill="url(#parteluz)" d="M10 320V170h47V320ZM74 320V200h35V320ZM122 320V174h10V154h9V140h18V154h9V174H177V320ZM196 320V186h39V320ZM250 320V138L302 112V320ZM320 320V170h32V320ZM364 320V130h11V110h10V96h20V110h10V130H425V320ZM446 320V60h41V320ZM502 320V128h55V320ZM576 320V176h36V320ZM626 320V230h50V320ZM694 320V262h71V320ZM788 320V252h55V320ZM862 320V266h49V320ZM928 320V150h46V320ZM990 320V80C990 50 1019.0 40 1048 40V320ZM1068 320V118L1112 148V320ZM1128 320V184h9V164h8V150h17V164h8V184H1180V320ZM1198 320V104h38V320ZM1250 320V164h57V320ZM1326 320V130h39V320ZM1380 320V182h47V320Z"/>
+      <path fill="#0A1427" d="M57 320V170h13V320ZM109 320V200h9V320ZM177 320V174h15V320ZM235 320V186h11V320ZM302 320V112l14 10V320ZM352 320V170h8V320ZM425 320V130h17V320ZM487 320V60h11V320ZM557 320V128h15V320ZM612 320V176h10V320ZM676 320V230h14V320ZM765 320V262h19V320ZM843 320V252h15V320ZM911 320V266h13V320ZM974 320V150h12V320ZM1048 320V40c9.6 4 16 14 16 26V320ZM1112 320V148l12 6V320ZM1180 320V184h14V320ZM1236 320V104h10V320ZM1307 320V164h15V320ZM1365 320V130h11V320ZM1427 320V182h13V320ZM465 60v-46h2V60ZM1216 104v-46h2V104Z"/>
+      <path fill="#F5D38A" fill-opacity="0.18" d="M20 245H54v2H20ZM19 280H51v2H19ZM88 268H101v2H88ZM88 296H104v2H88ZM131 233H169v2H131ZM377 315H418v2H377ZM450 149H474v2H450ZM456 261H479v2H456ZM518 217H545v2H518ZM507 238H543v2H507ZM507 245H544v2H507ZM512 280H545v2H512ZM590 202H603v2H590ZM639 249H672v2H639ZM645 263H664v2H645ZM641 298H673v2H641ZM792 313H838v2H792ZM880 278H901v2H880ZM943 288H960v2H943ZM1007 245H1037v2H1007ZM1002 280H1034v2H1002ZM997 301H1041v2H997ZM1078 137H1106v2H1078ZM1071 284H1108v2H1071ZM1074 305H1101v2H1074ZM1210 256H1229v2H1210ZM1264 204H1295v2H1264ZM1261 232H1290v2H1261ZM1262 246H1290v2H1262ZM1260 295H1299v2H1260ZM1338 212H1353v2H1338ZM1389 292H1421v2H1389Z"/>
+      <path fill="#F5D38A" fill-opacity="0.3" d="M16 231H49v2H16ZM22 294H49v2H22ZM83 212H102v2H83ZM139 184H169v2H139ZM209 233H226v2H209ZM332 273H342v2H332ZM333 287H349v2H333ZM324 308H344v2H324ZM374 175H411v2H374ZM462 170H478v2H462ZM453 240H480v2H453ZM449 303H478v2H449ZM518 315H542v2H518ZM579 188H601v2H579ZM583 300H605v2H583ZM584 314H602v2H584ZM796 306H834v2H796ZM933 162H966v2H933ZM940 197H961v2H940ZM931 281H962v2H931ZM994 84H1035v2H994ZM1083 179H1105v2H1083ZM1084 291H1104v2H1084ZM1134 208H1173v2H1134ZM1145 222H1165v2H1145ZM1208 116H1228v2H1208ZM1208 193H1227v2H1208ZM1207 200H1232v2H1207ZM1213 214H1228v2H1213ZM1207 242H1233v2H1207ZM1207 249H1233v2H1207ZM1266 183H1299v2H1266ZM1262 197H1300v2H1262ZM1330 198H1356v2H1330ZM1334 303H1353v2H1334ZM1386 243H1423v2H1386ZM1386 285H1419v2H1386ZM1397 299H1414v2H1397Z"/>
+      <path fill="#F5D38A" fill-opacity="0.45" d="M81 226H106v2H81ZM81 247H99v2H81ZM142 254H173v2H142ZM134 261H172v2H134ZM269 166H287v2H269ZM254 187H287v2H254ZM268 194H295v2H268ZM258 215H290v2H258ZM267 243H295v2H267ZM330 217H345v2H330ZM384 224H412v2H384ZM371 238H409v2H371ZM460 121H480v2H460ZM456 142H480v2H456ZM452 177H477v2H452ZM462 191H482v2H462ZM457 289H477v2H457ZM519 203H541v2H519ZM519 308H552v2H519ZM581 258H600v2H581ZM803 271H834v2H803ZM800 278H828v2H800ZM940 260H964v2H940ZM996 126H1034v2H996ZM996 210H1044v2H996ZM1077 200H1101v2H1077ZM1081 207H1107v2H1081ZM1073 270H1107v2H1073ZM1075 277H1109v2H1075ZM1145 243H1174v2H1145ZM1204 130H1229v2H1204ZM1213 158H1230v2H1213ZM1335 170H1357v2H1335ZM1332 177H1361v2H1332ZM1341 184H1358v2H1341ZM1330 261H1353v2H1330ZM1338 289H1354v2H1338ZM1340 310H1361v2H1340Z"/>
+      <path fill="#F5D38A" fill-opacity="0.6" d="M20 224H44v2H20ZM18 266H53v2H18ZM17 273H52v2H17ZM79 219H104v2H79ZM88 261H104v2H88ZM82 282H100v2H82ZM128 205H165v2H128ZM130 289H163v2H130ZM126 296H171v2H126ZM201 198H232v2H201ZM204 240H230v2H204ZM203 247H230v2H203ZM201 310H231v2H201ZM327 245H341v2H327ZM375 182H409v2H375ZM385 273H407v2H385ZM455 72H478v2H455ZM458 205H477v2H458ZM514 224H552v2H514ZM515 231H546v2H515ZM520 273H554v2H520ZM590 195H608v2H590ZM580 216H604v2H580ZM703 295H758v2H703ZM875 306H901v2H875ZM932 204H966v2H932ZM942 302H967v2H942ZM936 309H968v2H936ZM994 105H1038v2H994ZM995 133H1031v2H995ZM1007 175H1041v2H1007ZM999 203H1037v2H999ZM1076 130H1107v2H1076ZM1082 172H1106v2H1082ZM1079 263H1107v2H1079ZM1132 306H1174v2H1132ZM1207 186H1228v2H1207ZM1335 149H1360v2H1335ZM1337 247H1353v2H1337ZM1387 194H1416v2H1387ZM1395 208H1421v2H1395Z"/>
+      <path fill="#E04848" d="M465 12h3v3h-3ZM1216 56h3v3h-3Z"/>
+      <path fill="#0E1930" d="M0 320V306H1440V320Z"/></g>
+    </svg>
+  </section>
+
+</div>
+
+<main>
+  <section class="seccion solicitar" id="solicitar">
+    <div class="contenedor">
+      <div class="solicitar-texto">
+        <h2>Cuéntenos su caso.</h2>
+        <p>Le decimos qué documentos necesita y cuál es el camino más corto. Llene la solicitud y le llega directo a nuestro WhatsApp.</p>
+        <div class="datos-rapidos">
+          <span><b>Lunes a viernes</b> 9:00 a 18:00</span>
+          <span><b>WhatsApp</b> 81 4029 7419</span>
+          <span><b>Monterrey,</b> N.L.</span>
+        </div>
+      </div>
       <form class="solicitud" id="solicitud" novalidate aria-labelledby="titulo-solicitud">
         <header>
           <h2 id="titulo-solicitud">Solicitud de servicio</h2>
@@ -402,29 +451,8 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         </svg>
       </form>
     </div>
-
-    <!-- Monterrey de noche: Sierra Madre, Cerro de la Silla y torres de oficinas al frente -->
-    <svg class="cerro" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <path class="capa capa-lejos" fill="#152747" d="M0 320V196C110 188 210 160 320 168C410 175 470 138 560 146C650 154 700 186 790 182C900 177 1000 138 1120 146C1240 155 1340 184 1440 176V320Z"/>
-      <path class="capa capa-media" fill="#2B4A7A" d="M0 320V292C200 287 380 268 520 244C590 232 630 205 668 168L700 136L728 104L752 80L766 86L782 112L800 150L816 176L830 182L842 170L856 146L872 118L884 104L896 108L912 132L940 176C980 236 1150 280 1440 290V320Z"/>
-      <defs><linearGradient id="vidrio" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22385E"/><stop offset=".55" stop-color="#14223F"/><stop offset="1" stop-color="#0E1930"/></linearGradient><linearGradient id="brillo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B86C4" stop-opacity="0"/><stop offset="1" stop-color="#5B86C4" stop-opacity=".45"/></linearGradient><pattern id="parteluz" width="6" height="320" patternUnits="userSpaceOnUse"><path d="M5.5 0v320" stroke="#7FA3D3" stroke-opacity=".10"/></pattern></defs>
-      <rect class="resplandor" x="0" y="150" width="1440" height="170" fill="url(#brillo)"/>
-      <g class="capa capa-ciudad">
-      <path fill="url(#vidrio)" d="M10 320V170h47V320ZM74 320V200h35V320ZM122 320V174h10V154h9V140h18V154h9V174H177V320ZM196 320V186h39V320ZM250 320V138L302 112V320ZM320 320V170h32V320ZM364 320V130h11V110h10V96h20V110h10V130H425V320ZM446 320V60h41V320ZM502 320V128h55V320ZM576 320V176h36V320ZM626 320V230h50V320ZM694 320V262h71V320ZM788 320V252h55V320ZM862 320V266h49V320ZM928 320V150h46V320ZM990 320V80C990 50 1019.0 40 1048 40V320ZM1068 320V118L1112 148V320ZM1128 320V184h9V164h8V150h17V164h8V184H1180V320ZM1198 320V104h38V320ZM1250 320V164h57V320ZM1326 320V130h39V320ZM1380 320V182h47V320Z"/>
-      <path fill="url(#parteluz)" d="M10 320V170h47V320ZM74 320V200h35V320ZM122 320V174h10V154h9V140h18V154h9V174H177V320ZM196 320V186h39V320ZM250 320V138L302 112V320ZM320 320V170h32V320ZM364 320V130h11V110h10V96h20V110h10V130H425V320ZM446 320V60h41V320ZM502 320V128h55V320ZM576 320V176h36V320ZM626 320V230h50V320ZM694 320V262h71V320ZM788 320V252h55V320ZM862 320V266h49V320ZM928 320V150h46V320ZM990 320V80C990 50 1019.0 40 1048 40V320ZM1068 320V118L1112 148V320ZM1128 320V184h9V164h8V150h17V164h8V184H1180V320ZM1198 320V104h38V320ZM1250 320V164h57V320ZM1326 320V130h39V320ZM1380 320V182h47V320Z"/>
-      <path fill="#0A1427" d="M57 320V170h13V320ZM109 320V200h9V320ZM177 320V174h15V320ZM235 320V186h11V320ZM302 320V112l14 10V320ZM352 320V170h8V320ZM425 320V130h17V320ZM487 320V60h11V320ZM557 320V128h15V320ZM612 320V176h10V320ZM676 320V230h14V320ZM765 320V262h19V320ZM843 320V252h15V320ZM911 320V266h13V320ZM974 320V150h12V320ZM1048 320V40c9.6 4 16 14 16 26V320ZM1112 320V148l12 6V320ZM1180 320V184h14V320ZM1236 320V104h10V320ZM1307 320V164h15V320ZM1365 320V130h11V320ZM1427 320V182h13V320ZM465 60v-46h2V60ZM1216 104v-46h2V104Z"/>
-      <path fill="#F5D38A" fill-opacity="0.18" d="M20 245H54v2H20ZM19 280H51v2H19ZM88 268H101v2H88ZM88 296H104v2H88ZM131 233H169v2H131ZM377 315H418v2H377ZM450 149H474v2H450ZM456 261H479v2H456ZM518 217H545v2H518ZM507 238H543v2H507ZM507 245H544v2H507ZM512 280H545v2H512ZM590 202H603v2H590ZM639 249H672v2H639ZM645 263H664v2H645ZM641 298H673v2H641ZM792 313H838v2H792ZM880 278H901v2H880ZM943 288H960v2H943ZM1007 245H1037v2H1007ZM1002 280H1034v2H1002ZM997 301H1041v2H997ZM1078 137H1106v2H1078ZM1071 284H1108v2H1071ZM1074 305H1101v2H1074ZM1210 256H1229v2H1210ZM1264 204H1295v2H1264ZM1261 232H1290v2H1261ZM1262 246H1290v2H1262ZM1260 295H1299v2H1260ZM1338 212H1353v2H1338ZM1389 292H1421v2H1389Z"/>
-      <path fill="#F5D38A" fill-opacity="0.3" d="M16 231H49v2H16ZM22 294H49v2H22ZM83 212H102v2H83ZM139 184H169v2H139ZM209 233H226v2H209ZM332 273H342v2H332ZM333 287H349v2H333ZM324 308H344v2H324ZM374 175H411v2H374ZM462 170H478v2H462ZM453 240H480v2H453ZM449 303H478v2H449ZM518 315H542v2H518ZM579 188H601v2H579ZM583 300H605v2H583ZM584 314H602v2H584ZM796 306H834v2H796ZM933 162H966v2H933ZM940 197H961v2H940ZM931 281H962v2H931ZM994 84H1035v2H994ZM1083 179H1105v2H1083ZM1084 291H1104v2H1084ZM1134 208H1173v2H1134ZM1145 222H1165v2H1145ZM1208 116H1228v2H1208ZM1208 193H1227v2H1208ZM1207 200H1232v2H1207ZM1213 214H1228v2H1213ZM1207 242H1233v2H1207ZM1207 249H1233v2H1207ZM1266 183H1299v2H1266ZM1262 197H1300v2H1262ZM1330 198H1356v2H1330ZM1334 303H1353v2H1334ZM1386 243H1423v2H1386ZM1386 285H1419v2H1386ZM1397 299H1414v2H1397Z"/>
-      <path fill="#F5D38A" fill-opacity="0.45" d="M81 226H106v2H81ZM81 247H99v2H81ZM142 254H173v2H142ZM134 261H172v2H134ZM269 166H287v2H269ZM254 187H287v2H254ZM268 194H295v2H268ZM258 215H290v2H258ZM267 243H295v2H267ZM330 217H345v2H330ZM384 224H412v2H384ZM371 238H409v2H371ZM460 121H480v2H460ZM456 142H480v2H456ZM452 177H477v2H452ZM462 191H482v2H462ZM457 289H477v2H457ZM519 203H541v2H519ZM519 308H552v2H519ZM581 258H600v2H581ZM803 271H834v2H803ZM800 278H828v2H800ZM940 260H964v2H940ZM996 126H1034v2H996ZM996 210H1044v2H996ZM1077 200H1101v2H1077ZM1081 207H1107v2H1081ZM1073 270H1107v2H1073ZM1075 277H1109v2H1075ZM1145 243H1174v2H1145ZM1204 130H1229v2H1204ZM1213 158H1230v2H1213ZM1335 170H1357v2H1335ZM1332 177H1361v2H1332ZM1341 184H1358v2H1341ZM1330 261H1353v2H1330ZM1338 289H1354v2H1338ZM1340 310H1361v2H1340Z"/>
-      <path fill="#F5D38A" fill-opacity="0.6" d="M20 224H44v2H20ZM18 266H53v2H18ZM17 273H52v2H17ZM79 219H104v2H79ZM88 261H104v2H88ZM82 282H100v2H82ZM128 205H165v2H128ZM130 289H163v2H130ZM126 296H171v2H126ZM201 198H232v2H201ZM204 240H230v2H204ZM203 247H230v2H203ZM201 310H231v2H201ZM327 245H341v2H327ZM375 182H409v2H375ZM385 273H407v2H385ZM455 72H478v2H455ZM458 205H477v2H458ZM514 224H552v2H514ZM515 231H546v2H515ZM520 273H554v2H520ZM590 195H608v2H590ZM580 216H604v2H580ZM703 295H758v2H703ZM875 306H901v2H875ZM932 204H966v2H932ZM942 302H967v2H942ZM936 309H968v2H936ZM994 105H1038v2H994ZM995 133H1031v2H995ZM1007 175H1041v2H1007ZM999 203H1037v2H999ZM1076 130H1107v2H1076ZM1082 172H1106v2H1082ZM1079 263H1107v2H1079ZM1132 306H1174v2H1132ZM1207 186H1228v2H1207ZM1335 149H1360v2H1335ZM1337 247H1353v2H1337ZM1387 194H1416v2H1387ZM1395 208H1421v2H1395Z"/>
-      <path fill="#E04848" d="M465 12h3v3h-3ZM1216 56h3v3h-3Z"/>
-      <path fill="#0E1930" d="M0 320V306H1440V320Z"/></g>
-    </svg>
   </section>
 
-</div>
-
-<main>
   <section class="seccion" id="servicios">
     <div class="contenedor">
       <div class="encabezado">
@@ -559,7 +587,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
       </dl>
     </div>
     <div class="legal">
-      <span>© <span id="anio"></span> CFAIP Consultores y Servicios</span>
+      <span>© <span id="anio"></span> CFAIP · Consultor Financiero, Análisis, Investigación y Proyectos</span>
       <span>Consultoría financiera, bienes raíces y trámites · <a href="aviso-de-privacidad.html">Aviso de privacidad</a></span>
     </div>
   </div>
@@ -764,7 +792,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   }
   function iniciar(){
     if (lista.childElementCount) return;
-    burbuja('¡Hola! 👋 Somos CFAIP Consultores y Servicios.' + (abierto ? '' : '\nAhorita estamos fuera de horario, pero déjenos su mensaje y le contestamos a primera hora.'),'ellos');
+    burbuja('¡Hola! 👋 Somos CFAIP, Consultor Financiero.' + (abierto ? '' : '\nAhorita estamos fuera de horario, pero déjenos su mensaje y le contestamos a primera hora.'),'ellos');
     responder('¿Con qué le podemos ayudar?', ()=>opciones());
   }
   function abrir(){ chat.hidden = false; chatBoton.setAttribute('aria-expanded','true'); iniciar(); chatTexto.focus(); }
