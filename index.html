@@ -102,8 +102,8 @@ p{margin:0 0 1em;max-width:62ch}
 /* Portada: cielo de Monterrey */
 .cielo{position:relative;overflow:hidden;color:#fff;
   background:#0C1A36;isolation:isolate}
-/* Foto de fondo: desenfoque suave para que no se pixele (la foto es de baja resolución) */
-.cielo::before{content:"";position:absolute;inset:-24px;z-index:-2;background:url(img/portada.jpg) center 58%/cover no-repeat;filter:blur(2.5px) saturate(1.1);transform:scale(1.03)}
+/* Foto de fondo (ampliada con IA): un desenfoque mínimo suaviza los bordes de la ampliación */
+.cielo::before{content:"";position:absolute;inset:-24px;z-index:-2;background:url(img/portada.jpg) center 58%/cover no-repeat;filter:blur(.6px) saturate(1.05);transform:scale(1.01)}
 .cielo::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:linear-gradient(180deg,rgba(6,12,28,.88) 0%,rgba(6,12,28,.52) 26%,rgba(6,12,28,.46) 60%,rgba(14,25,48,.84) 88%,var(--fondo) 100%)}
 .cielo .marca{color:#fff}
