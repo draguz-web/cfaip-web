@@ -101,7 +101,7 @@ p{margin:0 0 1em;max-width:62ch}
 
 /* Portada: cielo de Monterrey */
 .cielo{position:relative;overflow:hidden;color:#fff;
-  background:#0C1A36;isolation:isolate}
+  background:#0C1A36;isolation:isolate;min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
 /* Foto de fondo (ampliada con IA): un desenfoque mínimo suaviza los bordes de la ampliación */
 .cielo::before{content:"";position:absolute;inset:-24px;z-index:-2;background:url(img/portada.jpg) center 58%/cover no-repeat;filter:blur(.6px) saturate(1.05);transform:scale(1.01)}
 .cielo::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
@@ -113,12 +113,13 @@ p{margin:0 0 1em;max-width:62ch}
 .cielo .barra nav a:not(.boton):hover{color:#DCE7F6}
 .boton.claro{background:#fff;color:var(--tinta)}
 .boton.claro:hover{background:#DCE6F3}
-.portada{position:relative;padding:40px 0 clamp(120px,14vw,200px)}
+.portada{position:relative;flex:1;display:flex;align-items:center;padding:2vh 0 6vh}
+.portada .contenedor{width:100%}
 .portada .contenedor{position:relative;z-index:2}
 .emblema{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:8px}
-.emblema-logo{width:clamp(130px,15vw,190px);height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.45))}
-.portada h1{font-size:clamp(2.1rem,5.4vw,4.6rem);line-height:1.04;max-width:17ch;margin-top:22px;color:#fff;text-wrap:balance;text-shadow:0 4px 40px rgba(0,0,0,.5)}
-.lugar{font-family:var(--sans);font-weight:650;letter-spacing:.08em;color:var(--manila);margin:18px 0 0;display:flex;align-items:center;gap:14px;max-width:none}
+.emblema-logo{width:clamp(84px,min(15vw,17vh),190px);height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.45))}
+.portada h1{font-size:clamp(1.9rem,min(5.4vw,6.8vh),4.6rem);line-height:1.04;max-width:17ch;margin-top:min(22px,2.2vh);color:#fff;text-wrap:balance;text-shadow:0 4px 40px rgba(0,0,0,.5)}
+.lugar{font-family:var(--sans);font-weight:650;letter-spacing:.08em;color:var(--manila);margin:min(18px,1.8vh) 0 0;display:flex;align-items:center;gap:14px;max-width:none}
 .lugar::before,.lugar::after{content:"";width:42px;height:1.5px;background:currentColor;opacity:.7}
 .acciones{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .boton.contorno{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
@@ -128,7 +129,7 @@ p{margin:0 0 1em;max-width:62ch}
 .solicitar .contenedor{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
 .solicitar h2{margin-bottom:18px}
 .solicitar-texto p{color:var(--texto-2)}
-.portada .intro{font-size:1.2rem;margin:22px auto 30px;max-width:40ch;color:#E6ECF5;text-shadow:0 1px 12px rgba(0,0,0,.85)}
+.portada .intro{font-size:clamp(1rem,2.1vh,1.2rem);margin:min(22px,2.2vh) auto min(30px,3vh);max-width:40ch;color:#E6ECF5;text-shadow:0 1px 12px rgba(0,0,0,.85)}
 .datos-rapidos{display:flex;flex-direction:column;gap:8px;font-family:var(--sans);font-size:1rem;color:#C3D2E8;margin-top:28px}
 .datos-rapidos b{color:#fff;font-weight:650}
 
@@ -171,15 +172,15 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .categorias{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
 .tarjeta{position:relative;display:block;width:100%;padding:0;border:1px solid var(--linea-osc);border-radius:10px;overflow:hidden;cursor:pointer;background:var(--fondo-2);color:#fff;text-align:left;
   box-shadow:0 18px 40px -24px rgba(0,0,0,.8);transition:transform .2s,border-color .2s}
-.tarjeta img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .5s}
-.tarjeta::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,12,28,0) 35%,rgba(6,12,28,.92) 100%)}
-.tarjeta-texto{position:absolute;left:20px;right:56px;bottom:16px;z-index:1;font-family:var(--sans)}
-.tarjeta-texto b{display:block;font-stretch:115%;font-weight:800;font-size:1.45rem;line-height:1.1}
+.tarjeta img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;transition:transform .5s}
+.tarjeta-texto{display:block;padding:16px 60px 18px 20px;font-family:var(--sans);border-top:3px solid var(--acero)}
+.tarjeta-texto b{display:block;font-stretch:112%;font-weight:800;font-size:1.3rem;line-height:1.15}
 .tarjeta-texto small{display:block;color:#C3D2E8;font-size:.92rem;margin-top:6px}
-.flecha{position:absolute;right:16px;bottom:18px;z-index:1;width:30px;height:30px;padding:4px;border-radius:50%;background:var(--acero);transition:transform .25s}
+.flecha{position:absolute;right:16px;bottom:22px;z-index:1;width:30px;height:30px;padding:4px;border-radius:50%;background:var(--acero);transition:transform .25s}
 .tarjeta:hover{border-color:var(--acero);transform:translateY(-3px)}
 .tarjeta:hover img{transform:scale(1.04)}
 .tarjeta[aria-expanded="true"]{border-color:var(--manila);border-bottom-left-radius:0;border-bottom-right-radius:0}
+.tarjeta[aria-expanded="true"] .tarjeta-texto{border-top-color:var(--manila)}
 .tarjeta[aria-expanded="true"] .flecha{transform:rotate(180deg);background:var(--manila);color:var(--tinta)}
 .servicios{list-style:none;margin:0;padding:6px 0;background:var(--fondo-2);border:1px solid var(--manila);border-top:0;border-radius:0 0 10px 10px}
 .servicios[hidden]{display:none}
@@ -252,7 +253,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   .barra nav a:not(.boton){display:none}
   .solicitar .contenedor{grid-template-columns:1fr;gap:36px}
   .portada h1{margin-top:14px}
-  .portada{padding-bottom:110px}
+  .portada{padding:3vh 0 7vh}
   .seccion{padding:76px 0}
   .seccion .encabezado{grid-template-columns:1fr;gap:16px}
   .lista-casos{grid-template-columns:1fr}
@@ -437,7 +438,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
       <div class="categorias">
         <article class="categoria" id="categoria-fin">
           <button class="tarjeta" type="button" aria-expanded="false" aria-controls="lista-fin" data-cat="fin">
-            <img src="img/finanzas.svg" alt="" width="480" height="300" loading="lazy">
+            <img src="img/finanzas.jpg" alt="" width="942" height="468" loading="lazy">
             <span class="tarjeta-texto"><b>Bróker financiero</b><small>Ver servicios</small></span>
             <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
           </button>
@@ -445,7 +446,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         </article>
         <article class="categoria" id="categoria-bie">
           <button class="tarjeta" type="button" aria-expanded="false" aria-controls="lista-bie" data-cat="bie">
-            <img src="img/bienes-raices.svg" alt="" width="480" height="300" loading="lazy">
+            <img src="img/bienes-raices.jpg" alt="" width="942" height="468" loading="lazy">
             <span class="tarjeta-texto"><b>Bienes raíces</b><small>Ver servicios</small></span>
             <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
           </button>
@@ -453,7 +454,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         </article>
         <article class="categoria" id="categoria-tra">
           <button class="tarjeta" type="button" aria-expanded="false" aria-controls="lista-tra" data-cat="tra">
-            <img src="img/tramites.svg" alt="" width="480" height="300" loading="lazy">
+            <img src="img/tramites.jpg" alt="" width="942" height="468" loading="lazy">
             <span class="tarjeta-texto"><b>Trámites en dependencias</b><small>Ver servicios</small></span>
             <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
           </button>

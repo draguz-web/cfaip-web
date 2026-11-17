@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300"><defs><linearGradient id="t" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D3560"/><stop offset="1" stop-color="#0B1630"/></linearGradient></defs>
-<rect width="480" height="300" fill="url(#t)"/>
-<path fill="#E3C27E" d="M60 262V94h86l18 18h232v150z"/>
-<path fill="#CFA95E" d="M60 262 84 132h336l-24 130z"/>
-<g transform="rotate(-6 210 160)"><rect x="128" y="64" width="160" height="160" rx="3" fill="#fff"/><path d="M148 94h120M148 114h120M148 134h88M148 154h104M148 174h64" stroke="#9DB7D9" stroke-width="6" stroke-linecap="round"/></g>
-<g transform="rotate(4 290 170)"><rect x="212" y="78" width="160" height="160" rx="3" fill="#F7F8F5"/><path d="M232 108h120M232 128h120M232 148h76M232 168h104" stroke="#9DB7D9" stroke-width="6" stroke-linecap="round"/><path d="M232 212c14-14 22 6 34-6s18 4 30-4" fill="none" stroke="#14233F" stroke-width="3" stroke-linecap="round"/></g>
-<g transform="rotate(-14 372 196)" fill="none" stroke="#D4544B"><circle cx="372" cy="196" r="50" stroke-width="6"/><circle cx="372" cy="196" r="41" stroke-width="2"/><text x="372" y="204" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="19" fill="#D4544B" stroke="none">RECIBIDO</text></g>
-</svg>
