@@ -249,15 +249,19 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .oculto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .punto{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3DDC84;box-shadow:0 0 0 3px rgba(61,220,132,.22)}
 .fuera .punto{background:#E3C27E;box-shadow:0 0 0 3px rgba(227,194,126,.22)}
-.chat-boton{position:fixed;right:22px;bottom:22px;z-index:20;display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:650;font-size:1rem;
-  background:var(--acero);color:#fff;border:0;border-radius:999px;padding:14px 20px 14px 16px;cursor:pointer;box-shadow:0 12px 28px -10px rgba(0,0,0,.6)}
-.chat-boton:hover{background:#5A84BA}
-.chat-boton svg{width:24px;height:24px}
-.chat-boton .punto{margin-left:2px}
+.chat-boton{position:fixed;right:22px;bottom:22px;z-index:20;width:64px;height:64px;display:grid;place-items:center;
+  background:var(--acero);color:#fff;border:0;border-radius:50%;padding:0;cursor:pointer;box-shadow:0 12px 28px -10px rgba(0,0,0,.6);transition:transform .15s,background .15s}
+.chat-boton:hover{background:#5A84BA;transform:scale(1.06)}
+.chat-boton svg{width:28px;height:28px}
+.chat-boton .punto{position:absolute;top:7px;right:7px;border:2px solid var(--fondo)}
 .chat-boton[aria-expanded="true"]{display:none}
 .chat{position:fixed;right:22px;bottom:22px;z-index:21;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100dvh - 44px));display:flex;flex-direction:column;
   background:#F7F8F5;color:var(--tinta);border-radius:14px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.75);border:1px solid var(--linea-osc)}
 .chat[hidden]{display:none}
+@media (prefers-reduced-motion:no-preference){
+  .chat{transform-origin:bottom right;animation:chat-sale .22s cubic-bezier(.2,.8,.25,1)}
+  @keyframes chat-sale{from{opacity:0;transform:scale(.6) translateY(20px)}to{opacity:1;transform:none}}
+}
 .solicitud,.hoja,.chat{color-scheme:light}
 .chat-cabeza{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 16px;background:var(--fondo-2);color:#fff}
 .chat-cabeza img{width:40px;height:40px;background:#fff;border-radius:50%;padding:6px 5px 4px}
@@ -284,9 +288,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .chat-escribir button{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--tinta);color:#fff;cursor:pointer;display:grid;place-items:center}
 .chat-escribir button svg{width:20px;height:20px}
 @media (max-width:560px){
-  .chat-boton{right:16px;bottom:16px;padding:15px}
-  .chat-boton span{display:none}
-  .chat-boton .punto{position:absolute;top:6px;right:6px;margin:0}
+  .chat-boton{right:16px;bottom:16px;width:58px;height:58px}
   .chat{right:8px;left:8px;bottom:8px;width:auto;height:min(78dvh,600px)}
 }
 
@@ -583,8 +585,8 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
 <!-- Chat en vivo: conversa aquí y pasa el caso a un asesor por WhatsApp -->
 <button class="chat-boton" id="chat-boton" type="button" aria-expanded="false" aria-controls="chat">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M8.5 10h.01M12 10h.01M15.5 10h.01"/></svg>
-  <span>Chat en vivo</span><i class="punto" aria-hidden="true"></i>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3.5h14A2 2 0 0 1 21 5.5v10a2 2 0 0 1-2 2h-8.2L6 21.4v-3.9H5a2 2 0 0 1-2-2v-10a2 2 0 0 1 2-2z"/></svg>
+  <span class="oculto">Abrir chat en vivo</span><i class="punto" aria-hidden="true"></i>
 </button>
 <section class="chat" id="chat" role="dialog" aria-labelledby="chat-titulo" hidden>
   <header class="chat-cabeza">
