@@ -380,53 +380,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 </div>
 
 <main>
-  <section class="seccion solicitar" id="solicitar">
-    <div class="contenedor">
-      <div class="solicitar-texto">
-        <h2>Cuéntenos su caso.</h2>
-        <p>Le decimos qué documentos necesita y cuál es el camino más corto. Llene la solicitud y le llega directo a nuestro WhatsApp.</p>
-        <div class="datos-rapidos">
-          <span><b>Lunes a viernes</b> 9:00 a 18:00</span>
-          <span><b>WhatsApp</b> 81 4029 7419</span>
-          <span><b>Monterrey,</b> N.L.</span>
-        </div>
-      </div>
-      <form class="solicitud" id="solicitud" novalidate aria-labelledby="titulo-solicitud">
-        <header>
-          <h2 id="titulo-solicitud">Solicitud de servicio</h2>
-          <span>Fecha: <time id="fecha"></time></span>
-        </header>
-        <div class="campo">
-          <label for="nombre">Su nombre</label>
-          <input id="nombre" name="nombre" autocomplete="name" required>
-        </div>
-        <fieldset class="campo">
-          <legend>¿Con qué le ayudamos?</legend>
-          <div class="opciones">
-            <label><input type="radio" name="area" value="un crédito o tema financiero" checked> Crédito o finanzas</label>
-            <label><input type="radio" name="area" value="una propiedad"> Una propiedad</label>
-            <label><input type="radio" name="area" value="un trámite"> Un trámite</label>
-          </div>
-        </fieldset>
-        <div class="campo">
-          <label for="caso">Cuéntenos su caso</label>
-          <textarea id="caso" name="caso" rows="3" required placeholder="Ej. Mi papá dejó una casa en Guadalupe sin testamento y queremos venderla."></textarea>
-          <p class="error" id="error" role="alert"></p>
-        </div>
-        <button class="boton" type="submit"><svg aria-hidden="true"><use href="#wa"/></svg>Enviar por WhatsApp</button>
-        <p class="nota">Se abre WhatsApp con su mensaje listo. Contestamos en horario de oficina. Consulte nuestro <a href="aviso-de-privacidad.html">aviso de privacidad</a>.</p>
-        <svg class="sello" id="sello" viewBox="0 0 200 200" aria-hidden="true">
-          <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="6"/>
-          <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path id="arco" d="M100 100 m-66 0 a66 66 0 1 1 132 0" fill="none"/>
-          <text font-family="Archivo, sans-serif" font-weight="700" font-size="17" fill="currentColor" letter-spacing="3"><textPath href="#arco" startOffset="50%" text-anchor="middle">CFAIP · MONTERREY</textPath></text>
-          <text x="100" y="112" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="30" textLength="138" lengthAdjust="spacingAndGlyphs" fill="currentColor">RECIBIDO</text>
-          <text x="100" y="146" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="16" fill="currentColor" id="sello-fecha"></text>
-        </svg>
-      </form>
-    </div>
-  </section>
-
   <section class="seccion" id="servicios">
     <div class="contenedor">
       <div class="encabezado">
@@ -481,6 +434,53 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
       </div>
     </div>
   </dialog>
+
+  <section class="seccion solicitar" id="solicitar">
+    <div class="contenedor">
+      <div class="solicitar-texto">
+        <h2>Cuéntenos su caso.</h2>
+        <p>Le decimos qué documentos necesita y cuál es el camino más corto. Llene la solicitud y le llega directo a nuestro WhatsApp.</p>
+        <div class="datos-rapidos">
+          <span><b>Lunes a viernes</b> 9:00 a 18:00</span>
+          <span><b>WhatsApp</b> 81 4029 7419</span>
+          <span><b>Monterrey,</b> N.L.</span>
+        </div>
+      </div>
+      <form class="solicitud" id="solicitud" novalidate aria-labelledby="titulo-solicitud">
+        <header>
+          <h2 id="titulo-solicitud">Solicitud de servicio</h2>
+          <span>Fecha: <time id="fecha"></time></span>
+        </header>
+        <div class="campo">
+          <label for="nombre">Su nombre</label>
+          <input id="nombre" name="nombre" autocomplete="name" required>
+        </div>
+        <fieldset class="campo">
+          <legend>¿Con qué le ayudamos?</legend>
+          <div class="opciones">
+            <label><input type="radio" name="area" value="un crédito o tema financiero" checked> Crédito o finanzas</label>
+            <label><input type="radio" name="area" value="una propiedad"> Una propiedad</label>
+            <label><input type="radio" name="area" value="un trámite"> Un trámite</label>
+          </div>
+        </fieldset>
+        <div class="campo">
+          <label for="caso">Cuéntenos su caso</label>
+          <textarea id="caso" name="caso" rows="3" required placeholder="Ej. Mi papá dejó una casa en Guadalupe sin testamento y queremos venderla."></textarea>
+          <p class="error" id="error" role="alert"></p>
+        </div>
+        <button class="boton" type="submit"><svg aria-hidden="true"><use href="#wa"/></svg>Enviar por WhatsApp</button>
+        <p class="nota">Se abre WhatsApp con su mensaje listo. Contestamos en horario de oficina. Consulte nuestro <a href="aviso-de-privacidad.html">aviso de privacidad</a>.</p>
+        <svg class="sello" id="sello" viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="6"/>
+          <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path id="arco" d="M100 100 m-66 0 a66 66 0 1 1 132 0" fill="none"/>
+          <text font-family="Archivo, sans-serif" font-weight="700" font-size="17" fill="currentColor" letter-spacing="3"><textPath href="#arco" startOffset="50%" text-anchor="middle">CFAIP · MONTERREY</textPath></text>
+          <text x="100" y="112" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="30" textLength="138" lengthAdjust="spacingAndGlyphs" fill="currentColor">RECIBIDO</text>
+          <text x="100" y="146" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="16" fill="currentColor" id="sello-fecha"></text>
+        </svg>
+      </form>
+    </div>
+  </section>
 
   <section class="seccion casos">
     <div class="contenedor">
