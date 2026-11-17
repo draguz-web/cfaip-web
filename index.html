@@ -8,8 +8,8 @@
 <!-- Dirección base: cambiar a https://cfaipconsultoresyservicios.com/ al conectar el dominio (aquí, en og:url, og:image, JSON-LD y sitemap.xml) -->
 <link rel="canonical" href="https://draguz-web.github.io/cfaip-web/">
 <meta name="theme-color" content="#0B1428">
-<link rel="icon" href="img/logo.png">
-<link rel="apple-touch-icon" href="img/logo.png">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icono.png">
 
 <!-- Vista previa al compartir (WhatsApp, Facebook, etc.) -->
 <meta property="og:type" content="website">
@@ -18,10 +18,11 @@
 <meta property="og:title" content="CFAIP · Consultor Financiero, Análisis, Investigación y Proyectos">
 <meta property="og:description" content="Créditos, bienes raíces y trámites ante cualquier dependencia de Nuevo León. Nosotros hacemos las vueltas.">
 <meta property="og:url" content="https://draguz-web.github.io/cfaip-web/">
-<meta property="og:image" content="https://draguz-web.github.io/cfaip-web/img/compartir.png">
+<meta property="og:image" content="https://draguz-web.github.io/cfaip-web/img/compartir.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="CFAIP: Nosotros hacemos las vueltas.">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="CFAIP, Consultor Financiero, Análisis, Investigación y Proyectos. Monterrey, N.L.">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Datos del negocio para Google -->
@@ -34,7 +35,7 @@
   "description": "Consultoría financiera, bienes raíces y trámites ante dependencias en Monterrey, Nuevo León.",
   "url": "https://draguz-web.github.io/cfaip-web/",
   "logo": "https://draguz-web.github.io/cfaip-web/img/logo.png",
-  "image": "https://draguz-web.github.io/cfaip-web/img/compartir.png",
+  "image": "https://draguz-web.github.io/cfaip-web/img/compartir.jpg",
   "telephone": "+52 81 4029 7419",
   "email": "infoservice@cfaipconsultoresyservicios.com",
   "address": {"@type": "PostalAddress", "addressLocality": "Monterrey", "addressRegion": "Nuevo León", "addressCountry": "MX"},
@@ -44,7 +45,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Cinzel:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --tinta:#14233F;
@@ -108,7 +109,7 @@ p{margin:0 0 1em;max-width:62ch}
   background:linear-gradient(180deg,rgba(6,12,28,.88) 0%,rgba(6,12,28,.52) 26%,rgba(6,12,28,.46) 60%,rgba(14,25,48,.84) 88%,var(--fondo) 100%)}
 .cielo .marca{color:#fff}
 .cielo .marca small{color:#B4C6E2}
-.cielo .marca img{background:#fff;border-radius:50%;padding:9px 7px 5px;box-shadow:0 4px 14px -6px rgba(10,22,45,.5)}
+.cielo .marca img{filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
 .cielo .barra nav a:not(.boton){color:#fff}
 .cielo .barra nav a:not(.boton):hover{color:#DCE7F6}
 .boton.claro{background:#fff;color:var(--tinta)}
@@ -117,8 +118,11 @@ p{margin:0 0 1em;max-width:62ch}
 .portada .contenedor{width:100%}
 .portada .contenedor{position:relative;z-index:2}
 .emblema{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:8px}
-.emblema-logo{width:clamp(84px,min(15vw,17vh),190px);height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.45))}
-.portada h1{font-size:clamp(1.9rem,min(5.4vw,6.8vh),4.6rem);line-height:1.04;max-width:17ch;margin-top:min(22px,2.2vh);color:#fff;text-wrap:balance;text-shadow:0 4px 40px rgba(0,0,0,.5)}
+.emblema-logo{width:clamp(96px,min(17vw,19vh),210px);height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.55))}
+.portada h1{margin-top:min(26px,2.6vh);color:#fff;font-family:"Cinzel",Georgia,serif;font-weight:600;letter-spacing:.04em;line-height:1.05;text-wrap:balance}
+.nombre-1{display:block;font-size:clamp(2.1rem,min(6.4vw,8vh),5.4rem);text-shadow:0 4px 30px rgba(0,0,0,.7),0 1px 2px rgba(0,0,0,.5)}
+.nombre-2{display:block;margin-top:min(14px,1.4vh);font-size:clamp(.95rem,min(2.2vw,2.8vh),1.75rem);font-weight:500;letter-spacing:.2em;color:#E6ECF5;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.nombre-2 i{font-style:normal;color:var(--manila);margin:0 .25em}
 .lugar{font-family:var(--sans);font-weight:650;letter-spacing:.08em;color:var(--manila);margin:min(18px,1.8vh) 0 0;display:flex;align-items:center;gap:14px;max-width:none}
 .lugar::before,.lugar::after{content:"";width:42px;height:1.5px;background:currentColor;opacity:.7}
 .acciones{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
@@ -294,7 +298,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 }
 .solicitud,.chat{color-scheme:light}
 .chat-cabeza{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 16px;background:var(--fondo-2);color:#fff}
-.chat-cabeza img{width:40px;height:40px;background:#fff;border-radius:50%;padding:6px 5px 4px}
+.chat-cabeza img{width:42px;height:42px}
 .chat-cabeza div{flex:1;min-width:0;font-family:var(--sans);line-height:1.25}
 .chat-cabeza b{display:block;font-size:1rem}
 .chat-cabeza small{display:flex;align-items:center;gap:7px;font-size:.82rem;color:#B4C6E2}
@@ -321,6 +325,8 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   .chat-boton{right:16px;bottom:16px;width:58px;height:58px}
   .chat{right:8px;left:8px;bottom:8px;width:auto;height:min(78dvh,600px)}
 }
+
+@media (max-width:560px){.cielo::before{background-image:url(img/portada-movil.jpg)}}
 
 /* Animación: entrada de la portada (una sola secuencia) */
 @media (prefers-reduced-motion:no-preference){
@@ -349,7 +355,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 <div class="cielo">
 <header class="contenedor barra">
   <a class="marca" href="#inicio" aria-label="CFAIP, inicio">
-    <img src="img/logo.png" alt="" width="52" height="52">
+    <img src="img/logo-claro.svg" alt="" width="52" height="52">
     <span>CFAIP<small>Consultor Financiero, Análisis, Investigación y Proyectos</small></span>
   </a>
   <nav aria-label="Principal">
@@ -363,8 +369,8 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   <section class="portada" id="inicio">
     <div class="contenedor">
       <div class="emblema">
-        <img class="emblema-logo" src="img/logo-claro.png" alt="Logotipo de CFAIP" width="600" height="600">
-        <h1>Consultor Financiero, Análisis, Investigación y Proyectos</h1>
+        <img class="emblema-logo" src="img/logo-claro.svg" alt="Logotipo de CFAIP" width="600" height="600">
+        <h1 class="nombre"><span class="nombre-1">Consultor Financiero</span><span class="nombre-2">Análisis <i>·</i> Investigación <i>·</i> Proyectos</span></h1>
         <p class="lugar">Monterrey, N.L.</p>
         <p class="intro">Nosotros hacemos las vueltas: créditos, bienes raíces y trámites ante cualquier dependencia de Nuevo León.</p>
         <div class="acciones">
@@ -574,7 +580,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 </button>
 <section class="chat" id="chat" role="dialog" aria-labelledby="chat-titulo" hidden>
   <header class="chat-cabeza">
-    <img src="img/logo.png" alt="" width="40" height="40">
+    <img src="img/logo-claro.svg" alt="" width="40" height="40">
     <div>
       <b id="chat-titulo">CFAIP Consultores</b>
       <small id="chat-estado"><i class="punto"></i><span></span></small>
