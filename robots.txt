@@ -4,5 +4,7 @@ User-agent: *
 Allow: /
 Disallow: /DESIGN.md
 Disallow: /vista-previa/
+Disallow: /opcion-3/
+Disallow: /opcion-4/
 
 Sitemap: https://draguz-web.github.io/cfaip-web/sitemap.xml
