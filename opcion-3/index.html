@@ -332,6 +332,25 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
 @media (max-width:560px){.cielo::before{background-image:url(img/portada-movil.jpg)}}
 
+/* Transición suave de la portada clara al fondo oscuro, y textura en las secciones */
+#servicios{position:relative;isolation:isolate;padding-top:300px;margin-top:-1px}
+#servicios::before{content:"";position:absolute;inset:0 0 auto;height:300px;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,#F2F3F5 0%,#E4E6E9 10%,#C3C7CC 24%,#8E9299 40%,#55595F 58%,#2C2E33 76%,#1A1B1E 90%,rgba(18,19,21,0) 100%)}
+#servicios,#solicitar,#como-trabajamos{
+  background:
+    radial-gradient(ellipse 60% 45% at 12% 30%,rgba(128,147,167,.13),transparent 70%),
+    radial-gradient(ellipse 55% 40% at 90% 75%,rgba(201,207,214,.07),transparent 70%),
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
+    var(--fondo)}
+#solicitar{background:
+    radial-gradient(ellipse 55% 50% at 88% 25%,rgba(128,147,167,.12),transparent 70%),
+    radial-gradient(ellipse 50% 40% at 8% 85%,rgba(201,207,214,.06),transparent 70%),
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
+    var(--fondo)}
+.casos{background:linear-gradient(180deg,rgba(128,147,167,.08),transparent 40%),var(--fondo-2)}
+@media (max-width:560px){#servicios{padding-top:200px}#servicios::before{height:200px}}
 /* Animación: entrada de la portada (una sola secuencia) */
 @media (prefers-reduced-motion:no-preference){
   .portada h1{animation:aparecer .9s cubic-bezier(.2,.7,.2,1) .45s both}
