@@ -6,13 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CFAIP · Consultor Financiero, Análisis, Investigación y Proyectos | Monterrey</title>
 <meta name="description" content="Despacho en Monterrey, N.L.: créditos para PYMES e hipotecarios, propiedades intestadas, compra y venta de inmuebles, y trámites ante SAT, CFE, Catastro y más. Cuéntenos su caso por WhatsApp.">
-<!-- Dirección base: cambiar a https://cfaipconsultoresyservicios.com/ al conectar el dominio (aquí, en og:url, og:image, JSON-LD y sitemap.xml) -->
 <link rel="canonical" href="https://draguz-web.github.io/cfaip-web/">
 <meta name="theme-color" content="#0B0C0D">
 <link rel="icon" href="img/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/icono.png">
 
-<!-- Vista previa al compartir (WhatsApp, Facebook, etc.) -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta property="og:site_name" content="CFAIP">
@@ -26,7 +24,6 @@
 <meta property="og:image:alt" content="CFAIP, Consultor Financiero, Análisis, Investigación y Proyectos. Monterrey, N.L.">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Datos del negocio para Google -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,7 +59,6 @@
   --sans:"Archivo",system-ui,sans-serif;
   --serif:"Source Serif 4",Georgia,serif;
   --ancho:1180px;
-  /* Tema oscuro */
   --fondo:#121315;
   --fondo-2:#1B1D21;
   --fondo-pie:#0B0C0D;
@@ -85,13 +81,11 @@ h2{font-size:clamp(2rem,4.4vw,3.2rem)}
 h3{font-size:1.35rem;line-height:1.15}
 p{margin:0 0 1em;max-width:62ch}
 
-/* Botón principal */
 .boton{display:inline-flex;align-items:center;gap:.6em;font-family:var(--sans);font-weight:650;font-size:1rem;text-decoration:none;
   background:var(--tinta);color:#fff;border:0;border-radius:6px;padding:.85em 1.3em;cursor:pointer;transition:background .15s}
 .boton:hover{background:var(--acero-osc)}
 .boton svg{width:1.2em;height:1.2em;flex:none}
 
-/* Encabezado */
 .barra{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:26px 0 18px}
 .marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--tinta)}
 .marca img{width:66px;height:66px;object-fit:contain}
@@ -101,10 +95,8 @@ p{margin:0 0 1em;max-width:62ch}
 .barra nav a:not(.boton){color:var(--tinta);text-decoration:none}
 .barra nav a:not(.boton):hover{color:var(--acero)}
 
-/* Portada: cielo de Monterrey */
 .cielo{position:relative;overflow:hidden;color:var(--tinta);
   background:#121315;isolation:isolate;min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
-/* Foto de fondo (ampliada con IA): un desenfoque mínimo suaviza los bordes de la ampliación */
 .cielo::before{content:"";position:absolute;inset:-24px;z-index:-2;background:url(img/portada.jpg) center 58%/cover no-repeat;filter:blur(.6px) saturate(1.05);transform:scale(1.01)}
 .cielo::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:linear-gradient(0deg,rgba(242,243,245,1) 0%,rgba(242,243,245,.95) 34%,rgba(240,242,245,.82) 48%,rgba(238,240,243,.58) 60%,rgba(236,238,241,.28) 70%,rgba(236,238,241,0) 79%)}
@@ -132,7 +124,6 @@ p{margin:0 0 1em;max-width:62ch}
 .acciones{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .boton.contorno{background:rgba(255,255,255,.5);color:var(--tinta);box-shadow:inset 0 0 0 1.5px var(--tinta)}
 .boton.contorno:hover{background:#fff}
-/* Sección de la solicitud */
 .solicitar{overflow-x:clip}
 .solicitar .contenedor{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
 .solicitar h2{margin-bottom:10px}
@@ -142,7 +133,6 @@ p{margin:0 0 1em;max-width:62ch}
 .datos-rapidos{display:flex;flex-direction:column;gap:8px;font-family:var(--sans);font-size:1rem;color:#C6CAD0;margin-top:28px}
 .datos-rapidos b{color:#fff;font-weight:650}
 
-/* Solicitud (formulario) */
 .solicitud{position:relative;color:var(--tinta);background:var(--hoja);border:1px solid var(--linea);border-radius:4px;padding:30px 30px 26px;
   box-shadow:0 1px 0 var(--linea),0 30px 60px -28px rgba(0,0,0,.6);transform:rotate(.6deg);margin-top:12px;z-index:2}
 .solicitud::before{content:"";position:absolute;inset:auto 0 -9px 8px;height:9px;background:var(--hoja);border:1px solid var(--linea);border-top:0;border-radius:0 0 4px 4px;transform:rotate(-.8deg);z-index:-1}
@@ -168,7 +158,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .sello.puesto{animation:sellar .38s cubic-bezier(.2,.9,.3,1.3) forwards}
 @keyframes sellar{to{opacity:.88;transform:scale(1) rotate(-14deg)}}
 
-/* Expediente de servicios */
 .seccion{padding:110px 0}
 .seccion .encabezado{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:44px}
 .seccion .encabezado p{margin:0;color:var(--texto-2)}
@@ -202,7 +191,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   .servicios:not([hidden]){animation:desplegar .3s cubic-bezier(.2,.8,.25,1)}
   @keyframes desplegar{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 }
-/* Ficha de cada servicio */
 .ficha{border:0;padding:0;border-radius:12px;width:min(620px,calc(100vw - 32px));max-height:calc(100dvh - 48px);background:var(--hoja);color:var(--tinta);color-scheme:light;
   box-shadow:0 40px 90px -30px rgba(0,0,0,.85)}
 .ficha::backdrop{background:rgba(5,10,24,.72);backdrop-filter:blur(3px)}
@@ -225,7 +213,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   @keyframes ficha-abre{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
 }
 
-/* Casos */
 .casos{background:var(--fondo-2);border-block:1px solid var(--linea-osc)}
 .casos .encabezado p{color:#C9CFD6}
 .lista-casos{display:grid;grid-template-columns:repeat(2,1fr);gap:0 64px}
@@ -236,14 +223,12 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   background:var(--manila);color:var(--tinta);border-radius:999px;padding:5px 13px}
 .caso a:hover{background:#E2E4E7}
 
-/* Pasos */
 .pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;counter-reset:paso}
 .pasos li{counter-increment:paso;border-top:3px solid var(--acero);padding-top:18px}
 .pasos li::before{content:counter(paso);font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:3.4rem;line-height:1;color:#8FA4BA;display:block;margin-bottom:14px}
 .pasos h3{margin-bottom:10px}
 .pasos p{color:var(--texto-2);margin:0}
 
-/* Pie / contacto */
 .pie{background:var(--fondo-pie);color:#DDE0E4;padding:90px 0 100px}
 .pie h2{color:#fff;max-width:14ch}
 .pie .rejilla{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;align-items:start}
@@ -284,7 +269,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   .ficha-cuerpo{padding:24px 20px 22px}
   .ficha-acciones .boton,.ficha-acciones .siguiente{width:100%;justify-content:center}
 }
-/* Chat en vivo */
 .oculto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .punto{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3DDC84;box-shadow:0 0 0 3px rgba(61,220,132,.22)}
 .fuera .punto{background:#E3C27E;box-shadow:0 0 0 3px rgba(227,194,126,.22)}
@@ -333,7 +317,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
 @media (max-width:560px){.cielo::before{background-image:url(img/portada-movil.jpg)}}
 
-/* Transición suave de la portada clara al fondo oscuro, y textura en las secciones */
 #servicios{position:relative;isolation:isolate;padding-top:300px;margin-top:-1px}
 #servicios::before{content:"";position:absolute;inset:0 0 auto;height:300px;z-index:-1;pointer-events:none;
   background:linear-gradient(180deg,#F2F3F5 0%,#E4E6E9 10%,#C3C7CC 24%,#8E9299 40%,#55595F 58%,#2C2E33 76%,#1A1B1E 90%,rgba(18,19,21,0) 100%)}
@@ -352,7 +335,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     var(--fondo)}
 .casos{background:linear-gradient(180deg,rgba(128,147,167,.08),transparent 40%),var(--fondo-2)}
 @media (max-width:560px){#servicios{padding-top:200px}#servicios::before{height:200px}}
-/* Contraste entre secciones: tonos alternados y línea plateada */
 #solicitar,#como-trabajamos{background-color:#1F2125 !important}
 #solicitar{background:
     radial-gradient(ellipse 55% 50% at 88% 25%,rgba(128,147,167,.12),transparent 70%),
@@ -368,7 +350,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 #solicitar,.casos,#como-trabajamos{border-top:1px solid rgba(201,207,214,.22)}
 .cerro-pie{background:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,#1F2125;margin-top:-1px}
 #como-trabajamos{padding-bottom:40px}
-/* Animación: entrada de la portada (una sola secuencia) */
 @media (prefers-reduced-motion:no-preference){
   .portada h1{animation:aparecer .9s cubic-bezier(.2,.7,.2,1) .45s both}
   .emblema-logo{animation:aparecer .9s cubic-bezier(.2,.7,.2,1) .2s both}
@@ -614,7 +595,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   </div>
 </footer>
 
-<!-- Chat en vivo: conversa aquí y pasa el caso a un asesor por WhatsApp -->
 <button class="chat-boton" id="chat-boton" type="button" aria-expanded="false" aria-controls="chat">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3.5h14A2 2 0 0 1 21 5.5v10a2 2 0 0 1-2 2h-8.2L6 21.4v-3.9H5a2 2 0 0 1-2-2v-10a2 2 0 0 1 2-2z"/></svg>
   <span class="oculto">Abrir chat en vivo</span><i class="punto" aria-hidden="true"></i>
@@ -638,7 +618,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
 <script>
 (function(){
-  // Al recargar, empezar siempre desde arriba (sin conservar el scroll anterior)
   if ('scrollRestoration' in history && !location.hash) { history.scrollRestoration = 'manual'; scrollTo(0,0); }
   const hoy = new Date();
   const fechaLarga = hoy.toLocaleDateString('es-MX',{day:'numeric',month:'long',year:'numeric'});
@@ -716,7 +695,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   }
   ficha.querySelectorAll('[data-cerrar]').forEach(b=>b.addEventListener('click',()=>ficha.close()));
   ficha.addEventListener('click', e=>{ if (e.target === ficha) ficha.close(); });
-  // Llenar la lista de cada categoría
   Object.entries(SERVICIOS).forEach(([cat, c])=>{
     const ul = document.getElementById('lista-' + cat);
     c.items.forEach(([titulo], n)=>{
@@ -741,7 +719,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     t.closest('.categoria').scrollIntoView({behavior: conMovimiento ? 'smooth' : 'auto', block:'start'});
   }));
 
-  // Solicitud -> WhatsApp
   const form = document.getElementById('solicitud');
   const error = document.getElementById('error');
   form.addEventListener('submit', e=>{
@@ -761,13 +738,11 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     setTimeout(()=>window.open('https://wa.me/528140297419?text='+encodeURIComponent(texto),'_blank','noopener'), 650);
   });
 
-  // Chat en vivo
   const chatBoton = document.getElementById('chat-boton');
   const chat = document.getElementById('chat');
   const lista = document.getElementById('chat-mensajes');
   const chatForm = document.getElementById('chat-form');
   const chatTexto = document.getElementById('chat-texto');
-  // ¿Estamos en horario? Lunes a viernes de 9:00 a 18:00, hora de Monterrey
   function enHorario(){
     const p = Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/Monterrey',weekday:'short',hour:'numeric',hourCycle:'h23'})
       .formatToParts(new Date()).map(x=>[x.type,x.value]));

@@ -5,13 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CFAIP Consultores y Servicios | Créditos, bienes raíces y trámites en Monterrey</title>
 <meta name="description" content="Despacho en Monterrey, N.L.: créditos para PYMES e hipotecarios, propiedades intestadas, compra y venta de inmuebles, y trámites ante SAT, CFE, Catastro y más. Cuéntenos su caso por WhatsApp.">
-<!-- Dirección base: cambiar a https://cfaipconsultoresyservicios.com/ al conectar el dominio (aquí, en og:url, og:image, JSON-LD y sitemap.xml) -->
 <link rel="canonical" href="https://draguz-web.github.io/cfaip-web/">
 <meta name="theme-color" content="#2C5288">
 <link rel="icon" href="img/logo.png">
 <link rel="apple-touch-icon" href="img/logo.png">
 
-<!-- Vista previa al compartir (WhatsApp, Facebook, etc.) -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta property="og:site_name" content="CFAIP Consultores y Servicios">
@@ -24,7 +22,6 @@
 <meta property="og:image:alt" content="CFAIP Consultores y Servicios: Nosotros hacemos las vueltas. Cerro de la Silla al fondo.">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Datos del negocio para Google -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,13 +69,11 @@ h2{font-size:clamp(2rem,4.4vw,3.2rem)}
 h3{font-size:1.35rem;line-height:1.15}
 p{margin:0 0 1em;max-width:62ch}
 
-/* Botón principal */
 .boton{display:inline-flex;align-items:center;gap:.6em;font-family:var(--sans);font-weight:650;font-size:1rem;text-decoration:none;
   background:var(--tinta);color:#fff;border:0;border-radius:6px;padding:.85em 1.3em;cursor:pointer;transition:background .15s}
 .boton:hover{background:var(--acero-osc)}
 .boton svg{width:1.2em;height:1.2em;flex:none}
 
-/* Encabezado */
 .barra{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:26px 0 18px}
 .marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--tinta)}
 .marca img{width:56px;height:56px;object-fit:contain}
@@ -88,7 +83,6 @@ p{margin:0 0 1em;max-width:62ch}
 .barra nav a:not(.boton){color:var(--tinta);text-decoration:none}
 .barra nav a:not(.boton):hover{color:var(--acero)}
 
-/* Portada: cielo de Monterrey */
 .cielo{position:relative;overflow:hidden;color:#fff;
   background:linear-gradient(180deg,#2C5288 0%,#4C74A8 48%,#8EB0D8 82%,#B9CDE6 100%)}
 .cielo .marca{color:#fff}
@@ -106,7 +100,6 @@ p{margin:0 0 1em;max-width:62ch}
 .datos-rapidos b{color:#fff;font-weight:650}
 .cerro{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:clamp(200px,26vw,380px);z-index:1}
 
-/* Solicitud (formulario) */
 .solicitud{position:relative;color:var(--tinta);background:var(--hoja);border:1px solid var(--linea);border-radius:4px;padding:30px 30px 26px;
   box-shadow:0 1px 0 var(--linea),0 30px 60px -28px rgba(10,22,45,.6);transform:rotate(.6deg);margin-top:12px;z-index:2}
 .solicitud::before{content:"";position:absolute;inset:auto 0 -9px 8px;height:9px;background:var(--hoja);border:1px solid var(--linea);border-top:0;border-radius:0 0 4px 4px;transform:rotate(-.8deg);z-index:-1}
@@ -132,7 +125,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .sello.puesto{animation:sellar .38s cubic-bezier(.2,.9,.3,1.3) forwards}
 @keyframes sellar{to{opacity:.88;transform:scale(1) rotate(-14deg)}}
 
-/* Expediente de servicios */
 .seccion{padding:110px 0}
 .seccion .encabezado{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:44px}
 .seccion .encabezado p{margin:0;color:#2A3754}
@@ -163,7 +155,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .lista span{color:var(--gris);font-size:.98rem;line-height:1.5}
 .hoja .boton{margin-top:10px}
 
-/* Casos */
 .casos{background:#F3E6C6}
 .casos .encabezado p{color:#5B4A27}
 .lista-casos{display:grid;grid-template-columns:repeat(2,1fr);gap:0 64px}
@@ -174,14 +165,12 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   background:var(--tinta);color:#fff;border-radius:999px;padding:5px 13px}
 .caso a:hover{background:var(--acero-osc)}
 
-/* Pasos */
 .pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;counter-reset:paso}
 .pasos li{counter-increment:paso;border-top:3px solid var(--acero);padding-top:18px}
 .pasos li::before{content:counter(paso);font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:3.4rem;line-height:1;color:var(--acero);display:block;margin-bottom:14px}
 .pasos h3{margin-bottom:10px}
 .pasos p{color:#3A4560;margin:0}
 
-/* Pie / contacto */
 .pie{background:var(--tinta);color:#DCE3EE;padding:90px 0 40px}
 .pie h2{color:#fff;max-width:14ch}
 .pie .rejilla{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;align-items:start}
@@ -195,7 +184,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .pie .legal{border-top:1px solid #2C3D5E;margin-top:70px;padding-top:24px;font-family:var(--sans);font-size:.85rem;color:#8395B2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .cerro-pie{display:block;width:100%;height:auto;min-height:70px;color:var(--tinta);margin-bottom:-1px}
 
-/* Botón flotante de WhatsApp (móvil) */
 .flotante{display:none}
 
 @media (max-width:900px){
@@ -229,7 +217,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   .flotante{display:flex;position:fixed;right:16px;bottom:16px;z-index:10;width:56px;height:56px;border-radius:50%;background:#1E8E4F;color:#fff;align-items:center;justify-content:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.4)}
   .flotante svg{width:28px;height:28px}
 }
-/* Animación: entrada de la portada (una sola secuencia) */
 @media (prefers-reduced-motion:no-preference){
   .cerro .capa{animation:subir 1.4s cubic-bezier(.16,.84,.3,1) both}
   .cerro .capa-lejos{animation-delay:.05s}
@@ -241,7 +228,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   @keyframes aparecer{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   .solicitud{animation:hoja-cae 1s cubic-bezier(.2,.8,.25,1) .9s both}
   @keyframes hoja-cae{from{opacity:0;transform:translateY(-26px) rotate(-2.5deg)}to{opacity:1;transform:rotate(.6deg)}}
-  /* Hoja que sale de la carpeta al cambiar de pestaña */
   .hoja.sacar{animation:sacar .42s cubic-bezier(.2,.8,.25,1)}
   @keyframes sacar{from{opacity:.2;transform:translateY(22px)}to{opacity:1;transform:none}}
 }
@@ -323,8 +309,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
       </form>
     </div>
 
-    <!-- Cerro de la Silla -->
-    <!-- Sierra Madre al fondo y Cerro de la Silla al frente -->
     <svg class="cerro" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
       <path class="capa capa-lejos" fill="#6E92C2" d="M0 320V196C110 188 210 160 320 168C410 175 470 138 560 146C650 154 700 186 790 182C900 177 1000 138 1120 146C1240 155 1340 184 1440 176V320Z"/>
       <path class="capa capa-media" fill="#3D6297" d="M0 320V236C140 230 260 214 380 220C480 225 560 206 640 214C760 226 860 246 980 240C1120 233 1280 222 1440 228V320Z"/>
@@ -495,7 +479,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
 <script>
 (function(){
-  // Al recargar, empezar siempre desde arriba (sin conservar el scroll anterior)
   if ('scrollRestoration' in history && !location.hash) { history.scrollRestoration = 'manual'; scrollTo(0,0); }
   const hoy = new Date();
   const fechaLarga = hoy.toLocaleDateString('es-MX',{day:'numeric',month:'long',year:'numeric'});
@@ -506,7 +489,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
   const conMovimiento = !matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Profundidad del cerro: las capas del fondo bajan más lento al hacer scroll
   if (conMovimiento){
     const lejos = document.querySelector('.capa-lejos');
     const media = document.querySelector('.capa-media');
@@ -521,7 +503,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     addEventListener('scroll', ()=>{ if (!pendiente){ pendiente = true; requestAnimationFrame(mover); } }, {passive:true});
   }
 
-  // Pestañas del expediente
   const tabs = [...document.querySelectorAll('.pestana')];
   function activar(tab, enfocar){
     tabs.forEach(t=>{
@@ -553,7 +534,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     t.scrollIntoView({block:'nearest'});
   }));
 
-  // Solicitud -> WhatsApp
   const form = document.getElementById('solicitud');
   const error = document.getElementById('error');
   form.addEventListener('submit', e=>{
