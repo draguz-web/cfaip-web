@@ -107,12 +107,13 @@ p{margin:0 0 1em;max-width:62ch}
 /* Foto de fondo (ampliada con IA): un desenfoque mínimo suaviza los bordes de la ampliación */
 .cielo::before{content:"";position:absolute;inset:-24px;z-index:-2;background:url(img/portada.jpg) center 58%/cover no-repeat;filter:blur(.6px) saturate(1.05);transform:scale(1.01)}
 .cielo::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(0deg,rgba(242,243,245,1) 0%,rgba(242,243,245,.97) 22%,rgba(240,242,245,.88) 38%,rgba(236,238,241,.6) 50%,rgba(236,238,241,.25) 60%,rgba(236,238,241,0) 70%),linear-gradient(180deg,rgba(8,9,11,.55) 0%,rgba(8,9,11,0) 22%)}
-.cielo .marca{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6)}
-.cielo .marca small{color:#E4E6E9}
+  background:linear-gradient(0deg,rgba(242,243,245,1) 0%,rgba(242,243,245,.95) 34%,rgba(240,242,245,.82) 48%,rgba(238,240,243,.58) 60%,rgba(236,238,241,.28) 70%,rgba(236,238,241,0) 79%)}
+.cielo .barra{position:relative;z-index:3;background:#F2F3F5;box-shadow:0 0 0 100vmax #F2F3F5;clip-path:inset(0 -100vmax);padding-top:14px;padding-bottom:14px}
+.cielo .marca{color:var(--tinta)}
+.cielo .marca small{color:#4A4E56}
 
-.cielo .barra nav a:not(.boton){color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6)}
-.cielo .barra nav a:not(.boton):hover{color:#E4E6E9}
+.cielo .barra nav a:not(.boton){color:var(--tinta);font-weight:600}
+.cielo .barra nav a:not(.boton):hover{color:var(--acero-osc)}
 .boton.claro{background:var(--tinta);color:#fff}
 .boton.claro:hover{background:#000}
 .boton.blanco{background:#fff;color:var(--tinta)}
@@ -366,7 +367,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     <a href="#servicios">Servicios</a>
     <a href="#como-trabajamos">Cómo trabajamos</a>
     <a href="#contacto">Contacto</a>
-    <a class="boton blanco" href="https://wa.me/528140297419" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>81 4029 7419</span></a>
+    <a class="boton claro" href="https://wa.me/528140297419" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>81 4029 7419</span></a>
   </nav>
 </header>
 
