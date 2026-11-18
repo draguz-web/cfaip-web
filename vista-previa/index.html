@@ -94,7 +94,7 @@ p{margin:0 0 1em;max-width:62ch}
 /* Encabezado */
 .barra{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:26px 0 18px}
 .marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--tinta)}
-.marca img{width:80px;height:80px;margin:-7px;object-fit:contain;background:radial-gradient(closest-side,rgba(244,245,247,.94) 0%,rgba(238,240,243,.86) 38%,rgba(228,231,235,.6) 56%,rgba(220,224,229,.28) 74%,rgba(220,224,229,.08) 88%,rgba(220,224,229,0) 100%);padding:9px;box-sizing:border-box}
+.marca img{width:66px;height:66px;object-fit:contain}
 .marca span{font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:1.45rem;line-height:1;letter-spacing:.02em}
 .marca small{display:block;max-width:26ch;font-stretch:100%;font-weight:500;letter-spacing:0;color:var(--gris);font-size:.82rem;line-height:1.3;margin-top:4px}
 .barra nav{display:flex;align-items:center;gap:26px;font-family:var(--sans);font-size:.95rem}
@@ -102,40 +102,40 @@ p{margin:0 0 1em;max-width:62ch}
 .barra nav a:not(.boton):hover{color:var(--acero)}
 
 /* Portada: cielo de Monterrey */
-.cielo{position:relative;overflow:hidden;color:#fff;
+.cielo{position:relative;overflow:hidden;color:var(--tinta);
   background:#121315;isolation:isolate;min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
 /* Foto de fondo (ampliada con IA): un desenfoque mínimo suaviza los bordes de la ampliación */
 .cielo::before{content:"";position:absolute;inset:-24px;z-index:-2;background:url(img/portada.jpg) center 58%/cover no-repeat;filter:blur(.6px) saturate(1.05);transform:scale(1.01)}
 .cielo::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(8,9,11,.88) 0%,rgba(8,9,11,.52) 26%,rgba(8,9,11,.46) 60%,rgba(18,19,21,.84) 88%,var(--fondo) 100%)}
-.cielo .marca{color:#fff}
-.cielo .marca small{color:#C2C6CC}
+  background:linear-gradient(180deg,rgba(244,245,247,.9) 0%,rgba(240,242,245,.72) 30%,rgba(236,238,241,.66) 62%,rgba(228,231,235,.82) 86%,rgba(150,154,160,.9) 94%,var(--fondo) 100%)}
+.cielo .marca{color:var(--tinta)}
+.cielo .marca small{color:#4A4E56}
 
-.cielo .barra nav a:not(.boton){color:#fff}
-.cielo .barra nav a:not(.boton):hover{color:#E4E6E9}
-.boton.claro{background:#fff;color:var(--tinta)}
-.boton.claro:hover{background:#E2E4E7}
+.cielo .barra nav a:not(.boton){color:var(--tinta);font-weight:600}
+.cielo .barra nav a:not(.boton):hover{color:var(--acero-osc)}
+.boton.claro{background:var(--tinta);color:#fff}
+.boton.claro:hover{background:#000}
 .portada{position:relative;flex:1;display:flex;align-items:center;padding:2vh 0 6vh}
 .portada .contenedor{width:100%}
 .portada .contenedor{position:relative;z-index:2}
 .emblema{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:8px}
-.emblema-logo{width:clamp(170px,min(30vw,33vh),370px);height:auto;margin:calc(clamp(170px,min(30vw,33vh),370px) * -.17) 0;background:radial-gradient(closest-side,rgba(244,245,247,.94) 0%,rgba(238,240,243,.86) 38%,rgba(228,231,235,.6) 56%,rgba(220,224,229,.28) 74%,rgba(220,224,229,.08) 88%,rgba(220,224,229,0) 100%);padding:calc(clamp(170px,min(30vw,33vh),370px) * .22);box-sizing:border-box}
-.portada h1{margin-top:min(26px,2.6vh);color:#fff;font-family:"Cinzel",Georgia,serif;font-weight:600;letter-spacing:.04em;line-height:1.05;text-wrap:balance}
-.nombre-1{display:block;font-size:clamp(2.1rem,min(6.4vw,8vh),5.4rem);text-shadow:0 4px 30px rgba(0,0,0,.7),0 1px 2px rgba(0,0,0,.5)}
-.nombre-2{display:block;margin-top:min(14px,1.4vh);font-size:clamp(.95rem,min(2.2vw,2.8vh),1.75rem);font-weight:500;letter-spacing:.2em;color:#ECEDEF;text-shadow:0 2px 16px rgba(0,0,0,.8)}
-.nombre-2 i{font-style:normal;color:var(--manila);margin:0 .25em}
-.lugar{font-family:var(--sans);font-weight:650;letter-spacing:.08em;color:var(--manila);margin:min(18px,1.8vh) 0 0;display:flex;align-items:center;gap:14px;max-width:none}
+.emblema-logo{width:clamp(110px,min(19vw,21vh),230px);height:auto;filter:drop-shadow(0 6px 18px rgba(255,255,255,.6))}
+.portada h1{margin-top:min(26px,2.6vh);color:#16181B;font-family:"Cinzel",Georgia,serif;font-weight:600;letter-spacing:.04em;line-height:1.05;text-wrap:balance}
+.nombre-1{display:block;font-size:clamp(2.1rem,min(6.4vw,8vh),5.4rem);text-shadow:0 2px 24px rgba(255,255,255,.7)}
+.nombre-2{display:block;margin-top:min(14px,1.4vh);font-size:clamp(.95rem,min(2.2vw,2.8vh),1.75rem);font-weight:500;letter-spacing:.2em;color:#3A3D43;text-shadow:0 1px 12px rgba(255,255,255,.8)}
+.nombre-2 i{font-style:normal;color:var(--acero);margin:0 .25em}
+.lugar{font-family:var(--sans);font-weight:650;letter-spacing:.08em;color:var(--acero-osc);margin:min(18px,1.8vh) 0 0;display:flex;align-items:center;gap:14px;max-width:none}
 .lugar::before,.lugar::after{content:"";width:42px;height:1.5px;background:currentColor;opacity:.7}
 .acciones{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.boton.contorno{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
-.boton.contorno:hover{background:rgba(255,255,255,.12)}
+.boton.contorno{background:rgba(255,255,255,.5);color:var(--tinta);box-shadow:inset 0 0 0 1.5px var(--tinta)}
+.boton.contorno:hover{background:#fff}
 /* Sección de la solicitud */
 .solicitar{overflow-x:clip}
 .solicitar .contenedor{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
 .solicitar h2{margin-bottom:10px}
 .solicitar-texto .subtitulo{margin-bottom:18px;font-size:1.25rem;color:var(--manila)}
 .solicitar-texto p{color:var(--texto-2)}
-.portada .intro{font-size:clamp(1rem,2.1vh,1.2rem);margin:min(22px,2.2vh) auto min(30px,3vh);max-width:40ch;color:#ECEDEF;text-shadow:0 1px 12px rgba(0,0,0,.85)}
+.portada .intro{font-size:clamp(1rem,2.1vh,1.2rem);margin:min(22px,2.2vh) auto min(30px,3vh);max-width:40ch;color:#2A2D32;text-shadow:0 1px 10px rgba(255,255,255,.9)}
 .datos-rapidos{display:flex;flex-direction:column;gap:8px;font-family:var(--sans);font-size:1rem;color:#C6CAD0;margin-top:28px}
 .datos-rapidos b{color:#fff;font-weight:650}
 
@@ -269,7 +269,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 }
 @media (max-width:560px){
   .contenedor{padding:0 16px}
-  .marca img{width:64px;height:64px;margin:-6px;padding:7px}
+  .marca img{width:52px;height:52px}
   .marca span{font-size:1.2rem}
   .marca small{display:none}
   .barra .boton span{display:none}
