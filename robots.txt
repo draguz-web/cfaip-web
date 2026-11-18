@@ -1,8 +1,5 @@
-# Google solo lee este archivo en la raíz del dominio.
-# Funciona en cuanto la página esté en https://cfaipconsultoresyservicios.com/
 User-agent: *
 Allow: /
-Disallow: /DESIGN.md
 Disallow: /vista-previa/
 Disallow: /opcion-3/
 Disallow: /opcion-4/
