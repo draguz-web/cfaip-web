@@ -351,6 +351,20 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     var(--fondo)}
 .casos{background:linear-gradient(180deg,rgba(128,147,167,.08),transparent 40%),var(--fondo-2)}
 @media (max-width:560px){#servicios{padding-top:200px}#servicios::before{height:200px}}
+/* Contraste entre secciones: tonos alternados y línea plateada */
+#solicitar,#como-trabajamos{background-color:#1F2125 !important}
+#solicitar{background:
+    radial-gradient(ellipse 55% 50% at 88% 25%,rgba(128,147,167,.12),transparent 70%),
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
+    #1F2125}
+#como-trabajamos{background:
+    radial-gradient(ellipse 60% 45% at 12% 30%,rgba(128,147,167,.12),transparent 70%),
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
+    #1F2125}
+.casos{background:linear-gradient(180deg,rgba(128,147,167,.06),transparent 40%),#121315;border-block:0}
+#solicitar,.casos,#como-trabajamos,.pie{border-top:1px solid rgba(201,207,214,.22)}
 /* Animación: entrada de la portada (una sola secuencia) */
 @media (prefers-reduced-motion:no-preference){
   .portada h1{animation:aparecer .9s cubic-bezier(.2,.7,.2,1) .45s both}
