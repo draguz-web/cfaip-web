@@ -8,7 +8,7 @@
 <meta name="description" content="Despacho en Monterrey, N.L.: créditos para PYMES e hipotecarios, propiedades intestadas, compra y venta de inmuebles, y trámites ante SAT, CFE, Catastro y más. Cuéntenos su caso por WhatsApp.">
 <!-- Dirección base: cambiar a https://cfaipconsultoresyservicios.com/ al conectar el dominio (aquí, en og:url, og:image, JSON-LD y sitemap.xml) -->
 <link rel="canonical" href="https://draguz-web.github.io/cfaip-web/">
-<meta name="theme-color" content="#0B1428">
+<meta name="theme-color" content="#0B0C0D">
 <link rel="icon" href="img/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/icono.png">
 
@@ -49,7 +49,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Cinzel:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --tinta:#14233F;
+  --tinta:#1B1D21;
   --acero:#6F849B;
   --acero-osc:#53677D;
   --papel:#F1F2EE;
@@ -63,13 +63,13 @@
   --serif:"Source Serif 4",Georgia,serif;
   --ancho:1180px;
   /* Tema oscuro */
-  --fondo:#0E1930;
-  --fondo-2:#14223F;
-  --fondo-pie:#091224;
-  --texto:#E6ECF5;
-  --texto-2:#B4C1D6;
+  --fondo:#121315;
+  --fondo-2:#1B1D21;
+  --fondo-pie:#0B0C0D;
+  --texto:#ECEDEF;
+  --texto-2:#B9BDC4;
   --enlace:#B3C3D4;
-  --linea-osc:#26375A;
+  --linea-osc:#2E3137;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -103,18 +103,18 @@ p{margin:0 0 1em;max-width:62ch}
 
 /* Portada: cielo de Monterrey */
 .cielo{position:relative;overflow:hidden;color:#fff;
-  background:#0C1A36;isolation:isolate;min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
+  background:#121315;isolation:isolate;min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
 /* Foto de fondo (ampliada con IA): un desenfoque mínimo suaviza los bordes de la ampliación */
 .cielo::before{content:"";position:absolute;inset:-24px;z-index:-2;background:url(img/portada.jpg) center 58%/cover no-repeat;filter:blur(.6px) saturate(1.05);transform:scale(1.01)}
 .cielo::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(6,12,28,.88) 0%,rgba(6,12,28,.52) 26%,rgba(6,12,28,.46) 60%,rgba(14,25,48,.84) 88%,var(--fondo) 100%)}
+  background:linear-gradient(180deg,rgba(8,9,11,.88) 0%,rgba(8,9,11,.52) 26%,rgba(8,9,11,.46) 60%,rgba(18,19,21,.84) 88%,var(--fondo) 100%)}
 .cielo .marca{color:#fff}
-.cielo .marca small{color:#B4C6E2}
+.cielo .marca small{color:#C2C6CC}
 .cielo .marca img{filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
 .cielo .barra nav a:not(.boton){color:#fff}
-.cielo .barra nav a:not(.boton):hover{color:#DCE7F6}
+.cielo .barra nav a:not(.boton):hover{color:#E4E6E9}
 .boton.claro{background:#fff;color:var(--tinta)}
-.boton.claro:hover{background:#DCE6F3}
+.boton.claro:hover{background:#E2E4E7}
 .portada{position:relative;flex:1;display:flex;align-items:center;padding:2vh 0 6vh}
 .portada .contenedor{width:100%}
 .portada .contenedor{position:relative;z-index:2}
@@ -122,7 +122,7 @@ p{margin:0 0 1em;max-width:62ch}
 .emblema-logo{width:clamp(96px,min(17vw,19vh),210px);height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.55))}
 .portada h1{margin-top:min(26px,2.6vh);color:#fff;font-family:"Cinzel",Georgia,serif;font-weight:600;letter-spacing:.04em;line-height:1.05;text-wrap:balance}
 .nombre-1{display:block;font-size:clamp(2.1rem,min(6.4vw,8vh),5.4rem);text-shadow:0 4px 30px rgba(0,0,0,.7),0 1px 2px rgba(0,0,0,.5)}
-.nombre-2{display:block;margin-top:min(14px,1.4vh);font-size:clamp(.95rem,min(2.2vw,2.8vh),1.75rem);font-weight:500;letter-spacing:.2em;color:#E6ECF5;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+.nombre-2{display:block;margin-top:min(14px,1.4vh);font-size:clamp(.95rem,min(2.2vw,2.8vh),1.75rem);font-weight:500;letter-spacing:.2em;color:#ECEDEF;text-shadow:0 2px 16px rgba(0,0,0,.8)}
 .nombre-2 i{font-style:normal;color:var(--manila);margin:0 .25em}
 .lugar{font-family:var(--sans);font-weight:650;letter-spacing:.08em;color:var(--manila);margin:min(18px,1.8vh) 0 0;display:flex;align-items:center;gap:14px;max-width:none}
 .lugar::before,.lugar::after{content:"";width:42px;height:1.5px;background:currentColor;opacity:.7}
@@ -135,13 +135,13 @@ p{margin:0 0 1em;max-width:62ch}
 .solicitar h2{margin-bottom:10px}
 .solicitar-texto .subtitulo{margin-bottom:18px;font-size:1.25rem;color:var(--manila)}
 .solicitar-texto p{color:var(--texto-2)}
-.portada .intro{font-size:clamp(1rem,2.1vh,1.2rem);margin:min(22px,2.2vh) auto min(30px,3vh);max-width:40ch;color:#E6ECF5;text-shadow:0 1px 12px rgba(0,0,0,.85)}
-.datos-rapidos{display:flex;flex-direction:column;gap:8px;font-family:var(--sans);font-size:1rem;color:#C3D2E8;margin-top:28px}
+.portada .intro{font-size:clamp(1rem,2.1vh,1.2rem);margin:min(22px,2.2vh) auto min(30px,3vh);max-width:40ch;color:#ECEDEF;text-shadow:0 1px 12px rgba(0,0,0,.85)}
+.datos-rapidos{display:flex;flex-direction:column;gap:8px;font-family:var(--sans);font-size:1rem;color:#C6CAD0;margin-top:28px}
 .datos-rapidos b{color:#fff;font-weight:650}
 
 /* Solicitud (formulario) */
 .solicitud{position:relative;color:var(--tinta);background:var(--hoja);border:1px solid var(--linea);border-radius:4px;padding:30px 30px 26px;
-  box-shadow:0 1px 0 var(--linea),0 30px 60px -28px rgba(10,22,45,.6);transform:rotate(.6deg);margin-top:12px;z-index:2}
+  box-shadow:0 1px 0 var(--linea),0 30px 60px -28px rgba(0,0,0,.6);transform:rotate(.6deg);margin-top:12px;z-index:2}
 .solicitud::before{content:"";position:absolute;inset:auto 0 -9px 8px;height:9px;background:var(--hoja);border:1px solid var(--linea);border-top:0;border-radius:0 0 4px 4px;transform:rotate(-.8deg);z-index:-1}
 .solicitud header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:2px solid var(--tinta);padding-bottom:12px;margin-bottom:18px}
 .solicitud header h2{font-size:1.45rem;font-stretch:112%}
@@ -156,7 +156,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .opciones{display:flex;flex-wrap:wrap;gap:8px}
 .opciones label{margin:0;font-weight:500;font-size:.95rem;display:flex;align-items:center;gap:8px;white-space:nowrap;border:1.5px solid #A9AFBA;border-radius:4px;padding:7px 12px;cursor:pointer}
 .opciones input{accent-color:var(--tinta);margin:0}
-.opciones label:has(input:checked){border-color:var(--tinta);background:#E9EDF4}
+.opciones label:has(input:checked){border-color:var(--tinta);background:#ECEDEF}
 .solicitud .boton{width:100%;justify-content:center;margin-top:6px}
 .solicitud .nota{font-family:var(--sans);font-size:.82rem;color:var(--gris);margin:12px 0 0}
 .error{color:var(--sello);font-family:var(--sans);font-size:.85rem;margin:6px 0 0;min-height:1em}
@@ -173,7 +173,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .pista svg{width:22px;height:22px;flex:none}
 .siguiente{grid-column:1/-1;justify-self:end;display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-weight:650;font-size:.98rem;
   background:none;border:1.5px solid var(--acero);color:var(--acero-osc);border-radius:6px;padding:.6em 1em;cursor:pointer}
-.siguiente:hover{background:#E9EFF7}
+.siguiente:hover{background:#EEEFF1}
 .siguiente svg{width:1.1em;height:1.1em}
 .categorias{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
 .tarjeta{position:relative;display:block;width:100%;padding:0;border:1px solid var(--linea-osc);border-radius:10px;overflow:hidden;cursor:pointer;background:var(--fondo-2);color:#fff;text-align:left;
@@ -181,7 +181,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .tarjeta img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;transition:transform .5s}
 .tarjeta-texto{display:block;padding:16px 60px 18px 20px;font-family:var(--sans);border-top:3px solid var(--acero)}
 .tarjeta-texto b{display:block;font-stretch:112%;font-weight:800;font-size:1.3rem;line-height:1.15}
-.tarjeta-texto small{display:block;color:#C3D2E8;font-size:.92rem;margin-top:6px}
+.tarjeta-texto small{display:block;color:#C6CAD0;font-size:.92rem;margin-top:6px}
 .flecha{position:absolute;right:16px;bottom:22px;z-index:1;width:30px;height:30px;padding:4px;border-radius:50%;background:var(--acero);transition:transform .25s}
 .tarjeta:hover{border-color:var(--acero);transform:translateY(-3px)}
 .tarjeta:hover img{transform:scale(1.04)}
@@ -193,7 +193,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .servicios button{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;font-family:var(--sans);font-size:1rem;font-weight:550;
   color:var(--texto);background:none;border:0;border-top:1px solid var(--linea-osc);padding:13px 18px;cursor:pointer}
 .servicios li:first-child button{border-top:0}
-.servicios button:hover{background:#1B2C4E;color:#fff}
+.servicios button:hover{background:#26292E;color:#fff}
 .servicios button svg{width:18px;height:18px;flex:none;color:var(--manila)}
 @media (prefers-reduced-motion:no-preference){
   .servicios:not([hidden]){animation:desplegar .3s cubic-bezier(.2,.8,.25,1)}
@@ -209,7 +209,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .ficha h3{font-size:clamp(1.5rem,4vw,2rem)}
 .ficha h4{font-family:var(--sans);font-size:1rem;margin:22px 0 8px}
 .ficha-cerrar{position:absolute;top:-6px;right:-8px;background:none;border:0;color:var(--tinta);padding:8px;border-radius:8px;cursor:pointer}
-.ficha-cerrar:hover{background:#E9EDF4}
+.ficha-cerrar:hover{background:#ECEDEF}
 .ficha-cerrar svg{width:22px;height:22px;display:block}
 .ficha-docs{margin:0;padding-left:1.2em}
 .ficha-docs li{margin-bottom:6px}
@@ -224,34 +224,34 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
 /* Casos */
 .casos{background:var(--fondo-2);border-block:1px solid var(--linea-osc)}
-.casos .encabezado p{color:#D9C79A}
+.casos .encabezado p{color:#C9CFD6}
 .lista-casos{display:grid;grid-template-columns:repeat(2,1fr);gap:0 64px}
-.caso{padding:26px 0;border-top:1.5px solid #6B5A2A}
+.caso{padding:26px 0;border-top:1.5px solid #3A3D43}
 .caso h3{font-family:var(--serif);font-stretch:100%;font-weight:600;font-size:1.3rem;letter-spacing:0;line-height:1.3;margin-bottom:8px}
 .caso p{margin:0;color:var(--texto-2)}
 .caso a{font-family:var(--sans);font-size:.88rem;font-weight:650;display:inline-block;margin-top:12px;text-decoration:none;
   background:var(--manila);color:var(--tinta);border-radius:999px;padding:5px 13px}
-.caso a:hover{background:#F0D59C}
+.caso a:hover{background:#E2E4E7}
 
 /* Pasos */
 .pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;counter-reset:paso}
 .pasos li{counter-increment:paso;border-top:3px solid var(--acero);padding-top:18px}
-.pasos li::before{content:counter(paso);font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:3.4rem;line-height:1;color:#7FA3D3;display:block;margin-bottom:14px}
+.pasos li::before{content:counter(paso);font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:3.4rem;line-height:1;color:#8FA4BA;display:block;margin-bottom:14px}
 .pasos h3{margin-bottom:10px}
 .pasos p{color:var(--texto-2);margin:0}
 
 /* Pie / contacto */
-.pie{background:var(--fondo-pie);color:#DCE3EE;padding:90px 0 100px}
+.pie{background:var(--fondo-pie);color:#DDE0E4;padding:90px 0 100px}
 .pie h2{color:#fff;max-width:14ch}
 .pie .rejilla{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;align-items:start}
 .pie a{color:#fff}
 .pie dl{margin:0;font-family:var(--sans);font-size:1rem}
-.pie dt{color:#9FB0CA;font-size:.88rem;margin-top:18px}
+.pie dt{color:#A3A8B0;font-size:.88rem;margin-top:18px}
 .pie dt:first-child{margin-top:0}
 .pie dd{margin:2px 0 0}
 .pie .boton{background:var(--hoja);color:var(--tinta);margin-top:26px}
-.pie .boton:hover{background:#DCE6F3}
-.pie .legal{border-top:1px solid var(--linea-osc);margin-top:70px;padding-top:24px;font-family:var(--sans);font-size:.85rem;color:#8395B2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.pie .boton:hover{background:#E2E4E7}
+.pie .legal{border-top:1px solid var(--linea-osc);margin-top:70px;padding-top:24px;font-family:var(--sans);font-size:.85rem;color:#8A8F97;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .cerro-pie{display:block;width:100%;height:auto;min-height:70px;color:var(--fondo-pie);margin-bottom:-1px}
 
 
@@ -287,7 +287,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .fuera .punto{background:#E3C27E;box-shadow:0 0 0 3px rgba(227,194,126,.22)}
 .chat-boton{position:fixed;right:22px;bottom:22px;z-index:20;width:64px;height:64px;display:grid;place-items:center;
   background:var(--acero);color:#fff;border:0;border-radius:50%;padding:0;cursor:pointer;box-shadow:0 12px 28px -10px rgba(0,0,0,.6);transition:transform .15s,background .15s}
-.chat-boton:hover{background:#5A84BA;transform:scale(1.06)}
+.chat-boton:hover{background:#8093A7;transform:scale(1.06)}
 .chat-boton svg{width:28px;height:28px}
 .chat-boton .punto{position:absolute;top:7px;right:7px;border:2px solid var(--fondo)}
 .chat-boton[aria-expanded="true"]{display:none}
@@ -303,10 +303,10 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .chat-cabeza img{width:42px;height:42px}
 .chat-cabeza div{flex:1;min-width:0;font-family:var(--sans);line-height:1.25}
 .chat-cabeza b{display:block;font-size:1rem}
-.chat-cabeza small{display:flex;align-items:center;gap:7px;font-size:.82rem;color:#B4C6E2}
+.chat-cabeza small{display:flex;align-items:center;gap:7px;font-size:.82rem;color:#C2C6CC}
 .chat-cabeza .punto{width:8px;height:8px}
 .chat-cerrar{background:none;border:0;color:#fff;padding:8px;border-radius:8px;cursor:pointer}
-.chat-cerrar:hover{background:#243A63}
+.chat-cerrar:hover{background:#2E3137}
 .chat-cerrar svg{width:20px;height:20px;display:block}
 .chat-mensajes{flex:1;overflow-y:auto;padding:18px 14px;display:flex;flex-direction:column;gap:10px;font-family:var(--sans);font-size:.96rem;line-height:1.45}
 .msj{max-width:85%;padding:10px 13px;border-radius:14px;white-space:pre-line;overflow-wrap:anywhere}
@@ -315,7 +315,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .msj.escribiendo{color:var(--gris);font-style:italic}
 .chips{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-start}
 .chips button{font:inherit;font-size:.9rem;font-weight:600;background:#fff;color:var(--acero-osc);border:1.5px solid var(--acero);border-radius:999px;padding:6px 12px;cursor:pointer}
-.chips button:hover{background:#E9EFF7}
+.chips button:hover{background:#EEEFF1}
 .msj .boton{margin-top:10px;background:#1E8E4F;color:#fff;font-size:.95rem;padding:.7em 1em}
 .msj .boton:hover{background:#18763F}
 .chat-escribir{display:flex;gap:8px;padding:10px;border-top:1px solid var(--linea);background:#fff}
