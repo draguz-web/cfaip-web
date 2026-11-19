@@ -3,4 +3,4 @@ Allow: /
 Disallow: /vista-previa/
 Disallow: /opcion-4/
 
-Sitemap: https://draguz-web.github.io/cfaip-web/sitemap.xml
+Sitemap: https://cfaipconsultoresyservicios.com/sitemap.xml
