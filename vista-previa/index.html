@@ -382,6 +382,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .tarjeta[aria-expanded="true"] .flecha{transform:rotate(180deg)}}
 @media (max-width:560px){.nombre-2{white-space:nowrap;font-size:3.6vw;letter-spacing:.09em}.nombre-2 i{margin:0 .15em}}
 @media (min-width:1101px){.tarjeta-texto{min-height:7.6rem}}
+.portada .acciones{margin-top:min(30px,3.2vh)}
 </style>
 </head>
 <body>
@@ -410,7 +411,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         <img class="emblema-logo" src="img/logo.svg" alt="Logotipo de CFAIP" width="600" height="600">
         <h1 class="nombre"><span class="nombre-1">Consultor Financiero</span><span class="nombre-2">Análisis <i>·</i> Investigación <i>·</i> Proyectos</span></h1>
         <p class="lugar">Monterrey, N.L.</p>
-        <p class="intro">Nosotros hacemos las vueltas: créditos, bienes raíces y trámites ante cualquier dependencia de Nuevo León.</p>
         <div class="acciones">
           <a class="boton claro" href="#servicios">Ver servicios</a>
           <a class="boton contorno" href="#solicitar">Solicitar un servicio</a>
@@ -431,7 +431,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         <p>Cuatro áreas, un solo despacho. Muchos casos tocan varias: una casa heredada necesita trámite en Catastro, escrituras y, a veces, un crédito para comprar la parte de los hermanos. Lo llevamos completo.</p>
       </div>
 
-      <p class="pista"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-.5V4.5a1.5 1.5 0 0 1 3 0V10m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1.2a5 5 0 0 1-3.9-1.9L4.6 15.6a1.5 1.5 0 0 1 2.3-1.9L9 16"/></svg>Toque una imagen para ver sus servicios, y un servicio para ver qué documentos necesita.</p>
+      <p class="pista"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-.5V4.5a1.5 1.5 0 0 1 3 0V10m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1.2a5 5 0 0 1-3.9-1.9L4.6 15.6a1.5 1.5 0 0 1 2.3-1.9L9 16"/></svg>Toque una imagen para ver sus servicios, y un servicio para ver más detalles.</p>
       <div class="categorias">
         <article class="categoria" id="categoria-fin">
           <button class="tarjeta" type="button" aria-expanded="false" aria-controls="lista-fin" data-cat="fin">
@@ -477,9 +477,9 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         <button class="ficha-cerrar" type="button" data-cerrar aria-label="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></svg></button>
       </header>
       <p id="ficha-desc" style="white-space:pre-line"></p>
-      <h4>Qué documentos se piden</h4>
+      <h4 id="ficha-docs-titulo">Qué documentos se piden</h4>
       <ul class="ficha-docs" id="ficha-docs"></ul>
-      <p class="ficha-nota">Es la lista general. Al revisar su caso le confirmamos exactamente qué hace falta, sin costo.</p>
+      <p class="ficha-nota" id="ficha-nota">Es la lista general. Al revisar su caso le confirmamos exactamente qué hace falta, sin costo.</p>
       <div class="ficha-acciones">
         <a class="boton" id="ficha-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Preguntar por este servicio</a>
         <button class="siguiente" type="button" data-cerrar>Ver otros servicios</button>
@@ -536,37 +536,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     </div>
   </section>
 
-  <section class="seccion casos">
-    <div class="contenedor">
-      <div class="encabezado">
-        <h2>Casos que nos llegan seguido.</h2>
-        <p>Si el suyo se parece a alguno, ya sabemos por dónde empezar.</p>
-      </div>
-      <div class="lista-casos">
-        <article class="caso">
-          <h3>“Mis papás fallecieron y la casa sigue a su nombre.”</h3>
-          <p>Se resuelve con un juicio intestamentario y la escrituración a nombre de los herederos. Le decimos qué actas y papeles reunir.</p>
-          <a href="#servicios" data-ir="bie">Bienes raíces</a>
-        </article>
-        <article class="caso">
-          <h3>“Necesito capital para mi negocio y el banco me lo negó.”</h3>
-          <p>Hay más opciones que el banco donde tiene su cuenta. Revisamos su situación y buscamos el crédito que sí le aprueben.</p>
-          <a href="#servicios" data-ir="fin">Finanzas</a>
-        </article>
-        <article class="caso">
-          <h3>“Me llegó un requerimiento del SAT y no entiendo qué piden.”</h3>
-          <p>Lo leemos con usted, le explicamos qué significa y preparamos la respuesta dentro del plazo.</p>
-          <a href="#servicios" data-ir="tra">Trámites</a>
-        </article>
-        <article class="caso">
-          <h3>“Tengo locales en renta y ya no me da tiempo de atenderlos.”</h3>
-          <p>Administramos la propiedad: cobranza, contratos, mantenimiento y pagos de servicios, con reporte cada mes.</p>
-          <a href="#servicios" data-ir="bie">Bienes raíces</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="seccion" id="como-trabajamos">
     <div class="contenedor">
       <div class="encabezado">
@@ -575,15 +544,15 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
       </div>
       <ol class="pasos">
         <li>
-          <h3>Nos cuenta su caso</h3>
+          <h3>¿Qué necesita resolver?</h3>
           <p>Por WhatsApp, correo o en persona. Entre más detalle nos dé, más rápido le orientamos.</p>
         </li>
         <li>
-          <h3>Le decimos el camino</h3>
+          <h3>Le ofrecemos la solución que necesita</h3>
           <p>Qué documentos hacen falta, qué pasos siguen y cuánto cobramos, antes de empezar.</p>
         </li>
         <li>
-          <h3>Hacemos las vueltas</h3>
+          <h3>Encontramos la solución que necesita</h3>
           <p>Llevamos el trámite ante cada oficina y le avisamos en cada avance hasta terminar.</p>
         </li>
       </ol>
@@ -667,13 +636,13 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     ]},
     emp: { nombre: 'Compra y venta de empresas', items: [
       ['Compra y venta de empresas', 'Ofrecemos servicios integrales para la adquisición, venta y constitución de empresas, brindando asesoría y acompañamiento durante cada etapa del proceso.\n\nNos especializamos en la compra y venta de empresas de diversos giros comerciales. Contamos con opciones para quienes buscan adquirir un negocio establecido y ofrecemos la posibilidad de comprar empresas de quienes desean venderlas, con intermediación y gestión durante toda la operación.',
-        ['Estados financieros de los últimos 2 a 3 años', 'Acta constitutiva, poderes y libro de accionistas', 'Constancia de situación fiscal y opinión de cumplimiento del SAT', 'Lista de activos, contratos y empleados']],
+        []],
       ['Actas constitutivas', 'Elaboración y gestión de documentación legal para empresas de diversos sectores.',
         ['Identificación oficial y CURP de cada socio', 'Constancia de situación fiscal de cada socio', 'Comprobante de domicilio', 'Tres opciones de nombre para la empresa', 'Giro o actividad, capital y reparto de acciones']],
       ['Apertura de empresas', 'Asesoría y gestión de trámites para la creación y formalización de nuevos negocios.',
         ['Identificación oficial y CURP de los socios', 'Constancia de situación fiscal de los socios', 'Comprobante del domicilio donde operará el negocio', 'Giro o actividad del negocio', 'Nombre propuesto para la empresa']],
       ['Recuperación de e.firma', 'Apoyo en los procesos de recuperación y renovación de la firma electrónica ante el SAT.',
-        ['Identificación oficial vigente', 'CURP', 'Correo electrónico personal', 'Archivos de la e.firma anterior (.cer y .key), si los tiene', 'Acta constitutiva y poder del representante, si es persona moral']]
+        []]
     ]},
     tra: { nombre: 'Trámites en dependencias', items: [
       ['CFE', 'Ofrecemos asesoría y gestión de trámites ante la Comisión Federal de Electricidad (CFE), brindando acompañamiento en solicitudes, contratos, modificaciones de servicio y seguimiento de procesos administrativos para facilitar su atención y resolución.',
@@ -723,6 +692,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     document.getElementById('ficha-titulo').textContent = titulo;
     document.getElementById('ficha-desc').textContent = desc;
     const ul = document.getElementById('ficha-docs'); ul.replaceChildren();
+    ['ficha-docs-titulo','ficha-docs','ficha-nota'].forEach(id=>document.getElementById(id).hidden = !docs.length);
     docs.forEach(d=>{ const li = document.createElement('li'); li.textContent = d; ul.append(li); });
     document.getElementById('ficha-wa').href = 'https://wa.me/528140297419?text=' + encodeURIComponent(`Hola, me interesa el servicio de ${titulo} (${SERVICIOS[cat].nombre}).`);
     if (typeof ficha.showModal === 'function') ficha.showModal(); else ficha.setAttribute('open','');
