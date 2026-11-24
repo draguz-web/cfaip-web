@@ -381,6 +381,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .flecha{top:50%;bottom:auto;margin-top:-15px;right:12px}
 .tarjeta[aria-expanded="true"] .flecha{transform:rotate(180deg)}}
 @media (max-width:560px){.nombre-2{white-space:nowrap;font-size:3.6vw;letter-spacing:.09em}.nombre-2 i{margin:0 .15em}}
+@media (min-width:1101px){.tarjeta-texto{min-height:7.6rem}}
 </style>
 </head>
 <body>
@@ -435,7 +436,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         <article class="categoria" id="categoria-fin">
           <button class="tarjeta" type="button" aria-expanded="false" aria-controls="lista-fin" data-cat="fin">
             <img src="img/finanzas.jpg" alt="" width="942" height="468" loading="lazy">
-            <span class="tarjeta-texto"><b>Bróker financiero</b><small>Ver servicios</small></span>
+            <span class="tarjeta-texto"><b>Especialista en soluciones financieras</b><small>Ver servicios</small></span>
             <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
           </button>
           <ul class="servicios" id="lista-fin" hidden></ul>
@@ -654,7 +655,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   const conMovimiento = !matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const SERVICIOS = {
-    fin: { nombre: 'Bróker financiero', items: [
+    fin: { nombre: 'Especialista en soluciones financieras', items: [
       ['Créditos PYMES y personales', 'Ofrecemos opciones de financiamiento para empresas y personas físicas, adaptadas a sus necesidades y objetivos financieros.',
         ['Identificación oficial (INE) y CURP', 'Comprobante de domicilio reciente', 'Constancia de situación fiscal (RFC)', 'Estados de cuenta bancarios de los últimos 3 a 6 meses', 'Declaraciones o estados financieros, si es negocio', 'Acta constitutiva y poderes, si es persona moral']],
       ['Apoyo gubernamental', 'Ofrecemos asesoría y acompañamiento en la identificación y gestión de programas de apoyo gubernamental, facilitando el acceso a recursos y alternativas de financiamiento.\n\nAsimismo, brindamos apoyo en la gestión de trámites y procesos administrativos, contribuyendo a agilizar los procedimientos burocráticos y simplificar los procesos ante las instituciones correspondientes.',
