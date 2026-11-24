@@ -365,6 +365,21 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   html{scroll-behavior:auto}
   .sello.puesto{animation:none;opacity:.88;transform:rotate(-14deg)}
 }
+.categorias{grid-template-columns:repeat(4,1fr);gap:20px}
+.tarjeta img{aspect-ratio:auto;height:clamp(120px,22vh,190px)}
+.tarjeta-texto{padding:14px 52px 16px 16px}
+.tarjeta-texto b{font-size:1.08rem}
+.tarjeta-texto small{font-size:.85rem}
+.servicios button{font-size:.92rem}
+@media (max-width:1100px){.categorias{grid-template-columns:repeat(2,1fr)}.tarjeta img{height:clamp(130px,24vh,220px)}}
+@media (max-width:640px){.categorias{grid-template-columns:1fr;gap:12px}
+.tarjeta{display:grid;grid-template-columns:96px 1fr;align-items:stretch}
+.tarjeta img{height:100%;min-height:92px;aspect-ratio:auto}
+.tarjeta-texto{border-top:0;border-left:3px solid var(--acero);padding:14px 50px 14px 14px;align-self:center}
+.tarjeta[aria-expanded="true"] .tarjeta-texto{border-left-color:var(--manila)}
+.tarjeta-texto b{font-size:1.02rem}
+.flecha{top:50%;bottom:auto;margin-top:-15px;right:12px}
+.tarjeta[aria-expanded="true"] .flecha{transform:rotate(180deg)}}
 </style>
 </head>
 <body>
@@ -426,7 +441,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         </article>
         <article class="categoria" id="categoria-emp">
           <button class="tarjeta" type="button" aria-expanded="false" aria-controls="lista-emp" data-cat="emp">
-            <img src="img/empresas.jpg" alt="" width="942" height="468" loading="lazy">
+            <img src="img/empresas.jpg" alt="" width="960" height="540" loading="lazy">
             <span class="tarjeta-texto"><b>Compra y venta de empresas</b><small>Ver servicios</small></span>
             <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
           </button>
