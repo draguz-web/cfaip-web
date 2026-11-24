@@ -38,7 +38,7 @@
   "email": "infoservice@cfaipconsultoresyservicios.com",
   "address": {"@type": "PostalAddress", "addressLocality": "Monterrey", "addressRegion": "Nuevo León", "addressCountry": "MX"},
   "areaServed": {"@type": "State", "name": "Nuevo León"},
-  "knowsAbout": ["Créditos para PYMES", "Créditos hipotecarios", "Propiedades intestadas", "Compra y venta de inmuebles", "Administración de propiedades", "Trámites ante el SAT", "Trámites ante Catastro y Registro Público"]
+  "knowsAbout": ["Créditos para PYMES", "Créditos hipotecarios", "Propiedades intestadas", "Compra y venta de inmuebles", "Compra y venta de empresas", "Apertura de empresas", "Administración de propiedades", "Trámites ante el SAT", "Trámites ante Catastro y Registro Público"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -167,7 +167,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   background:none;border:1.5px solid var(--acero);color:var(--acero-osc);border-radius:6px;padding:.6em 1em;cursor:pointer}
 .siguiente:hover{background:#EEEFF1}
 .siguiente svg{width:1.1em;height:1.1em}
-.categorias{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start}
+.categorias{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;align-items:start}
 .tarjeta{position:relative;display:block;width:100%;padding:0;border:1px solid var(--linea-osc);border-radius:10px;overflow:hidden;cursor:pointer;background:var(--fondo-2);color:#fff;text-align:left;
   box-shadow:0 18px 40px -24px rgba(0,0,0,.8);transition:transform .2s,border-color .2s}
 .tarjeta img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;transition:transform .5s}
@@ -411,7 +411,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     <div class="contenedor">
       <div class="encabezado">
         <h2>Servicios</h2>
-        <p>Tres áreas, un solo despacho. Muchos casos tocan las tres: una casa heredada necesita trámite en Catastro, escrituras y, a veces, un crédito para comprar la parte de los hermanos. Lo llevamos completo.</p>
+        <p>Cuatro áreas, un solo despacho. Muchos casos tocan varias: una casa heredada necesita trámite en Catastro, escrituras y, a veces, un crédito para comprar la parte de los hermanos. Lo llevamos completo.</p>
       </div>
 
       <p class="pista"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-.5V4.5a1.5 1.5 0 0 1 3 0V10m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1.2a5 5 0 0 1-3.9-1.9L4.6 15.6a1.5 1.5 0 0 1 2.3-1.9L9 16"/></svg>Toque una imagen para ver sus servicios, y un servicio para ver qué documentos necesita.</p>
@@ -424,13 +424,13 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
           </button>
           <ul class="servicios" id="lista-fin" hidden></ul>
         </article>
-        <article class="categoria" id="categoria-bie">
-          <button class="tarjeta" type="button" aria-expanded="false" aria-controls="lista-bie" data-cat="bie">
-            <img src="img/bienes-raices.jpg" alt="" width="942" height="468" loading="lazy">
-            <span class="tarjeta-texto"><b>Bienes raíces</b><small>Ver servicios</small></span>
+        <article class="categoria" id="categoria-emp">
+          <button class="tarjeta" type="button" aria-expanded="false" aria-controls="lista-emp" data-cat="emp">
+            <img src="img/empresas.jpg" alt="" width="942" height="468" loading="lazy">
+            <span class="tarjeta-texto"><b>Compra y venta de empresas</b><small>Ver servicios</small></span>
             <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
           </button>
-          <ul class="servicios" id="lista-bie" hidden></ul>
+          <ul class="servicios" id="lista-emp" hidden></ul>
         </article>
         <article class="categoria" id="categoria-tra">
           <button class="tarjeta" type="button" aria-expanded="false" aria-controls="lista-tra" data-cat="tra">
@@ -439,6 +439,14 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
             <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
           </button>
           <ul class="servicios" id="lista-tra" hidden></ul>
+        </article>
+        <article class="categoria" id="categoria-bie">
+          <button class="tarjeta" type="button" aria-expanded="false" aria-controls="lista-bie" data-cat="bie">
+            <img src="img/bienes-raices.jpg" alt="" width="942" height="468" loading="lazy">
+            <span class="tarjeta-texto"><b>Bienes raíces</b><small>Ver servicios</small></span>
+            <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="servicios" id="lista-bie" hidden></ul>
         </article>
       </div>
     </div>
@@ -451,7 +459,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         <h3 id="ficha-titulo"></h3>
         <button class="ficha-cerrar" type="button" data-cerrar aria-label="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></svg></button>
       </header>
-      <p id="ficha-desc"></p>
+      <p id="ficha-desc" style="white-space:pre-line"></p>
       <h4>Qué documentos se piden</h4>
       <ul class="ficha-docs" id="ficha-docs"></ul>
       <p class="ficha-nota">Es la lista general. Al revisar su caso le confirmamos exactamente qué hace falta, sin costo.</p>
@@ -487,6 +495,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
           <legend>¿Con qué le ayudamos?</legend>
           <div class="opciones">
             <label><input type="radio" name="area" value="un crédito o tema financiero" checked> Crédito o finanzas</label>
+            <label><input type="radio" name="area" value="una empresa (compra, venta o apertura)"> Una empresa</label>
             <label><input type="radio" name="area" value="una propiedad"> Una propiedad</label>
             <label><input type="radio" name="area" value="un trámite"> Un trámite</label>
           </div>
@@ -630,54 +639,62 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
   const SERVICIOS = {
     fin: { nombre: 'Bróker financiero', items: [
-      ['Créditos PYMES y personales', 'Buscamos el crédito que mejor se ajusta a su negocio o a su necesidad personal: capital de trabajo, compra de equipo, ampliación o gastos personales. Comparamos tasas y plazos de varias instituciones, armamos su expediente y le acompañamos hasta que el dinero llega.',
+      ['Créditos PYMES y personales', 'Ofrecemos opciones de financiamiento para empresas y personas físicas, adaptadas a sus necesidades y objetivos financieros.',
         ['Identificación oficial (INE) y CURP', 'Comprobante de domicilio reciente', 'Constancia de situación fiscal (RFC)', 'Estados de cuenta bancarios de los últimos 3 a 6 meses', 'Declaraciones o estados financieros, si es negocio', 'Acta constitutiva y poderes, si es persona moral']],
-      ['Apoyo gubernamental', 'Le orientamos sobre programas federales y estatales de apoyo y financiamiento para empresas, revisamos si su negocio califica y le ayudamos a integrar la solicitud dentro de las fechas de cada convocatoria.',
+      ['Apoyo gubernamental', 'Ofrecemos asesoría y acompañamiento en la identificación y gestión de programas de apoyo gubernamental, facilitando el acceso a recursos y alternativas de financiamiento.\n\nAsimismo, brindamos apoyo en la gestión de trámites y procesos administrativos, contribuyendo a agilizar los procedimientos burocráticos y simplificar los procesos ante las instituciones correspondientes.',
         ['Identificación oficial y CURP del representante', 'Constancia de situación fiscal', 'Comprobante de domicilio del negocio', 'Descripción del proyecto o del uso del apoyo', 'Documentos que pida la convocatoria vigente']],
-      ['Créditos para exportadores e importadores', 'Financiamiento para operaciones de comercio exterior: compra de mercancía, capital para pedidos de exportación o cartas de crédito. Le ayudamos a elegir la opción y a preparar la documentación de la operación.',
+      ['Créditos para exportadores e importadores', 'Ofrecemos soluciones de financiamiento para empresas dedicadas al comercio internacional, facilitando recursos para operaciones de importación y exportación, capital de trabajo y expansión comercial, de acuerdo con las necesidades de cada negocio.',
         ['Acta constitutiva y poderes', 'Constancia de situación fiscal', 'Estados financieros recientes', 'Padrón de importadores o registro de exportador, si aplica', 'Pedidos, facturas o contratos de la operación']],
-      ['Créditos hipotecarios', 'Para comprar, construir, remodelar o liquidar su casa. Comparamos opciones bancarias y de Infonavit o Fovissste, calculamos cuánto le prestan y le acompañamos hasta la firma de la escritura.',
-        ['Identificación oficial y CURP', 'Comprobante de domicilio', 'Comprobantes de ingresos (recibos de nómina o estados de cuenta)', 'Constancia de situación fiscal', 'Datos de la propiedad que quiere comprar, si ya la tiene']],
-      ['Venta y compra de empresas', 'Le ayudamos a valuar un negocio, a buscar comprador o vendedor y a cerrar la operación con los papeles en orden.',
-        ['Estados financieros de los últimos 2 a 3 años', 'Acta constitutiva, poderes y libro de accionistas', 'Constancia de situación fiscal y opinión de cumplimiento del SAT', 'Lista de activos, contratos y empleados']],
-      ['Trámites aduanales', 'Coordinamos los trámites para importar o exportar: clasificación de la mercancía, permisos y el trabajo con el agente aduanal.',
-        ['Constancia de situación fiscal', 'Padrón de importadores, si aplica', 'Facturas comerciales y lista de empaque', 'Fichas técnicas de la mercancía', 'Permisos especiales, según el producto']],
-      ['Trámites fiscales', 'Altas y cambios en el SAT, declaraciones, aclaraciones y respuesta a requerimientos, para que su operación esté en regla.',
-        ['RFC o constancia de situación fiscal', 'e.firma vigente, o identificación oficial para tramitarla', 'Documentos o requerimiento que recibió', 'Facturas y estados de cuenta del periodo, si aplica']]
+      ['Créditos hipotecarios', 'Ofrecemos alternativas de financiamiento para la adquisición, construcción o remodelación de bienes inmuebles, brindando asesoría y acompañamiento durante el proceso para encontrar opciones acordes a las necesidades y posibilidades de cada cliente.',
+        ['Identificación oficial y CURP', 'Comprobante de domicilio', 'Comprobantes de ingresos (recibos de nómina o estados de cuenta)', 'Constancia de situación fiscal', 'Datos de la propiedad que quiere comprar, si ya la tiene']]
     ]},
-    bie: { nombre: 'Bienes raíces', items: [
-      ['Propiedades intestadas', 'Cuando alguien fallece sin testamento, la casa sigue a su nombre y no se puede vender ni heredar. Llevamos el juicio intestamentario y la escrituración para que la propiedad quede a nombre de quien corresponde.',
-        ['Acta de defunción', 'Actas de nacimiento y de matrimonio que prueben el parentesco', 'Identificaciones de los herederos', 'Escritura o documento de la propiedad', 'Último recibo de predial']],
-      ['Créditos hipotecarios', 'Le ayudamos a conseguir el financiamiento para comprar la propiedad: comparamos opciones, calculamos cuánto le prestan y coordinamos con el banco y la notaría.',
-        ['Identificación oficial y CURP', 'Comprobantes de ingresos', 'Comprobante de domicilio', 'Datos de la propiedad']],
-      ['Compra y venta de propiedades', 'Revisamos que los papeles estén en orden antes de firmar, coordinamos avalúo y notaría, y le acompañamos hasta la escritura.',
-        ['Escritura de la propiedad', 'Identificaciones de comprador y vendedor', 'Predial y agua al corriente', 'Certificado de libertad de gravamen (lo tramitamos)', 'Avalúo, si hay crédito']],
-      ['Administración de propiedades', 'Administramos plazas y locales comerciales, edificios y casas: cobro de rentas, contratos, mantenimiento y pago de servicios, con reporte cada mes.',
-        ['Escritura o documento de la propiedad', 'Contratos de arrendamiento vigentes', 'Datos de inquilinos y pagos', 'Recibos de servicios e impuestos']],
-      ['Pago de impuestos', 'Pagamos el predial y otros impuestos de su propiedad a tiempo, aprovechando descuentos cuando los hay, y le entregamos los comprobantes.',
-        ['Número de expediente catastral o último recibo de predial', 'Datos del propietario']],
-      ['Pago de servicios públicos', 'Mantenemos al corriente agua, luz y otros servicios de su propiedad, sin que tenga que hacer filas.',
-        ['Recibos más recientes de cada servicio', 'Número de servicio o de contrato']],
-      ['Permiso de construcción', 'Solicitamos y damos seguimiento a su licencia de construcción ante Desarrollo Urbano del municipio.',
-        ['Escritura de la propiedad', 'Predial al corriente', 'Planos firmados por un perito o arquitecto', 'Identificación del propietario', 'Alineamiento y uso de suelo, si el municipio lo pide']]
+    emp: { nombre: 'Compra y venta de empresas', items: [
+      ['Compra y venta de empresas', 'Ofrecemos servicios integrales para la adquisición, venta y constitución de empresas, brindando asesoría y acompañamiento durante cada etapa del proceso.\n\nNos especializamos en la compra y venta de empresas de diversos giros comerciales. Contamos con opciones para quienes buscan adquirir un negocio establecido y ofrecemos la posibilidad de comprar empresas de quienes desean venderlas, con intermediación y gestión durante toda la operación.',
+        ['Estados financieros de los últimos 2 a 3 años', 'Acta constitutiva, poderes y libro de accionistas', 'Constancia de situación fiscal y opinión de cumplimiento del SAT', 'Lista de activos, contratos y empleados']],
+      ['Actas constitutivas', 'Elaboración y gestión de documentación legal para empresas de diversos sectores.',
+        ['Identificación oficial y CURP de cada socio', 'Constancia de situación fiscal de cada socio', 'Comprobante de domicilio', 'Tres opciones de nombre para la empresa', 'Giro o actividad, capital y reparto de acciones']],
+      ['Apertura de empresas', 'Asesoría y gestión de trámites para la creación y formalización de nuevos negocios.',
+        ['Identificación oficial y CURP de los socios', 'Constancia de situación fiscal de los socios', 'Comprobante del domicilio donde operará el negocio', 'Giro o actividad del negocio', 'Nombre propuesto para la empresa']],
+      ['Recuperación de e.firma', 'Apoyo en los procesos de recuperación y renovación de la firma electrónica ante el SAT.',
+        ['Identificación oficial vigente', 'CURP', 'Correo electrónico personal', 'Archivos de la e.firma anterior (.cer y .key), si los tiene', 'Acta constitutiva y poder del representante, si es persona moral']]
     ]},
     tra: { nombre: 'Trámites en dependencias', items: [
-      ['CFE', 'Contratos nuevos, cambios de nombre, aclaraciones de recibos y ajustes de tarifa ante la Comisión Federal de Electricidad.',
+      ['CFE', 'Ofrecemos asesoría y gestión de trámites ante la Comisión Federal de Electricidad (CFE), brindando acompañamiento en solicitudes, contratos, modificaciones de servicio y seguimiento de procesos administrativos para facilitar su atención y resolución.',
         ['Identificación oficial', 'Último recibo de luz o número de servicio', 'Escritura o contrato de arrendamiento, para cambio de nombre']],
-      ['Agua y Drenaje', 'Contratos, cambios de nombre, aclaraciones de cobro y reportes ante Agua y Drenaje de Monterrey.',
-        ['Identificación oficial', 'Último recibo de agua o número de cuenta', 'Escritura o contrato de arrendamiento, para cambio de nombre']],
-      ['Policía y Tránsito', 'Liberación de vehículos, aclaraciones y trámites ante Policía y Tránsito.',
+      ['Agua y Drenaje', 'Ofrecemos asesoría y gestión de trámites ante los organismos de Agua y Drenaje, incluyendo contratos de servicio, cambios de titularidad, aclaraciones, convenios de pago y seguimiento de solicitudes, facilitando los procesos administrativos correspondientes.',
+        ['Identificación oficial', 'Último recibo de agua o número de cuenta', 'Escritura o contrato de arrendamiento, para cambio de titular']],
+      ['Policía y Tránsito', 'Brindamos asesoría y acompañamiento en la gestión de trámites ante dependencias de Policía y Tránsito, incluyendo aclaraciones de infracciones, multas, liberación de vehículos, seguimiento de reportes y otros procedimientos administrativos, agilizando los procesos correspondientes.',
         ['Identificación oficial', 'Tarjeta de circulación y factura del vehículo', 'Boleta o folio de la infracción, si la hay']],
-      ['SAT, nómina e IMSS', 'Altas, declaraciones, aclaraciones y requerimientos ante el SAT; altas y bajas de trabajadores y pagos ante el IMSS.',
-        ['RFC o constancia de situación fiscal', 'e.firma vigente', 'Registro patronal, si es ante el IMSS', 'Documentos o requerimiento que recibió']],
-      ['Desarrollo Urbano, Catastro, Registro Público y notaría', 'Certificados, inscripciones, actualizaciones catastrales, licencias y escrituras.',
+      ['SAT', 'Ofrecemos asesoría y gestión de trámites ante el Servicio de Administración Tributaria (SAT), incluyendo renovación de e.firma, trámite de e.firma para personas morales por primera vez, cambios de domicilio fiscal, verificaciones de domicilio, actualización de datos fiscales, constancias de situación fiscal y aclaraciones administrativas.\n\nBrindamos acompañamiento y gestión remota en los trámites que lo permiten, facilitando los procesos y evitando desplazamientos y visitas innecesarias a las oficinas del SAT.',
+        ['RFC o constancia de situación fiscal', 'e.firma vigente, o identificación oficial para tramitarla', 'Comprobante de domicilio', 'Documento o requerimiento que recibió, si aplica']],
+      ['Nómina e IMSS', 'Ofrecemos servicios de administración y gestión de nóminas, incluyendo cálculo de sueldos, elaboración de recibos, control de incidencias, finiquitos, liquidaciones, prestaciones y cumplimiento de obligaciones laborales.\n\nOfrecemos asesoría y gestión de trámites ante el Instituto Mexicano del Seguro Social (IMSS), incluyendo altas y bajas de trabajadores, modificaciones salariales, registros patronales, movimientos afiliatorios, aclaraciones y revisión de cuotas obrero-patronales.\n\nAsimismo, brindamos asesoría en materia de pensiones, orientada a identificar alternativas legales para optimizar el monto de la pensión y gestionar el acceso a beneficios y derechos pensionarios para los asegurados y sus beneficiarios, de acuerdo con los requisitos aplicables. Acompañamos cada proceso con atención personalizada y seguimiento administrativo.',
+        ['Registro patronal y constancia de situación fiscal de la empresa', 'Lista de trabajadores con NSS, CURP, RFC y salario', 'Contratos e incidencias del periodo, para la nómina', 'Para pensión: identificación oficial, NSS y CURP del asegurado']],
+      ['Desarrollo Urbano, Catastro, Registro Público y Notarías', 'Ofrecemos asesoría y gestión de trámites ante dependencias de Desarrollo Urbano, Catastro, Registro Público de la Propiedad y notarías públicas.\n\nNuestros servicios incluyen regularización de propiedades, gestión de permisos y licencias, actualización de información catastral, inscripciones registrales, certificados, escrituras, trámites notariales y seguimiento de procesos administrativos y legales, facilitando la gestión y agilización de cada procedimiento.',
         ['Escritura de la propiedad', 'Expediente catastral o recibo de predial', 'Identificación del propietario', 'Planos, si el trámite lo pide']],
-      ['Control Vehicular', 'Placas, refrendos, cambios de propietario, bajas y reposición de tarjeta de circulación.',
+      ['Control Vehicular', 'Ofrecemos asesoría y gestión de trámites relacionados con el control vehicular, incluyendo altas y bajas de placas, cambios de propietario, refrendos, regularización de vehículos, aclaración de adeudos, pago de derechos y seguimiento de trámites ante las autoridades correspondientes, facilitando los procesos administrativos de manera ágil y profesional.',
         ['Identificación oficial', 'Factura del vehículo', 'Tarjeta de circulación', 'Comprobante de domicilio', 'Pagos de refrendo anteriores']],
-      ['Registro de obras', 'Registro y seguimiento de obras ante el municipio, desde el aviso hasta la terminación.',
+      ['Registro de obras', 'Ofrecemos asesoría y gestión de trámites para el registro y regularización de obras ante las dependencias correspondientes, incluyendo licencias de construcción, permisos, manifestaciones de obra, registros, actualizaciones y seguimiento administrativo, facilitando el cumplimiento de los requisitos legales y normativos aplicables.',
         ['Licencia de construcción', 'Planos autorizados', 'Datos del perito responsable', 'Identificación del propietario']],
-      ['Multas en cualquier dependencia', 'Revisamos la multa, le decimos si conviene pagarla, pedir descuento o impugnarla, y hacemos el trámite.',
-        ['La boleta o el oficio de la multa', 'Identificación oficial', 'Cualquier documento relacionado con el caso']]
+      ['Multas en cualquier dependencia', 'Brindamos asesoría y gestión para la revisión, aclaración e impugnación de multas ante diversas dependencias gubernamentales. Analizamos cada caso para identificar alternativas de solución, posibles reducciones, convenios de pago o procedimientos administrativos, dando seguimiento hasta su resolución conforme a la normativa aplicable.',
+        ['La boleta o el oficio de la multa', 'Identificación oficial', 'Cualquier documento relacionado con el caso']],
+      ['Licencia de funcionamiento', 'Ofrecemos asesoría y gestión para la obtención de licencias de funcionamiento de establecimientos comerciales y empresariales de diversos giros. Brindamos acompañamiento en la integración de documentación, cumplimiento de requisitos, presentación de solicitudes y seguimiento ante las dependencias correspondientes, facilitando el proceso de apertura y operación de nuevos negocios.',
+        ['Identificación oficial del propietario o representante', 'Constancia de situación fiscal', 'Escritura o contrato de arrendamiento del local', 'Uso de suelo del local', 'Visto bueno de Protección Civil, si el giro lo pide']]
+    ]},
+    bie: { nombre: 'Bienes raíces', items: [
+      ['Intestados', 'Ofrecemos asesoría y acompañamiento en procesos de sucesión intestamentaria, así como en la compra de propiedades en esta situación.\n\nTambién gestionamos procesos de regularización de inmuebles, brindando apoyo en la revisión documental, trámites legales, notariales y registrales para facilitar la certeza jurídica y la correcta situación legal de cada propiedad.',
+        ['Acta de defunción', 'Actas de nacimiento y de matrimonio que prueben el parentesco', 'Identificaciones de los herederos', 'Escritura o documento de la propiedad', 'Último recibo de predial']],
+      ['Créditos hipotecarios', 'Ofrecemos asesoría e intermediación para la obtención de créditos hipotecarios destinados a la compra, construcción, remodelación o adquisición de bienes inmuebles. Analizamos distintas alternativas de financiamiento y acompañamos a nuestros clientes durante el proceso de solicitud y autorización, buscando opciones que se ajusten a sus necesidades y capacidad financiera.',
+        ['Identificación oficial y CURP', 'Comprobantes de ingresos', 'Comprobante de domicilio', 'Datos de la propiedad']],
+      ['Compra y venta de propiedades', 'Ofrecemos servicios de intermediación para la compra y venta de propiedades, incluyendo casas, terrenos, locales comerciales y bienes inmuebles de distintos tipos. Brindamos asesoría y acompañamiento durante todo el proceso, desde la búsqueda de oportunidades y negociación hasta la revisión documental y formalización de la operación.',
+        ['Escritura de la propiedad', 'Identificaciones de comprador y vendedor', 'Predial y agua al corriente', 'Certificado de libertad de gravamen (lo tramitamos)', 'Avalúo, si hay crédito']],
+      ['Administración de propiedades', 'Ofrecemos servicios integrales de administración de bienes inmuebles, tanto particulares como comerciales, incluyendo plazas, locales comerciales, edificios, casas habitación y propiedades destinadas a rentas temporales como Airbnb.\n\nNos encargamos de la gestión operativa y administrativa, seguimiento de rentas, atención a inquilinos, coordinación de mantenimiento y supervisión de propiedades, buscando optimizar su funcionamiento y rentabilidad.',
+        ['Escritura o documento de la propiedad', 'Contratos de arrendamiento vigentes', 'Datos de inquilinos y pagos', 'Recibos de servicios e impuestos']],
+      ['Pago de impuestos', 'Ofrecemos asesoría y gestión en el cumplimiento de obligaciones fiscales, incluyendo cálculo, revisión y gestión de pagos de impuestos federales, estatales y municipales, así como seguimiento de adeudos, regularizaciones y aclaraciones ante las autoridades correspondientes, facilitando los procesos administrativos y contribuyendo al cumplimiento oportuno de sus obligaciones tributarias.',
+        ['Número de expediente catastral o último recibo de predial', 'Constancia de situación fiscal, si aplica', 'Datos del propietario']],
+      ['Pago de servicios públicos', 'Ofrecemos apoyo en la gestión y realización de pagos de servicios públicos, incluyendo agua, electricidad, gas, telefonía, internet y otros servicios. Brindamos asistencia en la consulta de adeudos, seguimiento de recibos y regularización de pagos, facilitando el cumplimiento de sus obligaciones y optimizando el tiempo de nuestros clientes.',
+        ['Recibos más recientes de cada servicio', 'Número de servicio o de contrato']],
+      ['Permisos de construcción', 'Ofrecemos asesoría y gestión para la obtención de permisos y licencias de construcción ante las dependencias correspondientes. Brindamos acompañamiento en la integración de documentación, presentación de solicitudes, cumplimiento de requisitos técnicos y administrativos, así como seguimiento del proceso hasta su resolución, facilitando la autorización de proyectos de construcción, ampliación y remodelación.',
+        ['Escritura de la propiedad', 'Predial al corriente', 'Planos firmados por un perito o arquitecto', 'Identificación del propietario', 'Alineamiento y uso de suelo, si el municipio lo pide']]
     ]}
   };
 
@@ -764,7 +781,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   }
   function opciones(){
     const c = document.createElement('div'); c.className = 'chips';
-    [['Un crédito','un crédito o tema financiero'],['Una propiedad','una propiedad'],['Un trámite','un trámite'],['Otra cosa','otra consulta']].forEach(([et,val])=>{
+    [['Un crédito','un crédito o tema financiero'],['Una empresa','una empresa (compra, venta o apertura)'],['Una propiedad','una propiedad'],['Un trámite','un trámite'],['Otra cosa','otra consulta']].forEach(([et,val])=>{
       const b = document.createElement('button'); b.type = 'button'; b.textContent = et;
       b.addEventListener('click',()=>{ c.remove(); burbuja(et,'yo'); tema = val; paso = 1;
         responder('Muy bien. Cuéntenos su caso en pocas palabras y díganos su nombre, y un asesor lo revisa.'); chatTexto.focus(); });
