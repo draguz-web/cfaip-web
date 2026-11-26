@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CFAIP · Consultor Financiero, Análisis, Investigación y Proyectos | Monterrey</title>
-<meta name="description" content="Despacho en Monterrey, N.L.: créditos para PYMES e hipotecarios, propiedades intestadas, compra y venta de inmuebles, y trámites ante SAT, CFE, Catastro y más. Cuéntenos su caso por WhatsApp.">
+<meta name="description" content="Despacho en Monterrey, N.L.: créditos para PYMES e hipotecarios, propiedades intestadas, compra y venta de empresas, y trámites ante SAT, CFE, Catastro y más. Cuéntenos su caso por WhatsApp.">
 <link rel="canonical" href="https://draguz-web.github.io/cfaip-web/">
 <meta name="theme-color" content="#0B0C0D">
 <link rel="icon" href="img/logo.svg" type="image/svg+xml">
@@ -38,7 +38,7 @@
   "email": "infoservice@cfaipconsultoresyservicios.com",
   "address": {"@type": "PostalAddress", "addressLocality": "Monterrey", "addressRegion": "Nuevo León", "addressCountry": "MX"},
   "areaServed": {"@type": "State", "name": "Nuevo León"},
-  "knowsAbout": ["Créditos para PYMES", "Créditos hipotecarios", "Propiedades intestadas", "Compra y venta de inmuebles", "Compra y venta de empresas", "Apertura de empresas", "Administración de propiedades", "Trámites ante el SAT", "Trámites ante Catastro y Registro Público"]
+  "knowsAbout": ["Créditos para PYMES", "Créditos hipotecarios", "Propiedades intestadas", "Compra y venta de empresas", "Apertura de empresas", "Administración de propiedades", "Trámites ante el SAT", "Trámites ante Catastro y Registro Público"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -205,6 +205,26 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .ficha-docs{margin:0;padding-left:1.2em}
 .ficha-docs li{margin-bottom:6px}
 .ficha-docs li::marker{color:var(--acero)}
+.ficha-temas details{border:1px solid #DCDFE3;border-radius:8px;margin-bottom:8px;background:#fff}
+.ficha-temas summary{font-family:var(--sans);font-weight:650;font-size:.98rem;padding:12px 40px 12px 14px;cursor:pointer;list-style:none;position:relative;border-left:4px solid var(--acero);border-radius:8px}
+.ficha-temas summary::-webkit-details-marker{display:none}
+.ficha-temas summary::after{content:"";position:absolute;right:16px;top:50%;width:8px;height:8px;border-right:2.4px solid var(--acero-osc);border-bottom:2.4px solid var(--acero-osc);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.ficha-temas details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.ficha-temas details[open] summary{border-bottom-left-radius:0;border-bottom-right-radius:0}
+.ficha-temas summary:hover{background:#F1F2EE}
+.ficha-temas details>p,.ficha-temas details>ul{margin:0;padding:4px 14px 14px 18px;font-size:.95rem;color:var(--tinta)}
+.ficha-temas details>ul{padding-left:36px}
+.ficha-temas details>ul li{margin-bottom:4px}
+.ficha-temas details>ul li::marker{color:var(--acero)}
+.ficha-temas-wa{display:inline-block;margin:0 14px 14px 18px;font-family:var(--sans);font-weight:650;font-size:.9rem;color:var(--acero-osc)}
+.ficha-temas-intro{margin:0 0 12px}
+.ficha-casillas{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ficha-casillas a{display:block;color:inherit;text-decoration:none;font-family:var(--sans);font-weight:650;font-size:.98rem;line-height:1.3;background:#EEF1F4;border:1px solid #D3DAE2;border-left:4px solid var(--acero);border-radius:8px;padding:14px 14px 14px 40px;position:relative}
+.ficha-casillas a:hover{background:#E2E8EE;border-color:var(--acero)}
+.ficha-casillas a::after{content:"Escribir por WhatsApp";display:block;font-weight:500;font-size:.82rem;color:var(--acero-osc);margin-top:4px;text-decoration:underline}
+.ficha-casillas a::before{content:"";position:absolute;left:15px;top:17px;width:6px;height:11px;border-right:2.6px solid var(--acero-osc);border-bottom:2.6px solid var(--acero-osc);transform:rotate(45deg)}
+@media (max-width:420px){.ficha-casillas{grid-template-columns:1fr}}
+.ficha-aviso{font-style:italic;font-size:.95rem;color:var(--gris);margin:12px 0 0}
 .ficha-nota{font-family:var(--sans);font-size:.88rem;color:var(--gris);background:#F1F2EE;border-radius:6px;padding:10px 12px;margin:16px 0 0}
 .ficha-acciones{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
 .ficha-acciones .siguiente{grid-column:auto;justify-self:auto}
@@ -223,11 +243,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   background:var(--manila);color:var(--tinta);border-radius:999px;padding:5px 13px}
 .caso a:hover{background:#E2E4E7}
 
-.pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;counter-reset:paso}
-.pasos li{counter-increment:paso;border-top:3px solid var(--acero);padding-top:18px}
-.pasos li::before{content:counter(paso);font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:3.4rem;line-height:1;color:#8FA4BA;display:block;margin-bottom:14px}
-.pasos h3{margin-bottom:10px}
-.pasos p{color:var(--texto-2);margin:0}
 
 .pie{background:var(--fondo-pie);color:#DDE0E4;padding:90px 0 100px}
 .pie h2{color:#fff;max-width:14ch}
@@ -252,8 +267,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   .seccion .encabezado{grid-template-columns:1fr;gap:16px}
   .lista-casos{grid-template-columns:1fr}
   .categorias{grid-template-columns:1fr;gap:18px}
-  .pasos{grid-template-columns:1fr;gap:34px}
-  .pie .rejilla{grid-template-columns:1fr;gap:36px}
+    .pie .rejilla{grid-template-columns:1fr;gap:36px}
 }
 @media (max-width:560px){
   .contenedor{padding:0 16px}
@@ -320,7 +334,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 #servicios{position:relative;isolation:isolate;padding-top:300px;margin-top:-1px}
 #servicios::before{content:"";position:absolute;inset:0 0 auto;height:300px;z-index:-1;pointer-events:none;
   background:linear-gradient(180deg,#F2F3F5 0%,#E4E6E9 10%,#C3C7CC 24%,#8E9299 40%,#55595F 58%,#2C2E33 76%,#1A1B1E 90%,rgba(18,19,21,0) 100%)}
-#servicios,#solicitar,#como-trabajamos{
+#servicios,#solicitar{
   background:
     radial-gradient(ellipse 60% 45% at 12% 30%,rgba(128,147,167,.13),transparent 70%),
     radial-gradient(ellipse 55% 40% at 90% 75%,rgba(201,207,214,.07),transparent 70%),
@@ -335,21 +349,15 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     var(--fondo)}
 .casos{background:linear-gradient(180deg,rgba(128,147,167,.08),transparent 40%),var(--fondo-2)}
 @media (max-width:560px){#servicios{padding-top:200px}#servicios::before{height:200px}}
-#solicitar,#como-trabajamos{background-color:#1F2125 !important}
+#solicitar{background-color:#1F2125 !important}
 #solicitar{background:
     radial-gradient(ellipse 55% 50% at 88% 25%,rgba(128,147,167,.12),transparent 70%),
     linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
     linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
     #1F2125}
-#como-trabajamos{background:
-    radial-gradient(ellipse 60% 45% at 12% 30%,rgba(128,147,167,.12),transparent 70%),
-    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
-    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
-    #1F2125}
 .casos{background:linear-gradient(180deg,rgba(128,147,167,.06),transparent 40%),#121315;border-block:0}
-#solicitar,.casos,#como-trabajamos{border-top:1px solid rgba(201,207,214,.22)}
+#solicitar,.casos{border-top:1px solid rgba(201,207,214,.22)}
 .cerro-pie{background:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,#1F2125;margin-top:-1px}
-#como-trabajamos{padding-bottom:40px}
 @media (prefers-reduced-motion:no-preference){
   .portada h1{animation:aparecer .9s cubic-bezier(.2,.7,.2,1) .45s both}
   .emblema-logo{animation:aparecer .9s cubic-bezier(.2,.7,.2,1) .2s both}
@@ -401,7 +409,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   </a>
   <nav aria-label="Principal">
     <a href="#servicios">Servicios</a>
-    <a href="#como-trabajamos">Cómo trabajamos</a>
     <a href="#contacto">Contacto</a>
     <a class="boton claro" href="https://wa.me/528140297419" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>81 4029 7419</span></a>
   </nav>
@@ -430,7 +437,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     <div class="contenedor">
       <div class="encabezado">
         <h2>Servicios</h2>
-        <p>Cuatro áreas, un solo despacho. Muchos casos tocan varias: una casa heredada necesita trámite en Catastro, escrituras y, a veces, un crédito para comprar la parte de los hermanos. Lo llevamos completo.</p>
+        <p>Integramos nuestros servicios y áreas de especialización para brindar soluciones coordinadas, gestionando cada etapa de acuerdo con las necesidades de nuestros clientes.</p>
       </div>
 
       <p class="pista"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-.5V4.5a1.5 1.5 0 0 1 3 0V10m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1.2a5 5 0 0 1-3.9-1.9L4.6 15.6a1.5 1.5 0 0 1 2.3-1.9L9 16"/></svg>Toque una imagen para ver sus servicios, y un servicio para ver más detalles.</p>
@@ -478,10 +485,13 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         <h3 id="ficha-titulo"></h3>
         <button class="ficha-cerrar" type="button" data-cerrar aria-label="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></svg></button>
       </header>
+      <ul class="ficha-casillas" id="ficha-casillas" hidden></ul>
       <p id="ficha-desc" style="white-space:pre-line"></p>
-      <h4 id="ficha-docs-titulo">Qué documentos se piden</h4>
+      <div class="ficha-temas" id="ficha-temas" hidden></div>
+      <h4 id="ficha-docs-titulo">Documentos a solicitar (si el trámite lo requiere)</h4>
       <ul class="ficha-docs" id="ficha-docs"></ul>
-      <p class="ficha-nota" id="ficha-nota">Es la lista general. Al revisar su caso le confirmamos exactamente qué hace falta, sin costo.</p>
+      <p class="ficha-aviso" id="ficha-aviso">(Si actualmente no cuentas con alguno de estos documentos, no te preocupes; contáctanos y con gusto buscamos una alternativa para resolverlo.)</p>
+      <p class="ficha-nota" id="ficha-nota">Especificar qué asunto necesita solucionar, mencionando el contexto completo de lo que se requiere. La información proporcionada será fundamental para determinar la atención y el seguimiento correspondientes; sin ella no se podrá dar seguimiento ni atención al caso.</p>
       <div class="ficha-acciones">
         <a class="boton" id="ficha-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Preguntar por este servicio</a>
         <button class="siguiente" type="button" data-cerrar>Ver otros servicios</button>
@@ -517,10 +527,11 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
             <label><input type="radio" name="area" value="una empresa (compra, venta o apertura)"> Una empresa</label>
             <label><input type="radio" name="area" value="una propiedad"> Una propiedad</label>
             <label><input type="radio" name="area" value="un trámite"> Un trámite</label>
+            <label><input type="radio" name="area" value="otro asunto"> Otro</label>
           </div>
         </fieldset>
         <div class="campo">
-          <label for="caso">Cuéntenos su caso</label>
+          <label for="caso">Especificar qué servicio o asunto necesita atender para darle la atención pertinente</label>
           <textarea id="caso" name="caso" rows="3" required placeholder="Ej. Mi papá dejó una casa en Guadalupe sin testamento y queremos venderla."></textarea>
           <p class="error" id="error" role="alert"></p>
         </div>
@@ -538,28 +549,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     </div>
   </section>
 
-  <section class="seccion" id="como-trabajamos">
-    <div class="contenedor">
-      <div class="encabezado">
-        <h2>Cómo trabajamos.</h2>
-        <p>Atención personalizada y de confianza en cada servicio, de principio a fin.</p>
-      </div>
-      <ol class="pasos">
-        <li>
-          <h3>¿Qué necesita resolver?</h3>
-          <p>Por WhatsApp, correo o en persona. Entre más detalle nos dé, más rápido le orientamos.</p>
-        </li>
-        <li>
-          <h3>Le ofrecemos la solución que necesita</h3>
-          <p>Qué documentos hacen falta, qué pasos siguen y cuánto cobramos, antes de empezar.</p>
-        </li>
-        <li>
-          <h3>Encontramos la solución que necesita</h3>
-          <p>Llevamos el trámite ante cada oficina y le avisamos en cada avance hasta terminar.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
 </main>
 
 <svg class="cerro-pie" viewBox="0 70 1440 250" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
@@ -627,37 +616,49 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 
   const SERVICIOS = {
     fin: { nombre: 'Especialista en soluciones financieras', items: [
-      ['Créditos PYMES y personales', 'Ofrecemos opciones de financiamiento para empresas y personas físicas, adaptadas a sus necesidades y objetivos financieros.',
+      ['Créditos PYMES y personales', 'Te ayudamos a encontrar el financiamiento que necesitas, conectándote con alternativas que se ajusten a las necesidades y objetivos de tu proyecto.',
         ['Identificación oficial (INE) y CURP', 'Comprobante de domicilio reciente', 'Constancia de situación fiscal (RFC)', 'Estados de cuenta bancarios de los últimos 3 a 6 meses', 'Declaraciones o estados financieros, si es negocio', 'Acta constitutiva y poderes, si es persona moral']],
-      ['Apoyo gubernamental', 'Ofrecemos asesoría y acompañamiento en la identificación y gestión de programas de apoyo gubernamental, facilitando el acceso a recursos y alternativas de financiamiento.\n\nAsimismo, brindamos apoyo en la gestión de trámites y procesos administrativos, contribuyendo a agilizar los procedimientos burocráticos y simplificar los procesos ante las instituciones correspondientes.',
-        ['Identificación oficial y CURP del representante', 'Constancia de situación fiscal', 'Comprobante de domicilio del negocio', 'Descripción del proyecto o del uso del apoyo', 'Documentos que pida la convocatoria vigente']],
-      ['Créditos para exportadores e importadores', 'Ofrecemos soluciones de financiamiento para empresas dedicadas al comercio internacional, facilitando recursos para operaciones de importación y exportación, capital de trabajo y expansión comercial, de acuerdo con las necesidades de cada negocio.',
-        ['Acta constitutiva y poderes', 'Constancia de situación fiscal', 'Estados financieros recientes', 'Padrón de importadores o registro de exportador, si aplica', 'Pedidos, facturas o contratos de la operación']],
+      ['Apoyo gubernamental', 'Te ayudamos a identificar oportunidades de apoyo gubernamental y financiamiento, orientándote durante el proceso para acceder a los recursos disponibles.\n\nAsimismo, brindamos apoyo en la gestión de trámites y procesos administrativos, contribuyendo a agilizar los procedimientos burocráticos y simplificar los procesos ante las instituciones correspondientes.',
+        ['Identificación oficial y CURP del representante', 'Constancia de situación fiscal', 'Comprobante de domicilio del negocio', 'Descripción del proyecto o del uso del apoyo', 'Estados de cuenta de los últimos 12 meses']],
+      ['Créditos para exportadores e importadores', 'Brindamos asesoría y gestión para que empresas dedicadas al comercio internacional puedan identificar y acceder a alternativas de financiamiento destinadas a operaciones de importación y exportación, capital de trabajo y expansión comercial, de acuerdo con las necesidades de cada negocio.',
+        [], [{ t: 'Soluciones que gestionamos', items: [
+          ['Créditos para Capital de Trabajo y Equipamiento', 'Gestionar líneas de crédito como el programa Crédito PyMEx de Bancomext (para necesidades menores a 3 millones de dólares) o financiamiento directo para empresas más grandes.'],
+          ['Factoraje Internacional y Descuento de Facturas', 'Ayudar a los exportadores a adelantar el cobro de sus facturas emitidas en el extranjero para obtener liquidez inmediata sin esperar los plazos de pago del comprador.'],
+          ['Instrumentos de Pago y Garantía', 'Asesorar en la apertura y negociación de Cartas de Crédito (créditos documentarios) y seguros de crédito a la exportación para proteger a tus clientes contra el impago internacional.'],
+          ['Optimización de Recursos y Programas Fiscales', 'Guiar a las empresas en la obtención de beneficios arancelarios y devolución de impuestos mediante programas de la Secretaría de Economía como IMMEX, PROSEC y Drawback.']
+        ]}]],
       ['Créditos hipotecarios', 'Ofrecemos alternativas de financiamiento para la adquisición, construcción o remodelación de bienes inmuebles, brindando asesoría y acompañamiento durante el proceso para encontrar opciones acordes a las necesidades y posibilidades de cada cliente.',
         ['Identificación oficial y CURP', 'Comprobante de domicilio', 'Comprobantes de ingresos (recibos de nómina o estados de cuenta)', 'Constancia de situación fiscal', 'Datos de la propiedad que quiere comprar, si ya la tiene']]
     ]},
     emp: { nombre: 'Compra y venta de empresas', items: [
-      ['Compra y venta de empresas', 'Ofrecemos servicios integrales para la adquisición, venta y constitución de empresas, brindando asesoría y acompañamiento durante cada etapa del proceso.\n\nNos especializamos en la compra y venta de empresas de diversos giros comerciales. Contamos con opciones para quienes buscan adquirir un negocio establecido y ofrecemos la posibilidad de comprar empresas de quienes desean venderlas, con intermediación y gestión durante toda la operación.',
-        []],
-      ['Actas constitutivas', 'Elaboración y gestión de documentación legal para empresas de diversos sectores.',
-        ['Identificación oficial y CURP de cada socio', 'Constancia de situación fiscal de cada socio', 'Comprobante de domicilio', 'Tres opciones de nombre para la empresa', 'Giro o actividad, capital y reparto de acciones']],
+      ['Compra y venta de empresas', 'Nos especializamos en la compra y venta de empresas de diversos giros comerciales.\nIdeales para clientes que necesitan una empresa con antigüedad.\n\nCompra y venta de empresas con activos y flujos.',
+        [], [{ t: 'Para compradores', items: [
+          ['Catálogo de sociedades disponibles', 'Oferta de empresas ya constituidas (S.A. de C.V., S. de R.L., S.A.P.I., etc.) con distintas antigüedades, objetos sociales amplios y regímenes fiscales.'],
+          ['Auditoría de "Empresa Limpia" (Due Diligence Express)', 'Verificación exhaustiva de que la sociedad no tiene deudas, juicios laborales, créditos fiscales ante el SAT/IMSS/INFONAVIT, ni antecedentes en listas negras (Art. 69-B del CFF).'],
+          ['Gestión de entrega de documentación corporativa', 'Entrega de testimonio notarial original, boleta de inscripción en el Registro Público de Comercio (RPC), Constancia de Situación Fiscal, e.firma vigente, libros corporativos y sellos.']
+        ]}, { t: 'Para vendedores (traspasos de sociedades inactivas)', intro: 'Enfocados en dueños de empresas que dejaron de operar o se constituyeron y nunca se usaron, y buscan recuperar su inversión sin pasar por el costoso y largo proceso de liquidación.', items: [
+          ['Diagnóstico previo a la venta', 'Revisión del estatus fiscal y corporativo para confirmar que la empresa está al corriente en declaraciones (en ceros) y apta para ser transferida.'],
+          ['Valuación por antigüedad y características', 'Determinación del precio de venta según los años de constitución, registros especiales (como REPSE, padrón de importadores, permisos) o historial crediticio limpio.'],
+          ['Intermediación confidencial', 'Conexión directa con compradores verificados para evitar el mal uso de la razón social antes del cierre.'],
+          ['Qué incluye el traspaso', ['Elaboración de contratos de compraventa de acciones o partes sociales.', 'Asambleas de cambio de administración y poderes.', 'Actualización ante el SAT y Registro Público.', 'Modificación de objeto social o denominación (opcional).']]
+        ]}]],
       ['Apertura de empresas', 'Asesoría y gestión de trámites para la creación y formalización de nuevos negocios.',
         ['Identificación oficial y CURP de los socios', 'Constancia de situación fiscal de los socios', 'Comprobante del domicilio donde operará el negocio', 'Giro o actividad del negocio', 'Nombre propuesto para la empresa']],
       ['Recuperación de e.firma', 'Apoyo en los procesos de recuperación y renovación de la firma electrónica ante el SAT.',
         []]
     ]},
     tra: { nombre: 'Trámites en dependencias', items: [
-      ['CFE', 'Ofrecemos asesoría y gestión de trámites ante la Comisión Federal de Electricidad (CFE), brindando acompañamiento en solicitudes, contratos, modificaciones de servicio y seguimiento de procesos administrativos para facilitar su atención y resolución.',
-        ['Identificación oficial', 'Último recibo de luz o número de servicio', 'Escritura o contrato de arrendamiento, para cambio de nombre']],
-      ['Agua y Drenaje', 'Ofrecemos asesoría y gestión de trámites ante los organismos de Agua y Drenaje, incluyendo contratos de servicio, cambios de titularidad, aclaraciones, convenios de pago y seguimiento de solicitudes, facilitando los procesos administrativos correspondientes.',
-        ['Identificación oficial', 'Último recibo de agua o número de cuenta', 'Escritura o contrato de arrendamiento, para cambio de titular']],
-      ['Policía y Tránsito', 'Brindamos asesoría y acompañamiento en la gestión de trámites ante dependencias de Policía y Tránsito, incluyendo aclaraciones de infracciones, multas, liberación de vehículos, seguimiento de reportes y otros procedimientos administrativos, agilizando los procesos correspondientes.',
-        ['Identificación oficial', 'Tarjeta de circulación y factura del vehículo', 'Boleta o folio de la infracción, si la hay']],
+      ['CFE', 'Especificar qué servicio o asunto necesita atender para darle la atención pertinente.',
+        []],
+      ['Agua y Drenaje', 'Especificar qué servicio o asunto necesita atender para darle la atención pertinente.',
+        []],
+      ['Policía y Tránsito', 'Especificar qué servicio o asunto necesita atender para darle la atención pertinente.',
+        []],
       ['SAT', 'Ofrecemos asesoría y gestión de trámites ante el Servicio de Administración Tributaria (SAT), incluyendo renovación de e.firma, trámite de e.firma para personas morales por primera vez, cambios de domicilio fiscal, verificaciones de domicilio, actualización de datos fiscales, constancias de situación fiscal y aclaraciones administrativas.\n\nBrindamos acompañamiento y gestión remota en los trámites que lo permiten, facilitando los procesos y evitando desplazamientos y visitas innecesarias a las oficinas del SAT.',
         ['RFC o constancia de situación fiscal', 'e.firma vigente, o identificación oficial para tramitarla', 'Comprobante de domicilio', 'Documento o requerimiento que recibió, si aplica']],
-      ['Nómina e IMSS', 'Ofrecemos servicios de administración y gestión de nóminas, incluyendo cálculo de sueldos, elaboración de recibos, control de incidencias, finiquitos, liquidaciones, prestaciones y cumplimiento de obligaciones laborales.\n\nOfrecemos asesoría y gestión de trámites ante el Instituto Mexicano del Seguro Social (IMSS), incluyendo altas y bajas de trabajadores, modificaciones salariales, registros patronales, movimientos afiliatorios, aclaraciones y revisión de cuotas obrero-patronales.\n\nAsimismo, brindamos asesoría en materia de pensiones, orientada a identificar alternativas legales para optimizar el monto de la pensión y gestionar el acceso a beneficios y derechos pensionarios para los asegurados y sus beneficiarios, de acuerdo con los requisitos aplicables. Acompañamos cada proceso con atención personalizada y seguimiento administrativo.',
-        ['Registro patronal y constancia de situación fiscal de la empresa', 'Lista de trabajadores con NSS, CURP, RFC y salario', 'Contratos e incidencias del periodo, para la nómina', 'Para pensión: identificación oficial, NSS y CURP del asegurado']],
-      ['Desarrollo Urbano, Catastro, Registro Público y Notarías', 'Ofrecemos asesoría y gestión de trámites ante dependencias de Desarrollo Urbano, Catastro, Registro Público de la Propiedad y notarías públicas.\n\nNuestros servicios incluyen regularización de propiedades, gestión de permisos y licencias, actualización de información catastral, inscripciones registrales, certificados, escrituras, trámites notariales y seguimiento de procesos administrativos y legales, facilitando la gestión y agilización de cada procedimiento.',
+      ['Nómina e IMSS', 'Especificar qué servicio o asunto necesita atender para darle la atención pertinente.',
+        []],
+      ['Desarrollo Urbano, Catastro, Registro Público y Notarías', 'Nuestros servicios incluyen regularización de propiedades, gestión de permisos y licencias, actualización de información catastral, inscripciones registrales, certificados, escrituras, trámites notariales y seguimiento de procesos administrativos y legales, facilitando la gestión y agilización de cada procedimiento.',
         ['Escritura de la propiedad', 'Expediente catastral o recibo de predial', 'Identificación del propietario', 'Planos, si el trámite lo pide']],
       ['Control Vehicular', 'Ofrecemos asesoría y gestión de trámites relacionados con el control vehicular, incluyendo altas y bajas de placas, cambios de propietario, refrendos, regularización de vehículos, aclaración de adeudos, pago de derechos y seguimiento de trámites ante las autoridades correspondientes, facilitando los procesos administrativos de manera ágil y profesional.',
         ['Identificación oficial', 'Factura del vehículo', 'Tarjeta de circulación', 'Comprobante de domicilio', 'Pagos de refrendo anteriores']],
@@ -665,36 +666,48 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         ['Licencia de construcción', 'Planos autorizados', 'Datos del perito responsable', 'Identificación del propietario']],
       ['Multas en cualquier dependencia', 'Brindamos asesoría y gestión para la revisión, aclaración e impugnación de multas ante diversas dependencias gubernamentales. Analizamos cada caso para identificar alternativas de solución, posibles reducciones, convenios de pago o procedimientos administrativos, dando seguimiento hasta su resolución conforme a la normativa aplicable.',
         ['La boleta o el oficio de la multa', 'Identificación oficial', 'Cualquier documento relacionado con el caso']],
-      ['Licencia de funcionamiento', 'Ofrecemos asesoría y gestión para la obtención de licencias de funcionamiento de establecimientos comerciales y empresariales de diversos giros. Brindamos acompañamiento en la integración de documentación, cumplimiento de requisitos, presentación de solicitudes y seguimiento ante las dependencias correspondientes, facilitando el proceso de apertura y operación de nuevos negocios.',
-        ['Identificación oficial del propietario o representante', 'Constancia de situación fiscal', 'Escritura o contrato de arrendamiento del local', 'Uso de suelo del local', 'Visto bueno de Protección Civil, si el giro lo pide']]
+      ['Licencias y permisos', '',
+        [], [{ items: [
+          ['Desarrollo urbano e inmobiliario', ['Licencias de uso de suelo.', 'Licencias de construcción.', 'Licencias de uso de edificación.', 'Demoliciones y ampliaciones.', 'Alineamientos y números oficiales.'], 'Hola, necesito un trámite de desarrollo urbano e inmobiliario. Mi situación es: '],
+          ['Comercio y establecimientos', ['Permisos para apertura de negocios.', 'Anuencias municipales.', 'Permisos para anuncios publicitarios.', 'Permisos para venta de alcohol.', 'Permisos para espectáculos y eventos.'], 'Hola, necesito un trámite de comercio y establecimientos. Mi situación es: '],
+          ['Medio ambiente', ['Permisos ambientales.', 'Autorizaciones de impacto ambiental.', 'Autorizaciones para tala o poda.'], 'Hola, necesito un trámite de medio ambiente. Mi situación es: '],
+          ['Permisos estatales y federales', ['Protección Civil.', 'COFEPRIS.', 'SEMARNAT.', 'Permisos y autorizaciones de funcionamiento según el giro.'], 'Hola, necesito un trámite de permisos estatales y federales. Mi situación es: ']
+        ]}]]
     ]},
     bie: { nombre: 'Bienes raíces', items: [
-      ['Intestados', 'Ofrecemos asesoría y acompañamiento en procesos de sucesión intestamentaria, así como en la compra de propiedades en esta situación.\n\nTambién gestionamos procesos de regularización de inmuebles, brindando apoyo en la revisión documental, trámites legales, notariales y registrales para facilitar la certeza jurídica y la correcta situación legal de cada propiedad.',
-        ['Acta de defunción', 'Actas de nacimiento y de matrimonio que prueben el parentesco', 'Identificaciones de los herederos', 'Escritura o documento de la propiedad', 'Último recibo de predial']],
-      ['Créditos hipotecarios', 'Ofrecemos asesoría e intermediación para la obtención de créditos hipotecarios destinados a la compra, construcción, remodelación o adquisición de bienes inmuebles. Analizamos distintas alternativas de financiamiento y acompañamos a nuestros clientes durante el proceso de solicitud y autorización, buscando opciones que se ajusten a sus necesidades y capacidad financiera.',
-        ['Identificación oficial y CURP', 'Comprobantes de ingresos', 'Comprobante de domicilio', 'Datos de la propiedad']],
-      ['Compra y venta de propiedades', 'Ofrecemos servicios de intermediación para la compra y venta de propiedades, incluyendo casas, terrenos, locales comerciales y bienes inmuebles de distintos tipos. Brindamos asesoría y acompañamiento durante todo el proceso, desde la búsqueda de oportunidades y negociación hasta la revisión documental y formalización de la operación.',
-        ['Escritura de la propiedad', 'Identificaciones de comprador y vendedor', 'Predial y agua al corriente', 'Certificado de libertad de gravamen (lo tramitamos)', 'Avalúo, si hay crédito']],
+      ['Intestados', 'También gestionamos procesos de regularización de inmuebles, brindando apoyo en la revisión documental, trámites legales, notariales y registrales para facilitar la certeza jurídica y la correcta situación legal de cada propiedad.',
+        ['Acta de defunción', 'Actas de nacimiento y de matrimonio que prueben el parentesco', 'Identificaciones de los herederos', 'Escritura o documento de la propiedad', 'Último recibo de predial'], [], [['Compramos tu propiedad intestada', 'Hola, quiero vender una propiedad intestada. Mi situación es: '], ['Regularizamos tus escrituras', 'Hola, quiero regularizar mis escrituras. Mi situación es: ']]],
       ['Administración de propiedades', 'Ofrecemos servicios integrales de administración de bienes inmuebles, tanto particulares como comerciales, incluyendo plazas, locales comerciales, edificios, casas habitación y propiedades destinadas a rentas temporales como Airbnb.\n\nNos encargamos de la gestión operativa y administrativa, seguimiento de rentas, atención a inquilinos, coordinación de mantenimiento y supervisión de propiedades, buscando optimizar su funcionamiento y rentabilidad.',
         ['Escritura o documento de la propiedad', 'Contratos de arrendamiento vigentes', 'Datos de inquilinos y pagos', 'Recibos de servicios e impuestos']],
       ['Pago de impuestos', 'Ofrecemos asesoría y gestión en el cumplimiento de obligaciones fiscales, incluyendo cálculo, revisión y gestión de pagos de impuestos federales, estatales y municipales, así como seguimiento de adeudos, regularizaciones y aclaraciones ante las autoridades correspondientes, facilitando los procesos administrativos y contribuyendo al cumplimiento oportuno de sus obligaciones tributarias.',
         ['Número de expediente catastral o último recibo de predial', 'Constancia de situación fiscal, si aplica', 'Datos del propietario']],
-      ['Pago de servicios públicos', 'Ofrecemos apoyo en la gestión y realización de pagos de servicios públicos, incluyendo agua, electricidad, gas, telefonía, internet y otros servicios. Brindamos asistencia en la consulta de adeudos, seguimiento de recibos y regularización de pagos, facilitando el cumplimiento de sus obligaciones y optimizando el tiempo de nuestros clientes.',
-        ['Recibos más recientes de cada servicio', 'Número de servicio o de contrato']],
-      ['Permisos de construcción', 'Ofrecemos asesoría y gestión para la obtención de permisos y licencias de construcción ante las dependencias correspondientes. Brindamos acompañamiento en la integración de documentación, presentación de solicitudes, cumplimiento de requisitos técnicos y administrativos, así como seguimiento del proceso hasta su resolución, facilitando la autorización de proyectos de construcción, ampliación y remodelación.',
-        ['Escritura de la propiedad', 'Predial al corriente', 'Planos firmados por un perito o arquitecto', 'Identificación del propietario', 'Alineamiento y uso de suelo, si el municipio lo pide']]
     ]}
   };
 
   const flechita = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m9 6 6 6-6 6"/></svg>';
   const ficha = document.getElementById('ficha');
   function abrirFicha(cat, n){
-    const [titulo, desc, docs] = SERVICIOS[cat].items[n];
+    const [titulo, desc, docs, temas = [], casillas = []] = SERVICIOS[cat].items[n];
+    const cas = document.getElementById('ficha-casillas'); cas.replaceChildren(); cas.hidden = !casillas.length;
+    casillas.forEach(([c, msg])=>{ const li = document.createElement('li'), a = document.createElement('a'); a.textContent = c; a.href = 'https://wa.me/528140297419?text=' + encodeURIComponent(msg); a.target = '_blank'; a.rel = 'noopener'; li.append(a); cas.append(li); });
     document.getElementById('ficha-area').textContent = SERVICIOS[cat].nombre;
     document.getElementById('ficha-titulo').textContent = titulo;
-    document.getElementById('ficha-desc').textContent = desc;
+    document.getElementById('ficha-desc').textContent = desc; document.getElementById('ficha-desc').hidden = !desc;
     const ul = document.getElementById('ficha-docs'); ul.replaceChildren();
-    ['ficha-docs-titulo','ficha-docs','ficha-nota'].forEach(id=>document.getElementById(id).hidden = !docs.length);
+    ['ficha-docs-titulo','ficha-docs','ficha-aviso'].forEach(id=>document.getElementById(id).hidden = !docs.length);
+    const caja = document.getElementById('ficha-temas'); caja.replaceChildren();
+    caja.hidden = !temas.length;
+    const el = (tag, txt, cls)=>{ const e = document.createElement(tag); if (txt) e.textContent = txt; if (cls) e.className = cls; return e; };
+    temas.forEach(g=>{
+      if (g.t) caja.append(el('h4', g.t));
+      if (g.intro) caja.append(el('p', g.intro, 'ficha-temas-intro'));
+      g.items.forEach(([t, x, msg])=>{
+        const d = el('details'); d.append(el('summary', t));
+        if (Array.isArray(x)) { const ul = el('ul'); x.forEach(li=>ul.append(el('li', li))); d.append(ul); } else d.append(el('p', x));
+        if (msg) { const a = el('a', 'Escribir por WhatsApp', 'ficha-temas-wa'); a.href = 'https://wa.me/528140297419?text=' + encodeURIComponent(msg); a.target = '_blank'; a.rel = 'noopener'; d.append(a); }
+        caja.append(d);
+      });
+    });
     docs.forEach(d=>{ const li = document.createElement('li'); li.textContent = d; ul.append(li); });
     document.getElementById('ficha-wa').href = 'https://wa.me/528140297419?text=' + encodeURIComponent(`Hola, me interesa el servicio de ${titulo} (${SERVICIOS[cat].nombre}).`);
     if (typeof ficha.showModal === 'function') ficha.showModal(); else ficha.setAttribute('open','');
@@ -732,7 +745,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     const nombre = form.nombre.value.trim();
     const caso = form.caso.value.trim();
     if (!nombre || !caso){
-      error.textContent = !nombre ? 'Escriba su nombre para saber cómo dirigirnos a usted.' : 'Cuéntenos su caso en una o dos líneas.';
+      error.textContent = !nombre ? 'Escriba su nombre para saber cómo dirigirnos a usted.' : 'Especifique qué servicio o asunto necesita atender.';
       (!nombre ? form.nombre : form.caso).focus();
       return;
     }
