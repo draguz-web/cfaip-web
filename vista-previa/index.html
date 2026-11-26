@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CFAIP · Consultor Financiero, Análisis, Investigación y Proyectos | Monterrey</title>
-<meta name="description" content="Despacho en Monterrey, N.L.: créditos para PYMES e hipotecarios, propiedades intestadas, compra y venta de inmuebles, y trámites ante SAT, CFE, Catastro y más. Cuéntenos su caso por WhatsApp.">
+<meta name="description" content="Despacho en Monterrey, N.L.: créditos para PYMES e hipotecarios, propiedades intestadas, compra y venta de empresas, y trámites ante SAT, CFE, Catastro y más. Cuéntenos su caso por WhatsApp.">
 <link rel="canonical" href="https://draguz-web.github.io/cfaip-web/">
 <meta name="theme-color" content="#0B0C0D">
 <link rel="icon" href="img/logo.svg" type="image/svg+xml">
@@ -38,7 +38,7 @@
   "email": "infoservice@cfaipconsultoresyservicios.com",
   "address": {"@type": "PostalAddress", "addressLocality": "Monterrey", "addressRegion": "Nuevo León", "addressCountry": "MX"},
   "areaServed": {"@type": "State", "name": "Nuevo León"},
-  "knowsAbout": ["Créditos para PYMES", "Créditos hipotecarios", "Propiedades intestadas", "Compra y venta de inmuebles", "Compra y venta de empresas", "Apertura de empresas", "Administración de propiedades", "Trámites ante el SAT", "Trámites ante Catastro y Registro Público"]
+  "knowsAbout": ["Créditos para PYMES", "Créditos hipotecarios", "Propiedades intestadas", "Compra y venta de empresas", "Apertura de empresas", "Administración de propiedades", "Trámites ante el SAT", "Trámites ante Catastro y Registro Público"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,8 +218,10 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .ficha-temas details>ul li::marker{color:var(--acero)}
 .ficha-temas-intro{margin:0 0 12px}
 .ficha-casillas{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.ficha-casillas li{font-family:var(--sans);font-weight:650;font-size:.98rem;line-height:1.3;background:#EEF1F4;border:1px solid #D3DAE2;border-left:4px solid var(--acero);border-radius:8px;padding:14px 14px 14px 40px;position:relative}
-.ficha-casillas li::before{content:"";position:absolute;left:15px;top:17px;width:6px;height:11px;border-right:2.6px solid var(--acero-osc);border-bottom:2.6px solid var(--acero-osc);transform:rotate(45deg)}
+.ficha-casillas a{display:block;color:inherit;text-decoration:none;font-family:var(--sans);font-weight:650;font-size:.98rem;line-height:1.3;background:#EEF1F4;border:1px solid #D3DAE2;border-left:4px solid var(--acero);border-radius:8px;padding:14px 14px 14px 40px;position:relative}
+.ficha-casillas a:hover{background:#E2E8EE;border-color:var(--acero)}
+.ficha-casillas a::after{content:"Escribir por WhatsApp";display:block;font-weight:500;font-size:.82rem;color:var(--acero-osc);margin-top:4px;text-decoration:underline}
+.ficha-casillas a::before{content:"";position:absolute;left:15px;top:17px;width:6px;height:11px;border-right:2.6px solid var(--acero-osc);border-bottom:2.6px solid var(--acero-osc);transform:rotate(45deg)}
 @media (max-width:420px){.ficha-casillas{grid-template-columns:1fr}}
 .ficha-aviso{font-style:italic;font-size:.95rem;color:var(--gris);margin:12px 0 0}
 .ficha-nota{font-family:var(--sans);font-size:.88rem;color:var(--gris);background:#F1F2EE;border-radius:6px;padding:10px 12px;margin:16px 0 0}
@@ -702,19 +704,11 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     ]},
     bie: { nombre: 'Bienes raíces', items: [
       ['Intestados', 'También gestionamos procesos de regularización de inmuebles, brindando apoyo en la revisión documental, trámites legales, notariales y registrales para facilitar la certeza jurídica y la correcta situación legal de cada propiedad.',
-        ['Acta de defunción', 'Actas de nacimiento y de matrimonio que prueben el parentesco', 'Identificaciones de los herederos', 'Escritura o documento de la propiedad', 'Último recibo de predial'], [], ['Compramos tu propiedad intestada', 'Regularizamos tus escrituras']],
-      ['Créditos hipotecarios', 'Ofrecemos asesoría e intermediación para la obtención de créditos hipotecarios destinados a la compra, construcción, remodelación o adquisición de bienes inmuebles. Analizamos distintas alternativas de financiamiento y acompañamos a nuestros clientes durante el proceso de solicitud y autorización, buscando opciones que se ajusten a sus necesidades y capacidad financiera.',
-        ['Identificación oficial y CURP', 'Comprobantes de ingresos', 'Comprobante de domicilio', 'Datos de la propiedad']],
-      ['Compra y venta de propiedades', 'Ofrecemos servicios de intermediación para la compra y venta de propiedades, incluyendo casas, terrenos, locales comerciales y bienes inmuebles de distintos tipos. Brindamos asesoría y acompañamiento durante todo el proceso, desde la búsqueda de oportunidades y negociación hasta la revisión documental y formalización de la operación.',
-        ['Escritura de la propiedad', 'Identificaciones de comprador y vendedor', 'Predial y agua al corriente', 'Certificado de libertad de gravamen (lo tramitamos)', 'Avalúo, si hay crédito']],
+        ['Acta de defunción', 'Actas de nacimiento y de matrimonio que prueben el parentesco', 'Identificaciones de los herederos', 'Escritura o documento de la propiedad', 'Último recibo de predial'], [], [['Compramos tu propiedad intestada', 'Hola, quiero vender una propiedad intestada. Mi situación es: '], ['Regularizamos tus escrituras', 'Hola, quiero regularizar mis escrituras. Mi situación es: ']]],
       ['Administración de propiedades', 'Ofrecemos servicios integrales de administración de bienes inmuebles, tanto particulares como comerciales, incluyendo plazas, locales comerciales, edificios, casas habitación y propiedades destinadas a rentas temporales como Airbnb.\n\nNos encargamos de la gestión operativa y administrativa, seguimiento de rentas, atención a inquilinos, coordinación de mantenimiento y supervisión de propiedades, buscando optimizar su funcionamiento y rentabilidad.',
         ['Escritura o documento de la propiedad', 'Contratos de arrendamiento vigentes', 'Datos de inquilinos y pagos', 'Recibos de servicios e impuestos']],
       ['Pago de impuestos', 'Ofrecemos asesoría y gestión en el cumplimiento de obligaciones fiscales, incluyendo cálculo, revisión y gestión de pagos de impuestos federales, estatales y municipales, así como seguimiento de adeudos, regularizaciones y aclaraciones ante las autoridades correspondientes, facilitando los procesos administrativos y contribuyendo al cumplimiento oportuno de sus obligaciones tributarias.',
         ['Número de expediente catastral o último recibo de predial', 'Constancia de situación fiscal, si aplica', 'Datos del propietario']],
-      ['Pago de servicios públicos', 'Ofrecemos apoyo en la gestión y realización de pagos de servicios públicos, incluyendo agua, electricidad, gas, telefonía, internet y otros servicios. Brindamos asistencia en la consulta de adeudos, seguimiento de recibos y regularización de pagos, facilitando el cumplimiento de sus obligaciones y optimizando el tiempo de nuestros clientes.',
-        ['Recibos más recientes de cada servicio', 'Número de servicio o de contrato']],
-      ['Permisos de construcción', 'Ofrecemos asesoría y gestión para la obtención de permisos y licencias de construcción ante las dependencias correspondientes. Brindamos acompañamiento en la integración de documentación, presentación de solicitudes, cumplimiento de requisitos técnicos y administrativos, así como seguimiento del proceso hasta su resolución, facilitando la autorización de proyectos de construcción, ampliación y remodelación.',
-        ['Escritura de la propiedad', 'Predial al corriente', 'Planos firmados por un perito o arquitecto', 'Identificación del propietario', 'Alineamiento y uso de suelo, si el municipio lo pide']]
     ]}
   };
 
@@ -723,7 +717,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   function abrirFicha(cat, n){
     const [titulo, desc, docs, temas = [], casillas = []] = SERVICIOS[cat].items[n];
     const cas = document.getElementById('ficha-casillas'); cas.replaceChildren(); cas.hidden = !casillas.length;
-    casillas.forEach(c=>{ const li = document.createElement('li'); li.textContent = c; cas.append(li); });
+    casillas.forEach(([c, msg])=>{ const li = document.createElement('li'), a = document.createElement('a'); a.textContent = c; a.href = 'https://wa.me/528140297419?text=' + encodeURIComponent(msg); a.target = '_blank'; a.rel = 'noopener'; li.append(a); cas.append(li); });
     document.getElementById('ficha-area').textContent = SERVICIOS[cat].nombre;
     document.getElementById('ficha-titulo').textContent = titulo;
     document.getElementById('ficha-desc').textContent = desc;
