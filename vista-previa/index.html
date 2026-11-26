@@ -535,7 +535,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
           </div>
         </fieldset>
         <div class="campo">
-          <label for="caso">Cuéntenos su caso</label>
+          <label for="caso">Especificar qué servicio o asunto necesita atender para darle la atención pertinente</label>
           <textarea id="caso" name="caso" rows="3" required placeholder="Ej. Mi papá dejó una casa en Guadalupe sin testamento y queremos venderla."></textarea>
           <p class="error" id="error" role="alert"></p>
         </div>
@@ -771,7 +771,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     const nombre = form.nombre.value.trim();
     const caso = form.caso.value.trim();
     if (!nombre || !caso){
-      error.textContent = !nombre ? 'Escriba su nombre para saber cómo dirigirnos a usted.' : 'Cuéntenos su caso en una o dos líneas.';
+      error.textContent = !nombre ? 'Escriba su nombre para saber cómo dirigirnos a usted.' : 'Especifique qué servicio o asunto necesita atender.';
       (!nombre ? form.nombre : form.caso).focus();
       return;
     }
