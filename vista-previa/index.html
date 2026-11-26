@@ -217,6 +217,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .ficha-temas details>ul li{margin-bottom:4px}
 .ficha-temas details>ul li::marker{color:var(--acero)}
 .ficha-temas-intro{margin:0 0 12px}
+.ficha-aviso{font-style:italic;font-size:.95rem;color:var(--gris);margin:12px 0 0}
 .ficha-nota{font-family:var(--sans);font-size:.88rem;color:var(--gris);background:#F1F2EE;border-radius:6px;padding:10px 12px;margin:16px 0 0}
 .ficha-acciones{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
 .ficha-acciones .siguiente{grid-column:auto;justify-self:auto}
@@ -494,6 +495,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
       <div class="ficha-temas" id="ficha-temas" hidden></div>
       <h4 id="ficha-docs-titulo">Documentos a solicitar (si el trámite lo requiere)</h4>
       <ul class="ficha-docs" id="ficha-docs"></ul>
+      <p class="ficha-aviso" id="ficha-aviso">(Si actualmente no cuentas con alguno de estos documentos, no te preocupes; contáctanos y con gusto buscamos una alternativa para resolverlo.)</p>
       <p class="ficha-nota" id="ficha-nota">Es la lista general. Al revisar su caso le confirmamos exactamente qué hace falta, sin costo.</p>
       <div class="ficha-acciones">
         <a class="boton" id="ficha-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Preguntar por este servicio</a>
@@ -719,7 +721,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     document.getElementById('ficha-titulo').textContent = titulo;
     document.getElementById('ficha-desc').textContent = desc;
     const ul = document.getElementById('ficha-docs'); ul.replaceChildren();
-    ['ficha-docs-titulo','ficha-docs','ficha-nota'].forEach(id=>document.getElementById(id).hidden = !docs.length);
+    ['ficha-docs-titulo','ficha-docs','ficha-aviso','ficha-nota'].forEach(id=>document.getElementById(id).hidden = !docs.length);
     const caja = document.getElementById('ficha-temas'); caja.replaceChildren();
     caja.hidden = !temas.length;
     const el = (tag, txt, cls)=>{ const e = document.createElement(tag); if (txt) e.textContent = txt; if (cls) e.className = cls; return e; };
