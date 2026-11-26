@@ -212,7 +212,11 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .ficha-temas details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
 .ficha-temas details[open] summary{border-bottom-left-radius:0;border-bottom-right-radius:0}
 .ficha-temas summary:hover{background:#F1F2EE}
-.ficha-temas p{margin:0;padding:4px 14px 14px 18px;font-size:.95rem;color:var(--tinta)}
+.ficha-temas details>p,.ficha-temas details>ul{margin:0;padding:4px 14px 14px 18px;font-size:.95rem;color:var(--tinta)}
+.ficha-temas details>ul{padding-left:36px}
+.ficha-temas details>ul li{margin-bottom:4px}
+.ficha-temas details>ul li::marker{color:var(--acero)}
+.ficha-temas-intro{margin:0 0 12px}
 .ficha-nota{font-family:var(--sans);font-size:.88rem;color:var(--gris);background:#F1F2EE;border-radius:6px;padding:10px 12px;margin:16px 0 0}
 .ficha-acciones{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
 .ficha-acciones .siguiente{grid-column:auto;justify-self:auto}
@@ -487,7 +491,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         <button class="ficha-cerrar" type="button" data-cerrar aria-label="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></svg></button>
       </header>
       <p id="ficha-desc" style="white-space:pre-line"></p>
-      <h4 id="ficha-temas-titulo" hidden>Soluciones que gestionamos</h4>
       <div class="ficha-temas" id="ficha-temas" hidden></div>
       <h4 id="ficha-docs-titulo">Qué documentos se piden</h4>
       <ul class="ficha-docs" id="ficha-docs"></ul>
@@ -642,22 +645,27 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
       ['Apoyo gubernamental', 'Te ayudamos a identificar oportunidades de apoyo gubernamental y financiamiento, orientándote durante el proceso para acceder a los recursos disponibles.\n\nAsimismo, brindamos apoyo en la gestión de trámites y procesos administrativos, contribuyendo a agilizar los procedimientos burocráticos y simplificar los procesos ante las instituciones correspondientes.',
         ['Identificación oficial y CURP del representante', 'Constancia de situación fiscal', 'Comprobante de domicilio del negocio', 'Descripción del proyecto o del uso del apoyo', 'Estados de cuenta de los últimos 12 meses']],
       ['Créditos para exportadores e importadores', 'Brindamos asesoría y gestión para que empresas dedicadas al comercio internacional puedan identificar y acceder a alternativas de financiamiento destinadas a operaciones de importación y exportación, capital de trabajo y expansión comercial, de acuerdo con las necesidades de cada negocio.',
-        [], [
+        [], [{ t: 'Soluciones que gestionamos', items: [
           ['Créditos para Capital de Trabajo y Equipamiento', 'Gestionar líneas de crédito como el programa Crédito PyMEx de Bancomext (para necesidades menores a 3 millones de dólares) o financiamiento directo para empresas más grandes.'],
           ['Factoraje Internacional y Descuento de Facturas', 'Ayudar a los exportadores a adelantar el cobro de sus facturas emitidas en el extranjero para obtener liquidez inmediata sin esperar los plazos de pago del comprador.'],
           ['Instrumentos de Pago y Garantía', 'Asesorar en la apertura y negociación de Cartas de Crédito (créditos documentarios) y seguros de crédito a la exportación para proteger a tus clientes contra el impago internacional.'],
           ['Optimización de Recursos y Programas Fiscales', 'Guiar a las empresas en la obtención de beneficios arancelarios y devolución de impuestos mediante programas de la Secretaría de Economía como IMMEX, PROSEC y Drawback.']
-        ]],
+        ]}]],
       ['Créditos hipotecarios', 'Ofrecemos alternativas de financiamiento para la adquisición, construcción o remodelación de bienes inmuebles, brindando asesoría y acompañamiento durante el proceso para encontrar opciones acordes a las necesidades y posibilidades de cada cliente.',
         ['Identificación oficial y CURP', 'Comprobante de domicilio', 'Comprobantes de ingresos (recibos de nómina o estados de cuenta)', 'Constancia de situación fiscal', 'Datos de la propiedad que quiere comprar, si ya la tiene']]
     ]},
     emp: { nombre: 'Compra y venta de empresas', items: [
       ['Compra y venta de empresas', 'Nos especializamos en la compra y venta de empresas de diversos giros comerciales.\nIdeales para clientes que necesitan una empresa con antigüedad.\n\nCompra y venta de empresas con activos y flujos.',
-        [], [
+        [], [{ t: 'Para compradores', items: [
           ['Catálogo de sociedades disponibles', 'Oferta de empresas ya constituidas (S.A. de C.V., S. de R.L., S.A.P.I., etc.) con distintas antigüedades, objetos sociales amplios y regímenes fiscales.'],
           ['Auditoría de "Empresa Limpia" (Due Diligence Express)', 'Verificación exhaustiva de que la sociedad no tiene deudas, juicios laborales, créditos fiscales ante el SAT/IMSS/INFONAVIT, ni antecedentes en listas negras (Art. 69-B del CFF).'],
           ['Gestión de entrega de documentación corporativa', 'Entrega de testimonio notarial original, boleta de inscripción en el Registro Público de Comercio (RPC), Constancia de Situación Fiscal, e.firma vigente, libros corporativos y sellos.']
-        ]],
+        ]}, { t: 'Para vendedores (traspasos de sociedades inactivas)', intro: 'Enfocados en dueños de empresas que dejaron de operar o se constituyeron y nunca se usaron, y buscan recuperar su inversión sin pasar por el costoso y largo proceso de liquidación.', items: [
+          ['Diagnóstico previo a la venta', 'Revisión del estatus fiscal y corporativo para confirmar que la empresa está al corriente en declaraciones (en ceros) y apta para ser transferida.'],
+          ['Valuación por antigüedad y características', 'Determinación del precio de venta según los años de constitución, registros especiales (como REPSE, padrón de importadores, permisos) o historial crediticio limpio.'],
+          ['Intermediación confidencial', 'Conexión directa con compradores verificados para evitar el mal uso de la razón social antes del cierre.'],
+          ['Qué incluye el traspaso', ['Elaboración de contratos de compraventa de acciones o partes sociales.', 'Asambleas de cambio de administración y poderes.', 'Actualización ante el SAT y Registro Público.', 'Modificación de objeto social o denominación (opcional).']]
+        ]}]],
       ['Actas constitutivas', 'Elaboración y gestión de documentación legal para empresas de diversos sectores.',
         ['Identificación oficial y CURP de cada socio', 'Constancia de situación fiscal de cada socio', 'Comprobante de domicilio', 'Tres opciones de nombre para la empresa', 'Giro o actividad, capital y reparto de acciones']],
       ['Apertura de empresas', 'Asesoría y gestión de trámites para la creación y formalización de nuevos negocios.',
@@ -715,8 +723,17 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     const ul = document.getElementById('ficha-docs'); ul.replaceChildren();
     ['ficha-docs-titulo','ficha-docs','ficha-nota'].forEach(id=>document.getElementById(id).hidden = !docs.length);
     const caja = document.getElementById('ficha-temas'); caja.replaceChildren();
-    ['ficha-temas-titulo','ficha-temas'].forEach(id=>document.getElementById(id).hidden = !temas.length);
-    temas.forEach(([t, x])=>{ const d = document.createElement('details'), su = document.createElement('summary'), p = document.createElement('p'); su.textContent = t; p.textContent = x; d.append(su, p); caja.append(d); });
+    caja.hidden = !temas.length;
+    const el = (tag, txt, cls)=>{ const e = document.createElement(tag); if (txt) e.textContent = txt; if (cls) e.className = cls; return e; };
+    temas.forEach(g=>{
+      caja.append(el('h4', g.t));
+      if (g.intro) caja.append(el('p', g.intro, 'ficha-temas-intro'));
+      g.items.forEach(([t, x])=>{
+        const d = el('details'); d.append(el('summary', t));
+        if (Array.isArray(x)) { const ul = el('ul'); x.forEach(li=>ul.append(el('li', li))); d.append(ul); } else d.append(el('p', x));
+        caja.append(d);
+      });
+    });
     docs.forEach(d=>{ const li = document.createElement('li'); li.textContent = d; ul.append(li); });
     document.getElementById('ficha-wa').href = 'https://wa.me/528140297419?text=' + encodeURIComponent(`Hola, me interesa el servicio de ${titulo} (${SERVICIOS[cat].nombre}).`);
     if (typeof ficha.showModal === 'function') ficha.showModal(); else ficha.setAttribute('open','');
