@@ -217,6 +217,10 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .ficha-temas details>ul li{margin-bottom:4px}
 .ficha-temas details>ul li::marker{color:var(--acero)}
 .ficha-temas-intro{margin:0 0 12px}
+.ficha-casillas{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ficha-casillas li{font-family:var(--sans);font-weight:650;font-size:.98rem;line-height:1.3;background:#EEF1F4;border:1px solid #D3DAE2;border-left:4px solid var(--acero);border-radius:8px;padding:14px 14px 14px 40px;position:relative}
+.ficha-casillas li::before{content:"";position:absolute;left:15px;top:17px;width:6px;height:11px;border-right:2.6px solid var(--acero-osc);border-bottom:2.6px solid var(--acero-osc);transform:rotate(45deg)}
+@media (max-width:420px){.ficha-casillas{grid-template-columns:1fr}}
 .ficha-aviso{font-style:italic;font-size:.95rem;color:var(--gris);margin:12px 0 0}
 .ficha-nota{font-family:var(--sans);font-size:.88rem;color:var(--gris);background:#F1F2EE;border-radius:6px;padding:10px 12px;margin:16px 0 0}
 .ficha-acciones{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
@@ -491,6 +495,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         <h3 id="ficha-titulo"></h3>
         <button class="ficha-cerrar" type="button" data-cerrar aria-label="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></svg></button>
       </header>
+      <ul class="ficha-casillas" id="ficha-casillas" hidden></ul>
       <p id="ficha-desc" style="white-space:pre-line"></p>
       <div class="ficha-temas" id="ficha-temas" hidden></div>
       <h4 id="ficha-docs-titulo">Documentos a solicitar (si el trámite lo requiere)</h4>
@@ -696,8 +701,8 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         ['Identificación oficial del propietario o representante', 'Constancia de situación fiscal', 'Escritura o contrato de arrendamiento del local', 'Uso de suelo del local', 'Visto bueno de Protección Civil, si el giro lo pide']]
     ]},
     bie: { nombre: 'Bienes raíces', items: [
-      ['Intestados', 'Ofrecemos asesoría y acompañamiento en procesos de sucesión intestamentaria, así como en la compra de propiedades en esta situación.\n\nTambién gestionamos procesos de regularización de inmuebles, brindando apoyo en la revisión documental, trámites legales, notariales y registrales para facilitar la certeza jurídica y la correcta situación legal de cada propiedad.',
-        ['Acta de defunción', 'Actas de nacimiento y de matrimonio que prueben el parentesco', 'Identificaciones de los herederos', 'Escritura o documento de la propiedad', 'Último recibo de predial']],
+      ['Intestados', 'También gestionamos procesos de regularización de inmuebles, brindando apoyo en la revisión documental, trámites legales, notariales y registrales para facilitar la certeza jurídica y la correcta situación legal de cada propiedad.',
+        ['Acta de defunción', 'Actas de nacimiento y de matrimonio que prueben el parentesco', 'Identificaciones de los herederos', 'Escritura o documento de la propiedad', 'Último recibo de predial'], [], ['Compramos tu propiedad intestada', 'Regularizamos tus escrituras']],
       ['Créditos hipotecarios', 'Ofrecemos asesoría e intermediación para la obtención de créditos hipotecarios destinados a la compra, construcción, remodelación o adquisición de bienes inmuebles. Analizamos distintas alternativas de financiamiento y acompañamos a nuestros clientes durante el proceso de solicitud y autorización, buscando opciones que se ajusten a sus necesidades y capacidad financiera.',
         ['Identificación oficial y CURP', 'Comprobantes de ingresos', 'Comprobante de domicilio', 'Datos de la propiedad']],
       ['Compra y venta de propiedades', 'Ofrecemos servicios de intermediación para la compra y venta de propiedades, incluyendo casas, terrenos, locales comerciales y bienes inmuebles de distintos tipos. Brindamos asesoría y acompañamiento durante todo el proceso, desde la búsqueda de oportunidades y negociación hasta la revisión documental y formalización de la operación.',
@@ -716,7 +721,9 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   const flechita = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m9 6 6 6-6 6"/></svg>';
   const ficha = document.getElementById('ficha');
   function abrirFicha(cat, n){
-    const [titulo, desc, docs, temas = []] = SERVICIOS[cat].items[n];
+    const [titulo, desc, docs, temas = [], casillas = []] = SERVICIOS[cat].items[n];
+    const cas = document.getElementById('ficha-casillas'); cas.replaceChildren(); cas.hidden = !casillas.length;
+    casillas.forEach(c=>{ const li = document.createElement('li'); li.textContent = c; cas.append(li); });
     document.getElementById('ficha-area').textContent = SERVICIOS[cat].nombre;
     document.getElementById('ficha-titulo').textContent = titulo;
     document.getElementById('ficha-desc').textContent = desc;
