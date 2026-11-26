@@ -243,11 +243,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   background:var(--manila);color:var(--tinta);border-radius:999px;padding:5px 13px}
 .caso a:hover{background:#E2E4E7}
 
-.pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;counter-reset:paso}
-.pasos li{counter-increment:paso;border-top:3px solid var(--acero);padding-top:18px}
-.pasos li::before{content:counter(paso);font-family:var(--sans);font-stretch:125%;font-weight:800;font-size:3.4rem;line-height:1;color:#8FA4BA;display:block;margin-bottom:14px}
-.pasos h3{margin-bottom:10px}
-.pasos p{color:var(--texto-2);margin:0}
 
 .pie{background:var(--fondo-pie);color:#DDE0E4;padding:90px 0 100px}
 .pie h2{color:#fff;max-width:14ch}
@@ -272,8 +267,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   .seccion .encabezado{grid-template-columns:1fr;gap:16px}
   .lista-casos{grid-template-columns:1fr}
   .categorias{grid-template-columns:1fr;gap:18px}
-  .pasos{grid-template-columns:1fr;gap:34px}
-  .pie .rejilla{grid-template-columns:1fr;gap:36px}
+    .pie .rejilla{grid-template-columns:1fr;gap:36px}
 }
 @media (max-width:560px){
   .contenedor{padding:0 16px}
@@ -340,7 +334,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 #servicios{position:relative;isolation:isolate;padding-top:300px;margin-top:-1px}
 #servicios::before{content:"";position:absolute;inset:0 0 auto;height:300px;z-index:-1;pointer-events:none;
   background:linear-gradient(180deg,#F2F3F5 0%,#E4E6E9 10%,#C3C7CC 24%,#8E9299 40%,#55595F 58%,#2C2E33 76%,#1A1B1E 90%,rgba(18,19,21,0) 100%)}
-#servicios,#solicitar,#como-trabajamos{
+#servicios,#solicitar{
   background:
     radial-gradient(ellipse 60% 45% at 12% 30%,rgba(128,147,167,.13),transparent 70%),
     radial-gradient(ellipse 55% 40% at 90% 75%,rgba(201,207,214,.07),transparent 70%),
@@ -355,21 +349,15 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     var(--fondo)}
 .casos{background:linear-gradient(180deg,rgba(128,147,167,.08),transparent 40%),var(--fondo-2)}
 @media (max-width:560px){#servicios{padding-top:200px}#servicios::before{height:200px}}
-#solicitar,#como-trabajamos{background-color:#1F2125 !important}
+#solicitar{background-color:#1F2125 !important}
 #solicitar{background:
     radial-gradient(ellipse 55% 50% at 88% 25%,rgba(128,147,167,.12),transparent 70%),
     linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
     linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
     #1F2125}
-#como-trabajamos{background:
-    radial-gradient(ellipse 60% 45% at 12% 30%,rgba(128,147,167,.12),transparent 70%),
-    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
-    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,
-    #1F2125}
 .casos{background:linear-gradient(180deg,rgba(128,147,167,.06),transparent 40%),#121315;border-block:0}
-#solicitar,.casos,#como-trabajamos{border-top:1px solid rgba(201,207,214,.22)}
+#solicitar,.casos{border-top:1px solid rgba(201,207,214,.22)}
 .cerro-pie{background:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/56px 56px,#1F2125;margin-top:-1px}
-#como-trabajamos{padding-bottom:40px}
 @media (prefers-reduced-motion:no-preference){
   .portada h1{animation:aparecer .9s cubic-bezier(.2,.7,.2,1) .45s both}
   .emblema-logo{animation:aparecer .9s cubic-bezier(.2,.7,.2,1) .2s both}
@@ -421,7 +409,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
   </a>
   <nav aria-label="Principal">
     <a href="#servicios">Servicios</a>
-    <a href="#como-trabajamos">Cómo trabajamos</a>
     <a href="#contacto">Contacto</a>
     <a class="boton claro" href="https://wa.me/528140297419" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg><span>81 4029 7419</span></a>
   </nav>
@@ -562,25 +549,6 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     </div>
   </section>
 
-  <section class="seccion" id="como-trabajamos">
-    <div class="contenedor">
-      <div class="encabezado">
-        <h2>Cómo trabajamos.</h2>
-        <p>Atención personalizada y de confianza en cada servicio, de principio a fin.</p>
-      </div>
-      <ol class="pasos">
-        <li>
-          <h3>¿Qué necesita resolver?</h3>
-        </li>
-        <li>
-          <h3>Le ofrecemos la solución que necesita</h3>
-        </li>
-        <li>
-          <h3>Encontramos la solución que necesita</h3>
-        </li>
-      </ol>
-    </div>
-  </section>
 </main>
 
 <svg class="cerro-pie" viewBox="0 70 1440 250" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
