@@ -216,6 +216,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
 .ficha-temas details>ul{padding-left:36px}
 .ficha-temas details>ul li{margin-bottom:4px}
 .ficha-temas details>ul li::marker{color:var(--acero)}
+.ficha-temas-wa{display:inline-block;margin:0 14px 14px 18px;font-family:var(--sans);font-weight:650;font-size:.9rem;color:var(--acero-osc)}
 .ficha-temas-intro{margin:0 0 12px}
 .ficha-casillas{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .ficha-casillas a{display:block;color:inherit;text-decoration:none;font-family:var(--sans);font-weight:650;font-size:.98rem;line-height:1.3;background:#EEF1F4;border:1px solid #D3DAE2;border-left:4px solid var(--acero);border-radius:8px;padding:14px 14px 14px 40px;position:relative}
@@ -503,7 +504,7 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
       <h4 id="ficha-docs-titulo">Documentos a solicitar (si el trámite lo requiere)</h4>
       <ul class="ficha-docs" id="ficha-docs"></ul>
       <p class="ficha-aviso" id="ficha-aviso">(Si actualmente no cuentas con alguno de estos documentos, no te preocupes; contáctanos y con gusto buscamos una alternativa para resolverlo.)</p>
-      <p class="ficha-nota" id="ficha-nota">Es la lista general. Al revisar su caso le confirmamos exactamente qué hace falta, sin costo.</p>
+      <p class="ficha-nota" id="ficha-nota">Especificar qué asunto necesita solucionar, mencionando el contexto completo de lo que se requiere. La información proporcionada será fundamental para determinar la atención y el seguimiento correspondientes; sin ella no se podrá dar seguimiento ni atención al caso.</p>
       <div class="ficha-acciones">
         <a class="boton" id="ficha-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Preguntar por este servicio</a>
         <button class="siguiente" type="button" data-cerrar>Ver otros servicios</button>
@@ -699,8 +700,13 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
         ['Licencia de construcción', 'Planos autorizados', 'Datos del perito responsable', 'Identificación del propietario']],
       ['Multas en cualquier dependencia', 'Brindamos asesoría y gestión para la revisión, aclaración e impugnación de multas ante diversas dependencias gubernamentales. Analizamos cada caso para identificar alternativas de solución, posibles reducciones, convenios de pago o procedimientos administrativos, dando seguimiento hasta su resolución conforme a la normativa aplicable.',
         ['La boleta o el oficio de la multa', 'Identificación oficial', 'Cualquier documento relacionado con el caso']],
-      ['Licencia de funcionamiento', 'Ofrecemos asesoría y gestión para la obtención de licencias de funcionamiento de establecimientos comerciales y empresariales de diversos giros. Brindamos acompañamiento en la integración de documentación, cumplimiento de requisitos, presentación de solicitudes y seguimiento ante las dependencias correspondientes, facilitando el proceso de apertura y operación de nuevos negocios.',
-        ['Identificación oficial del propietario o representante', 'Constancia de situación fiscal', 'Escritura o contrato de arrendamiento del local', 'Uso de suelo del local', 'Visto bueno de Protección Civil, si el giro lo pide']]
+      ['Licencias y permisos', '',
+        [], [{ items: [
+          ['Desarrollo urbano e inmobiliario', ['Licencias de uso de suelo.', 'Licencias de construcción.', 'Licencias de uso de edificación.', 'Demoliciones y ampliaciones.', 'Alineamientos y números oficiales.'], 'Hola, necesito un trámite de desarrollo urbano e inmobiliario. Mi situación es: '],
+          ['Comercio y establecimientos', ['Permisos para apertura de negocios.', 'Anuencias municipales.', 'Permisos para anuncios publicitarios.', 'Permisos para venta de alcohol.', 'Permisos para espectáculos y eventos.'], 'Hola, necesito un trámite de comercio y establecimientos. Mi situación es: '],
+          ['Medio ambiente', ['Permisos ambientales.', 'Autorizaciones de impacto ambiental.', 'Autorizaciones para tala o poda.'], 'Hola, necesito un trámite de medio ambiente. Mi situación es: '],
+          ['Permisos estatales y federales', ['Protección Civil.', 'COFEPRIS.', 'SEMARNAT.', 'Permisos y autorizaciones de funcionamiento según el giro.'], 'Hola, necesito un trámite de permisos estatales y federales. Mi situación es: ']
+        ]}]]
     ]},
     bie: { nombre: 'Bienes raíces', items: [
       ['Intestados', 'También gestionamos procesos de regularización de inmuebles, brindando apoyo en la revisión documental, trámites legales, notariales y registrales para facilitar la certeza jurídica y la correcta situación legal de cada propiedad.',
@@ -720,18 +726,19 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px}
     casillas.forEach(([c, msg])=>{ const li = document.createElement('li'), a = document.createElement('a'); a.textContent = c; a.href = 'https://wa.me/528140297419?text=' + encodeURIComponent(msg); a.target = '_blank'; a.rel = 'noopener'; li.append(a); cas.append(li); });
     document.getElementById('ficha-area').textContent = SERVICIOS[cat].nombre;
     document.getElementById('ficha-titulo').textContent = titulo;
-    document.getElementById('ficha-desc').textContent = desc;
+    document.getElementById('ficha-desc').textContent = desc; document.getElementById('ficha-desc').hidden = !desc;
     const ul = document.getElementById('ficha-docs'); ul.replaceChildren();
-    ['ficha-docs-titulo','ficha-docs','ficha-aviso','ficha-nota'].forEach(id=>document.getElementById(id).hidden = !docs.length);
+    ['ficha-docs-titulo','ficha-docs','ficha-aviso'].forEach(id=>document.getElementById(id).hidden = !docs.length);
     const caja = document.getElementById('ficha-temas'); caja.replaceChildren();
     caja.hidden = !temas.length;
     const el = (tag, txt, cls)=>{ const e = document.createElement(tag); if (txt) e.textContent = txt; if (cls) e.className = cls; return e; };
     temas.forEach(g=>{
-      caja.append(el('h4', g.t));
+      if (g.t) caja.append(el('h4', g.t));
       if (g.intro) caja.append(el('p', g.intro, 'ficha-temas-intro'));
-      g.items.forEach(([t, x])=>{
+      g.items.forEach(([t, x, msg])=>{
         const d = el('details'); d.append(el('summary', t));
         if (Array.isArray(x)) { const ul = el('ul'); x.forEach(li=>ul.append(el('li', li))); d.append(ul); } else d.append(el('p', x));
+        if (msg) { const a = el('a', 'Escribir por WhatsApp', 'ficha-temas-wa'); a.href = 'https://wa.me/528140297419?text=' + encodeURIComponent(msg); a.target = '_blank'; a.rel = 'noopener'; d.append(a); }
         caja.append(d);
       });
     });
